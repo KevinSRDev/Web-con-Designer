@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENA Radio</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="contenBosGov">
+            <div class="boxGov">
+                <img src="https://css.mintic.gov.co/mt/mintic/img/header_govco.png" alt="Gov Co">
+            </div>
+        </div>
+    </header>
+
+
+    <div class="boxLogos">
+        <div class="contenedor"></div>
+        <div class="boxSENAyGov">
+            <div class="senaLogo">
+                <img src="https://certificadossena.net/wp-content/uploads/2022/10/logo-sena-negro-png-2022.png"
+                    alt="Gobierno SENA">
+            </div>
+            <div class="govLogo">
+                <img src="https://www.sena.edu.co/Style%20Library/alayout/images/iMinTrabajo.png"
+                    alt="Ministerio del Trabajo">
+            </div>
+        </div>
+        <div class="boxMensaje">
+            <div class="mensaje">
+                <p class="textMensaje">
+                    Laboratorio del SENA Caldas recibe acreditación con alcance internacional por parte de ONAC
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- NAVBAR -->
+    <div class="boxNavBar">
+        <button id="open-SideBar-btn" onclick="openSideBar()" aria-label="open sideBar" aria-expanded="false"
+            aria-controls="navBarM">
+            <i class="bi bi-filter"></i>
+        </button>
+        <nav id="navBarM">
+            <ul>
+                <button class="btn-close" id="close-SideBar-btn" onclick="closeSideBar()" aria-label="close sideBar">
+                    <i class="bi bi-backspace"></i>
+                </button>
+                <li class="inicio-li" id="link_nav">
+                    <a href="">Inicio</a>
+                    <a href="">Transparencia</a>
+                    <a href="">Atención y Servicio a la Ciudadanía</a>
+                    <a href="">Participa</a>
+                    <a href="">La Entidad</a>
+                    <a href="">Formación</a>
+                    <a href="">Empleabilidad</a>
+                    <a href="">Empresarios</a>
+                    <a href="">Sala de Prensa</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="overlay" onclick="closeSideBar()" aria-hidden="true"></div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="boxEscucharMas">
+        <div class="boxTitleEscuchar">
+            <h2 class="titleEscuchar">
+                Escuchar Más
+            </h2>
+            <div class="btn-left">
+                <i class="bi bi-chevron-left"></i>
+            </div>
+            <div class="btn-right">
+                <i class="bi bi-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANBER -->
+    <div class="divGlobal-banner">
+        <div class="box-bannerWS">
+            <div class="carruselesWS" id="sliderWS">
+                <section class="slider-imgWS">
+                    <div class="boxEscuchar2">
+                        <div class="boxInfoTextImg">
+                            <div class="textoBanner">
+                                <p class="textInfo">
+                                    Campesinos e indígenas de
+                                    Obandos, construyendo
+                                    propuestas para fortalecer la
+                                    formación y el desarrollo rural
+                                </p>
+                            </div>
+                            <div class="boxSliderImg">
+                                <img class="imgWS-banner" src="./src/img/evento-01.jpg" alt="Demon Slayer">
+                            </div>
+                        </div>
+                        <div class="boxControls">
+                            <div class="controlesPod">
+                                <button id="" class="boton-reproducir-pausarP iconoControlP">
+                                    <i class="bi bi-play-fill" id="iconoControlP"></i>
+                                </button>
+                                <input type="range" value="0" id="progresoPod" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="slider-imgWS">
+                    <div class="boxEscuchar2">
+                        <div class="boxInfoTextImg">
+                            <div class="textoBanner">
+                                <p class="textInfo">
+                                    Campesinos e indígenas de
+                                    Obandos, construyendo
+                                    propuestas para fortalecer la
+                                    formación y el desarrollo rural
+                                </p>
+                            </div>
+                            <div class="boxSliderImg">
+                                <img class="imgWS-banner" src="./src/img/evento-02.jpg" alt="Demon Slayer">
+                            </div>
+                        </div>
+                        <div class="boxControls">
+                            <div class="controlesPod">
+                                <button id="" class="boton-reproducir-pausarP iconoControlP">
+                                    <i class="bi bi-play-fill" id="iconoControlP"></i>
+                                </button>
+                                <input type="range" value="0" id="progresoPod" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="slider-imgWS">
+                    <div class="boxEscuchar2">
+                        <div class="boxInfoTextImg">
+                            <div class="textoBanner">
+                                <p class="textInfo">
+                                    Campesinos e indígenas de
+                                    Obandos, construyendo
+                                    propuestas para fortalecer la
+                                    formación y el desarrollo rural
+                                </p>
+                            </div>
+                            <div class="boxSliderImg">
+                                <img class="imgWS-banner" src="./src/img/evento-03.jpg" alt="Demon Slayer">
+                            </div>
+                        </div>
+                        <div class="boxControls">
+                            <div class="controlesPod">
+                                <button id="" class="boton-reproducir-pausarP iconoControlP">
+                                    <i class="bi bi-play-fill" id="iconoControlP"></i>
+                                </button>
+                                <input type="range" value="0" id="progresoPod" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="slider-imgWS">
+                    <div class="boxEscuchar2">
+                        <div class="boxInfoTextImg">
+                            <div class="textoBanner">
+                                <p class="textInfo">
+                                    Campesinos e indígenas de
+                                    Obandos, construyendo
+                                    propuestas para fortalecer la
+                                    formación y el desarrollo rural
+                                </p>
+                            </div>
+                            <div class="boxSliderImg">
+                                <img class="imgWS-banner" src="./src/img/evento-04.jpg" alt="Demon Slayer">
+                            </div>
+                        </div>
+                        <div class="boxControls">
+                            <div class="controlesPod">
+                                <button id="" class="boton-reproducir-pausarP iconoControlP">
+                                    <i class="bi bi-play-fill" id="iconoControlP"></i>
+                                </button>
+                                <input type="range" value="0" id="progresoPod" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="slider-imgWS">
+                    <div class="boxEscuchar2">
+                        <div class="boxInfoTextImg">
+                            <div class="textoBanner">
+                                <p class="textInfo">
+                                    Campesinos e indígenas de
+                                    Obandos, construyendo
+                                    propuestas para fortalecer la
+                                    formación y el desarrollo rural
+                                </p>
+                            </div>
+                            <div class="boxSliderImg">
+                                <img class="imgWS-banner" src="./src/img/evento-05.jpg" alt="Demon Slayer">
+                            </div>
+                        </div>
+                        <div class="boxControls">
+                            <div class="controlesPod">
+                                <button id="" class="boton-reproducir-pausarP iconoControlP">
+                                    <i class="bi bi-play-fill" id="iconoControlP"></i>
+                                </button>
+                                <input type="range" value="0" id="progresoPod" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- OFERTA -->
+    <div class="boxWhite">
+        <div class="boxLineBlack"></div>
+    </div>
+    <div class="boxOferta">
+        <div class="contenedorOferta">
+            <div class="boxTextoOferta">
+                <div class="boxTitle-text">
+                    <h2 class="titleOferta">
+                        Oferta Académica
+                    </h2>
+                    <p class="ofertaText">
+                        ¿Qué le gustaría estudiar?
+                    </p>
+                </div>
+                <p class="linkCatalogo">
+                    Catálogo de programas de formación
+                </p>
+            </div>
+            <div class="boxImgOferta">
+                <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/53940368232_198fa9e408_k-30725.jpg"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/player.js"></script>
+    <script src="./js/banner.js"></script>
+</body>
+
+</html>

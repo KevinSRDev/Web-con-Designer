@@ -1,0 +1,660 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Inconsolata:wght@200..900&family=M+PLUS+Rounded+1c&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
+
+* {
+    font-family: "Sansation", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primerColor: #39a900;
+    --segundoColor: #00304d;
+    --textColor: black;
+    --textColorTwo: white;
+    --bgGobierno: #285ec3;
+}
+
+/* parte de arriba */
+header {
+    width: 100%;
+    background-color: var(--bgGobierno);
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.contenBosGov {
+    width: 80%;
+    height: 40px;
+    padding: 8px 0;
+}
+
+.boxGov {
+    width: 100px;
+    height: 20px;
+}
+
+.boxGov img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* BOX LOGOS */
+.contenedor {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    z-index: 0;
+}
+
+.contenedor::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+.contenido {
+    position: relative;
+    z-index: 1;
+}
+
+.boxLogos {
+    width: 100%;
+    height: auto;
+    background-image: url(https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/caldas1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    fill-opacity: 0.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.boxSENAyGov {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+}
+
+.senaLogo {
+    width: 150px;
+    height: 150px;
+}
+
+.senaLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: invert(100%);
+    z-index: 1;
+}
+
+.govLogo {
+    width: 200px;
+    height: 200px;
+    padding: 50px 0;
+}
+
+.govLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    background-color: white;
+}
+
+.boxMensaje {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.mensaje {
+    width: 80%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 20rem;
+}
+
+.textMensaje {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--textColorTwo);
+}
+
+
+/* NavBar fijada en la parte inferior de la pagina */
+.boxNavBar {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid var(--segundoColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+nav ul {
+    width: 100%;
+    height: auto;
+    list-style: none;
+}
+
+.btn-nav {
+    display: none;
+}
+
+nav li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+nav a:hover {
+    border-bottom: 2px solid var(--primerColor);
+}
+
+#open-SideBar-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#open-SideBar-btn i {
+    color: var(--primerColor);
+    font-size: 4dvb;
+}
+
+#close-SideBar-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#close-SideBar-btn i {
+    font-size: 4dvb;
+}
+
+#overlay {
+    background: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    display: none;
+}
+
+/* Contenido */
+.boxEscucharMas {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0 20px 0;
+}
+
+.boxTitleEscuchar {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 2px solid black;
+}
+
+.titleEscuchar {
+    color: var(--primerColor);
+}
+
+/**/
+.divGlobal-banner {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-bannerWS {
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    border: 2px solid var(--segundoColor);
+}
+
+.carruselesWS {
+    width: 500%;
+    /*SE DEBE CAMBIAR SI SE AGRAGAN MAS IMAGENES*/
+    height: 100%;
+    display: flex;
+}
+
+.slider-imgWS {
+    width: calc(100% / 5);
+    /*SE CALCULA DE ACUERSO A LA CANTIDAD DE IMAGENES. EJEMPLO =>( 100 / NUMERO DE IMG)*/
+    background-image: url(../src/img/fondo-escuchar.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.boxSliderImg {
+    width: 200px;
+    height: 200px;
+}
+
+.boxSliderImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-left,
+.btn-right {
+    display: flex;
+    position: relative;
+    top: 50%;
+    width: 50px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    padding: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primerColor);
+    transform: translate(0, -50%);
+    transition: .9s ease;
+    user-select: none;
+}
+
+
+.btn-right {
+    right: 10px;
+}
+
+.btn-left {
+    left: 10px;
+}
+
+/****/
+
+.boxEscuchar2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxInfoTextImg {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.textoBanner {
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    background: rgba(338, 338, 338, 0.8);
+}
+
+.boxControls {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#progresoPod {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 7px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 24px 5px;
+    cursor: pointer;
+}
+
+#progresoPod::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--primerColor);
+    width: 15px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: 0 6px 10px black;
+}
+
+.controlesPod {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.controlesPod button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+
+
+/* OFERTA EDUCATIVA */
+.boxWhite{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+.boxLineBlack{
+    width: 80%;
+    height: 50px;
+    border-top: 2px solid black;
+}
+
+.boxOferta{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.contenedorOferta{
+    width: 80%;
+    height: 300px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxTextoOferta{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    color: var(--primerColor);
+    gap: 10px;
+}
+.boxTitle-text{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.boxTitle-text h2{
+    font-size: 3rem;
+}
+.boxTitle-text p{
+    font-size: 2.1rem;
+    font-weight: 200;
+}
+
+.linkCatalogo{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.boxImgOferta{
+    width: 50%;
+    height: 100%;
+}
+.boxImgOferta img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .boxSENAyGov {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        z-index: 2;
+        margin-top: 40px;
+    }
+
+    .boxMensaje {
+        width: 100%;
+        height: auto;
+        z-index: 2;
+    }
+
+    .mensaje {
+        width: 90%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 0;
+        padding: 10px;
+    }
+
+    .textMensaje {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--textColorTwo);
+    }
+
+    /* CARRUSEL */
+    .divGlobal-banner {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .boxInfoTextImg {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .textoBanner {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        background: rgba(338, 338, 338, 0.8);
+    }
+
+    .controlesPod {
+        width: 100%;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Navegación en la parte inferior de la web */
+
+    #open-SideBar-btn {
+        display: flex;
+        background-color: white;
+        border-bottom: 1px solid var(--segundoColor);
+        width: 50px;
+        position: relative;
+        z-index: 100;
+        width: 100%;
+    }
+
+    .boxNavBar {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 40px;
+    }
+
+    nav {
+        position: fixed;
+        bottom: -100%;
+        top: -100%;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        backdrop-filter: blur(10px);
+        transition: bottom 400ms ease-out;
+        z-index: 100;
+        display: flex;
+        align-items: start;
+    }
+
+    nav.show {
+        top: 40px;
+        height: auto;
+    }
+
+    nav.show~#overlay {
+        display: block;
+    }
+
+    nav ul {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav .inicio-li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    nav a {
+        width: 100%;
+        height: 30px;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 5px;
+    }
+
+    #close-SideBar-btn {
+        display: flex;
+        padding: 10px;
+    }
+
+    #close-SideBar-btn i {
+        color: var(--segundoColor);
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+    /* NavBar fijada en la parte inferior de la pagina */
+    .boxNavBar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    nav {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid var(--segundoColor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    nav ul {
+        width: 100%;
+        height: auto;
+        list-style: none;
+        padding: 30px 40px;
+    }
+
+    .btn-nav {
+        display: none;
+    }
+
+    nav li {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+    nav a{
+        padding: 2px;
+        border-bottom: 2px solid var(--primerColor);
+    }
+
+    .mensaje {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+}
