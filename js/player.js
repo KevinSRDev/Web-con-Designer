@@ -12,12 +12,12 @@ var boxNavBar = document.querySelector('.boxNavBar')
 
 window.addEventListener("scroll", () => {
   var boxLogos = document.querySelector(".boxSENAyGov");
-  boxLogos.classList.toggle("abajo", window.scrollY > 0);
+  boxLogos.classList.toggle("abajo", window.scrollY > 50);
 
-  boxNavBar.classList.toggle('navAbajo', window.scrollY > 0);
+  boxNavBar.classList.toggle('navAbajo', window.scrollY > 50);
 
 
-  if (window.scrollY > 0) {
+  if (window.scrollY > 50) {
     logoSENA.src = "./src/img/SENA_SENA VERDE.png";
     logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
 

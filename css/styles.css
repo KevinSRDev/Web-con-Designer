@@ -60,6 +60,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     gap: 100px;
+    position: relative;
 }
 
 .boxSENAyGov {
@@ -484,14 +485,15 @@ nav a:hover {
 }
 
 /* NOTICIAS */
-.boxTitle{
+.boxTitle {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.boxTitleNoticias{
+
+.boxTitleNoticias {
     width: 980px;
     height: auto;
     display: flex;
@@ -499,7 +501,8 @@ nav a:hover {
     justify-content: flex-start;
     border-top: 2px solid black;
 }
-.titleNoticias{
+
+.titleNoticias {
     color: var(--primerColor);
     padding: 10px;
     font-weight: 200;
@@ -509,6 +512,11 @@ nav a:hover {
 
 @media only screen and (max-width: 600px) {
 
+    .boxLogos{
+        position: relative;
+        top: 70px;
+        padding-top: 20px;
+    }
     .boxSENAyGov {
         width: 100%;
         height: auto;
@@ -517,7 +525,6 @@ nav a:hover {
         align-items: center;
         padding: 5px;
         z-index: 2;
-        margin-top: 40px;
     }
 
     .boxSENAyGov.abajo {
@@ -525,7 +532,7 @@ nav a:hover {
         position: fixed;
         display: flex;
         flex-direction: row;
-        top: 30px;
+        top: 70px;
         height: 100px;
         z-index: 10;
         border-bottom: 1px solid black;
@@ -554,12 +561,25 @@ nav a:hover {
     }
 
     /* CARRUSEL */
+
+    .boxTitleEscuchar {
+        width: 80%;
+        height: 50px;
+    }
+
     .divGlobal-banner {
         width: 100%;
         height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .box-bannerWS {
+        width: 80%;
+        height: 100%;
+        overflow: hidden;
+        border: 2px solid var(--segundoColor);
     }
 
     .boxSliderImg {
@@ -601,7 +621,7 @@ nav a:hover {
         width: 100%;
         height: auto;
         position: absolute;
-        top: 40px;
+        top: 39px;
     }
 
     nav {
@@ -659,6 +679,11 @@ nav a:hover {
     }
 
     /* OFERTA */
+    .boxLineBlack {
+        width: 80%;
+        height: 50px;
+    }
+
     .contenedorOferta {
         width: 80%;
         height: auto;
@@ -697,6 +722,12 @@ nav a:hover {
     .linkCatalogo {
         font-size: 1.1rem;
         font-weight: bold;
+    }
+
+    /* NOTICIAS */
+    .boxTitleNoticias {
+        width: 80%;
+        height: auto;
     }
 }
 
@@ -764,7 +795,32 @@ nav a:hover {
         padding: 20px;
     }
 
+    /* CARRUSEL */
+    .boxTitleEscuchar {
+        width: 80%;
+        height: 50px;
+    }
+    .box-bannerWS {
+        width: 80%;
+        height: 100%;
+        overflow: hidden;
+        border: 2px solid var(--segundoColor);
+    }
+
     /* OFERTA */
+    .boxLineBlack {
+        width: 80%;
+        height: 50px;
+    }
+
+    .contenedorOferta {
+        width: 80%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .boxImgOferta {
         width: 50%;
         height: 100%;
@@ -782,5 +838,12 @@ nav a:hover {
     .linkCatalogo {
         font-size: 1rem;
         font-weight: bold;
+        text-align: center;
+    }
+
+    /* NOTICIAS */
+    .boxTitleNoticias {
+        width: 80%;
+        height: auto;
     }
 }
