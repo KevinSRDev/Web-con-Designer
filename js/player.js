@@ -1,8 +1,6 @@
 const openButton = document.getElementById("open-SideBar-btn");
 const navbar = document.getElementById("navBarM");
 const media = window.matchMedia("(width < 600px)");
-const icono = document.getElementById("miIcono");
-const texto = document.getElementById("miTexto");
 const linkOfertaSena = document.getElementById("oferta-sena");
 const logoSENA = document.getElementById("logoSena");
 const boxLogoSena = document.querySelector(".senaLogo");
@@ -19,7 +17,7 @@ window.addEventListener("scroll", () => {
   boxNavBar.classList.toggle('navAbajo', window.scrollY > 0);
 
 
-  if (window.scrollY > 2) {
+  if (window.scrollY > 0) {
     logoSENA.src = "./src/img/SENA_SENA VERDE.png";
     logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
 
@@ -37,14 +35,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
-icono.addEventListener("mouseover", () => {
-  texto.style.display = "flex";
-});
-
-icono.addEventListener("mouseout", () => {
-  texto.style.display = "none";
-});
 
 media.addEventListener("change", (e) => updateNavbar(e));
 
