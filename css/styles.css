@@ -46,7 +46,8 @@ header {
 .contenedor {
     position: absolute;
     width: 100%;
-    height: 70%;
+    height: 550px;
+    top: 40px;
     z-index: 0;
 }
 
