@@ -233,7 +233,11 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 150px 0 20px 0;
+    padding: 100px 0 20px 0;
+}
+
+.espacioArriba {
+    padding: 200px 0 20px 0;
 }
 
 .boxTitleEscuchar {
@@ -334,7 +338,7 @@ nav a:hover {
 
 .boxInfoTextImg {
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 20px;
     display: flex;
     justify-content: space-around;
@@ -352,14 +356,15 @@ nav a:hover {
     width: 100%;
     height: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    background-color: rgb(0, 0, 0, 0.5);
 }
 
 #progresoPod {
     appearance: none;
     -webkit-appearance: none;
-    width: 100%;
+    width: 100px;
     height: 7px;
     background-color: white;
     border-radius: 10px;
@@ -381,10 +386,9 @@ nav a:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 50%;
+    width: auto;
+    gap: 15px;
     height: 50px;
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    background-color: var(--segundoColor);
 }
 
 .controlesPod button {
@@ -397,9 +401,12 @@ nav a:hover {
     color: white;
     background: none;
     border: none;
-    font-size: 2rem;
     cursor: pointer;
     transition: all 0.1s linear;
+}
+
+.controlesPod button i {
+    font-size: 1.5rem;
 }
 
 
@@ -509,14 +516,106 @@ nav a:hover {
     font-size: 2rem;
 }
 
+/* CARRUSEL DE NOTICIAS */
+.boxGlobalNoticias {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: rgba(228, 228, 228, 0.8);
+}
+
+.carrusel-noticias {
+    width: 980px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    gap: 30px;
+}
+
+.Noticia {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 310px;
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.boxImg {
+    width: 100%;
+    height: 200px;
+}
+
+.boxImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-info-noticia-carrusel {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.boxTitulo-noticia {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.titulo-noticia-carrusel {
+    font-size: 1.1rem;
+    color: var(--primerColor);
+    font-weight: 300;
+}
+
+.box-link-noticia {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+}
+
+.lineVerde {
+    width: 70%;
+    height: 2px;
+    border-bottom: 1px solid var(--primerColor);
+}
+
+.link-carrusel {
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primerColor);
+}
+
+
 
 @media only screen and (max-width: 600px) {
 
-    .boxLogos{
+    .boxLogos {
         position: relative;
         top: 70px;
         padding-top: 20px;
     }
+
     .boxSENAyGov {
         width: 100%;
         height: auto;
@@ -565,6 +664,10 @@ nav a:hover {
     .boxTitleEscuchar {
         width: 80%;
         height: 50px;
+    }
+
+    .titleEscuchar {
+        font-size: 1.6rem;
     }
 
     .divGlobal-banner {
@@ -729,6 +832,28 @@ nav a:hover {
         width: 80%;
         height: auto;
     }
+
+    /* CARRUSEL Noticias */
+    .carrusel-noticias {
+        width: 90%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        gap: 30px;
+    }
+
+    .Noticia {
+        flex: 0 0 auto;
+        width: 400px;
+        height: 310px;
+        display: flex;
+        margin: 20px;
+        align-items: center;
+        flex-direction: column;
+        background-color: #fff;
+    }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1100px) {
@@ -800,6 +925,7 @@ nav a:hover {
         width: 80%;
         height: 50px;
     }
+
     .box-bannerWS {
         width: 80%;
         height: 100%;

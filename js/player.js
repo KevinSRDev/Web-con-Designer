@@ -7,6 +7,7 @@ const boxLogoSena = document.querySelector(".senaLogo");
 const logoGov = document.getElementById("logoCobierno");
 const boxLogoGov = document.querySelector(".govLogo");
 var boxNavBar = document.querySelector('.boxNavBar')
+const escucharMas = document.querySelector('.boxEscucharMas')
 
 
 
@@ -15,6 +16,7 @@ window.addEventListener("scroll", () => {
   boxLogos.classList.toggle("abajo", window.scrollY > 50);
 
   boxNavBar.classList.toggle('navAbajo', window.scrollY > 50);
+  escucharMas.classList.toggle('espacioArriba', window.scrollY > 50);
 
 
   if (window.scrollY > 50) {
@@ -25,6 +27,7 @@ window.addEventListener("scroll", () => {
     boxLogoSena.style.height = `60px`;
 
     boxLogoGov.style.width = `100px`;
+
   } else {
     logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
     logoGov.src = "./src/img/SENA_TRABAJO.png";
