@@ -50,14 +50,22 @@
                 </button>
                 <li class="inicio-li" id="link_nav">
                     <a href="./index.html">Inicio</a>
-                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/default.aspx" target="_blank">Transparencia</a>
-                    <a href="https://www.sena.edu.co/es-co/ciudadano/Paginas/default.aspx" target="_blank">Atención y Servicio a la Ciudadanía</a>
-                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/participa.aspx" target="_blank">Participa</a>
-                    <a href="https://www.sena.edu.co/es-co/sena/Paginas/quienesSomos.aspx" target="_blank">La Entidad</a>
-                    <a href="https://www.sena.edu.co/es-co/formacion/Paginas/Estudie-en-el-SENA.aspx" target="_blank">Formación</a>
-                    <a href="https://www.sena.edu.co/es-co/trabajo/Paginas/busqueEmpleo.aspx" target="_blank">Empleabilidad</a>
-                    <a href="https://www.sena.edu.co/es-co/Empresarios/Paginas/default.aspx" target="_blank">Empresarios</a>
-                    <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/default.aspx" target="_blank">Sala de Prensa</a>
+                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/default.aspx"
+                        target="_blank">Transparencia</a>
+                    <a href="https://www.sena.edu.co/es-co/ciudadano/Paginas/default.aspx" target="_blank">Atención y
+                        Servicio a la Ciudadanía</a>
+                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/participa.aspx"
+                        target="_blank">Participa</a>
+                    <a href="https://www.sena.edu.co/es-co/sena/Paginas/quienesSomos.aspx" target="_blank">La
+                        Entidad</a>
+                    <a href="https://www.sena.edu.co/es-co/formacion/Paginas/Estudie-en-el-SENA.aspx"
+                        target="_blank">Formación</a>
+                    <a href="https://www.sena.edu.co/es-co/trabajo/Paginas/busqueEmpleo.aspx"
+                        target="_blank">Empleabilidad</a>
+                    <a href="https://www.sena.edu.co/es-co/Empresarios/Paginas/default.aspx"
+                        target="_blank">Empresarios</a>
+                    <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/default.aspx" target="_blank">Sala de
+                        Prensa</a>
                 </li>
             </ul>
         </nav>
@@ -66,183 +74,200 @@
     </div>
 
     <!-- CONTENIDO -->
-    <div class="boxEscucharMas">
-        <div class="boxTitleEscuchar">
-            <h2 class="titleEscuchar" onclick="linkEscucharMas()">
-                Escuchar Más
-            </h2>
-            <div class="btn-right" onclick="linkEscucharMas()">
-                <i class="bi bi-chevron-right"></i>
+    <main>
+        <div class="boxEscucharMas">
+            <div class="boxTitleEscuchar">
+                <h2 class="titleEscuchar" onclick="linkEscucharMas()">
+                    Escuchar Más
+                </h2>
+                <div class="btn-right" onclick="linkEscucharMas()">
+                    <i class="bi bi-chevron-right"></i>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- BANBER -->
-    <div class="divGlobal-banner">
-        <div class="box-bannerWS">
-            <section class="slider-imgWS">
-                <div class="boxEscuchar2">
-                    <div class="boxInfoTextImg">
-                        <div class="textoBanner">
-                            <p id="textoAudio" class="textInfo">
-                                Campesinos e indígenas de
-                                Obandos, construyendo
-                                propuestas para fortalecer la
-                                formación y el desarrollo rural
-                            </p>
+        <!-- BANBER -->
+        <div class="divGlobal-banner">
+            <div class="box-bannerWS">
+                <section class="slider-imgWS">
+                    <div class="boxEscuchar2">
+                        <div class="boxInfoTextImg">
+                            <div class="textoBanner">
+                                <p id="textoAudio" class="textInfo">
+                                    Campesinos e indígenas de
+                                    Obandos, construyendo
+                                    propuestas para fortalecer la
+                                    formación y el desarrollo rural
+                                </p>
+                            </div>
+                            <div class="boxSliderImg">
+                                <img class="imgWS-banner" src="./src/img/evento-01.jpg"
+                                    alt="Imagen acerca del evento ...">
+                            </div>
                         </div>
-                        <div class="boxSliderImg">
-                            <img class="imgWS-banner" src="./src/img/evento-01.jpg" alt="Imagen acerca del evento ...">
+                        <div class="boxControls">
+                            <div class="controlesPod">
+                                <button id="btnPlay" class="boton-reproducir-pausarP iconoControlP">
+                                    <i class="bi bi-play" id="iconoControlP"></i>
+                                </button>
+                                <button id="btnLeft" class="atrasP">
+                                    <i class="bi bi-arrow-bar-left"></i>
+                                </button>
+                                <button id="btnRight" class="siguienteP">
+                                    <i class="bi bi-arrow-bar-right"></i>
+                                </button>
+                                <audio id="podcasts">
+                                    <source src="" type="audio/mpeg">
+                                </audio>
+                                <input type="range" value="0" id="progresoPod" />
+                            </div>
                         </div>
                     </div>
-                    <div class="boxControls">
-                        <div class="controlesPod">
-                            <button id="btnPlay" class="boton-reproducir-pausarP iconoControlP">
-                                <i class="bi bi-play" id="iconoControlP"></i>
-                            </button>
-                            <button id="btnLeft" class="atrasP">
-                                <i class="bi bi-arrow-bar-left"></i>
-                            </button>
-                            <button id="btnRight" class="siguienteP">
-                                <i class="bi bi-arrow-bar-right"></i>
-                            </button>
-                            <audio id="podcasts">
-                                <source src="" type="audio/mpeg">
-                            </audio>
-                            <input type="range" value="0" id="progresoPod" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
-    </div>
 
-    <!-- OFERTA -->
-    <div class="boxWhite">
-        <div class="boxLineBlack"></div>
-    </div>
-    <div class="boxOferta">
-        <div id="oferta-sena" class="contenedorOferta" onclick="linkOferta()" target="_blank">
-            <div class="boxTextoOferta">
-                <div class="boxTitle-text">
-                    <h2 class="titleOferta">
-                        Oferta Académica
-                    </h2>
-                    <p class="ofertaText">
-                        ¿Qué le gustaría estudiar?
+        <!-- OFERTA -->
+        <div class="boxWhite">
+            <div class="boxLineBlack"></div>
+        </div>
+        <div class="boxOferta">
+            <div id="oferta-sena" class="contenedorOferta" onclick="linkOferta()" target="_blank">
+                <div class="boxTextoOferta">
+                    <div class="boxTitle-text">
+                        <h2 class="titleOferta">
+                            Oferta Académica
+                        </h2>
+                        <p class="ofertaText">
+                            ¿Qué le gustaría estudiar?
+                        </p>
+                    </div>
+                    <p class="linkCatalogo">
+                        Catálogo de programas de formación
                     </p>
                 </div>
-                <p class="linkCatalogo">
-                    Catálogo de programas de formación
-                </p>
-            </div>
-            <div class="boxImgOferta">
-                <img src="./src/img/oferta (2).jpg" alt="Imagen de Oferta Educativa SENA">
+                <div class="boxImgOferta">
+                    <img src="./src/img/oferta (2).jpg" alt="Imagen de Oferta Educativa SENA">
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- NOTICIAS -->
-    <div class="boxTitle">
-        <div class="boxTitleNoticias">
-            <h2 class="titleNoticias">
-                Noticias
-            </h2>
-        </div>
-    </div>
-    <!-- CARRUSEL DE NOTICIAS -->
-    <div class="boxGlobalNoticias">
-        <div class="carrusel-noticias" id="slider-noticia">
-            <div class="Noticia">
-                <div class="boxImg">
-                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/bol4825.jpeg"
-                        alt="Imagen de Noticia">
-                </div>
-                <div class="box-info-noticia-carrusel">
-                    <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel"> SENA impulsa en Pitalito el diálogo de saberes campesinos
-                            para la transformación del campo colombiano </h3>
-                    </div>
-                    <div class="box-link-noticia">
-                        <div class="lineVerde"></div>
-                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8468" target="_blank" class="link-carrusel">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="Noticia">
-                <div class="boxImg">
-                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/FOTO%201-1825.png" alt="Imagen de Noticia">
-                </div>
-                <div class="box-info-noticia-carrusel">
-                    <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel"> Peter Rosset cerrará su gira por Colombia con el SENA en Viotá: “La voz protagónica es la de las comunidades campesinas”</h3>
-                    </div>
-                    <div class="box-link-noticia">
-                        <div class="lineVerde"></div>
-                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8467" target="_blank" class="link-carrusel">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="Noticia">
-                <div class="boxImg">
-                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/Dialogos%202-1825.jpg" alt="Imagen de Noticia">
-                </div>
-                <div class="box-info-noticia-carrusel">
-                    <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel">SENA Arauca lidera primer Diálogo Territorial para fortalecer el campesinado y la economía popular</h3>
-                    </div>
-                    <div class="box-link-noticia">
-                        <div class="lineVerde"></div>
-                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8466" target="_blank" class="link-carrusel">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="Noticia">
-                <div class="boxImg">
-                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/bol1825-2.jpeg" alt="Imagen de Noticia">
-                </div>
-                <div class="box-info-noticia-carrusel">
-                    <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel">Sembrando cambio: comunidades campesinas y academia impulsan la agroecología en Colombia</h3>
-                    </div>
-                    <div class="box-link-noticia">
-                        <div class="lineVerde"></div>
-                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8465" target="_blank" class="link-carrusel">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="Noticia">
-                <div class="boxImg">
-                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/senaComunica12-1825.png" alt="Imagen de Noticia">
-                </div>
-                <div class="box-info-noticia-carrusel">
-                    <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel">Ya está disponible la 12.ª edición de la Revista Digital SENA Comunica</h3>
-                    </div>
-                    <div class="box-link-noticia">
-                        <div class="lineVerde"></div>
-                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8464" target="_blank" class="link-carrusel">Ver más</a>
-                    </div>
-                </div>
-            </div>
-            <div class="Noticia">
-                <div class="boxImg">
-                    <img src="./src/img/noticias.jpg" alt="Imagen de Noticia">
-                </div>
-                <div class="box-info-noticia-carrusel">
-                    <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel"> Conmemoramos el Día del Servidor
-                            Público y celebramos el II Encuentro de
-                            Cultura Organizacional </h3>
-                    </div>
-                    <div class="box-link-noticia">
-                        <div class="lineVerde"></div>
-                        <a href="" class="link-carrusel">Ver más</a>
-                    </div>
-                </div>
+        <!-- NOTICIAS -->
+        <div class="boxTitle">
+            <div class="boxTitleNoticias">
+                <h2 class="titleNoticias">
+                    Noticias
+                </h2>
             </div>
         </div>
-    </div>
+        <!-- CARRUSEL DE NOTICIAS -->
+        <div class="boxGlobalNoticias">
+            <div class="carrusel-noticias" id="slider-noticia">
+                <div class="Noticia">
+                    <div class="boxImg">
+                        <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/bol4825.jpeg"
+                            alt="Imagen de Noticia">
+                    </div>
+                    <div class="box-info-noticia-carrusel">
+                        <div class="boxTitulo-noticia">
+                            <h3 class="titulo-noticia-carrusel"> SENA impulsa en Pitalito el diálogo de saberes
+                                campesinos
+                                para la transformación del campo colombiano </h3>
+                        </div>
+                        <div class="box-link-noticia">
+                            <div class="lineVerde"></div>
+                            <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8468"
+                                target="_blank" class="link-carrusel">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Noticia">
+                    <div class="boxImg">
+                        <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/FOTO%201-1825.png"
+                            alt="Imagen de Noticia">
+                    </div>
+                    <div class="box-info-noticia-carrusel">
+                        <div class="boxTitulo-noticia">
+                            <h3 class="titulo-noticia-carrusel"> Peter Rosset cerrará su gira por Colombia con el SENA
+                                en Viotá: “La voz protagónica es la de las comunidades campesinas”</h3>
+                        </div>
+                        <div class="box-link-noticia">
+                            <div class="lineVerde"></div>
+                            <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8467"
+                                target="_blank" class="link-carrusel">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Noticia">
+                    <div class="boxImg">
+                        <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/Dialogos%202-1825.jpg"
+                            alt="Imagen de Noticia">
+                    </div>
+                    <div class="box-info-noticia-carrusel">
+                        <div class="boxTitulo-noticia">
+                            <h3 class="titulo-noticia-carrusel">SENA Arauca lidera primer Diálogo Territorial para
+                                fortalecer el campesinado y la economía popular</h3>
+                        </div>
+                        <div class="box-link-noticia">
+                            <div class="lineVerde"></div>
+                            <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8466"
+                                target="_blank" class="link-carrusel">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Noticia">
+                    <div class="boxImg">
+                        <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/bol1825-2.jpeg"
+                            alt="Imagen de Noticia">
+                    </div>
+                    <div class="box-info-noticia-carrusel">
+                        <div class="boxTitulo-noticia">
+                            <h3 class="titulo-noticia-carrusel">Sembrando cambio: comunidades campesinas y academia
+                                impulsan la agroecología en Colombia</h3>
+                        </div>
+                        <div class="box-link-noticia">
+                            <div class="lineVerde"></div>
+                            <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8465"
+                                target="_blank" class="link-carrusel">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Noticia">
+                    <div class="boxImg">
+                        <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/senaComunica12-1825.png"
+                            alt="Imagen de Noticia">
+                    </div>
+                    <div class="box-info-noticia-carrusel">
+                        <div class="boxTitulo-noticia">
+                            <h3 class="titulo-noticia-carrusel">Ya está disponible la 12.ª edición de la Revista Digital
+                                SENA Comunica</h3>
+                        </div>
+                        <div class="box-link-noticia">
+                            <div class="lineVerde"></div>
+                            <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8464"
+                                target="_blank" class="link-carrusel">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Noticia">
+                    <div class="boxImg">
+                        <img src="./src/img/noticias.jpg" alt="Imagen de Noticia">
+                    </div>
+                    <div class="box-info-noticia-carrusel">
+                        <div class="boxTitulo-noticia">
+                            <h3 class="titulo-noticia-carrusel"> Conmemoramos el Día del Servidor
+                                Público y celebramos el II Encuentro de
+                                Cultura Organizacional </h3>
+                        </div>
+                        <div class="box-link-noticia">
+                            <div class="lineVerde"></div>
+                            <a href="" class="link-carrusel">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- <FOOTER></FOOTER> -->
     <footer>
