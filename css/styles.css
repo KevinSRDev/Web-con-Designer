@@ -726,7 +726,7 @@ footer {
         position: fixed;
         display: flex;
         flex-direction: row;
-        top: 70px;
+        top: 64px;
         height: 100px;
         z-index: 10;
         border-bottom: 1px solid black;
@@ -839,6 +839,7 @@ footer {
         background-color: white;
         border-bottom: 1px solid var(--segundoColor);
         width: 50px;
+        height: 30px;
         position: fixed;
         z-index: 100;
         width: 100%;

@@ -545,7 +545,7 @@ footer {
 
     .boxLogos {
         position: fixed;
-        top: 73px;
+        top: 70px;
     }
 
     .boxSENAyGov {
@@ -655,6 +655,7 @@ footer {
         background-color: white;
         border-bottom: 1px solid var(--segundoColor);
         width: 50px;
+        height: 30px;
         position: fixed;
         z-index: 100;
         width: 100%;
