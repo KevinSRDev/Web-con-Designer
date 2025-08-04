@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./src/img/SENA_SENA VERDE.png" type="image/png">
-    <title>SENA Radio</title>
+    <title>SENA-RA</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -37,7 +37,6 @@
         </div>
     </div>
 
-
     <!-- NAVBAR -->
     <div class="boxNavBar">
         <button id="open-SideBar-btn" onclick="openSideBar()" aria-label="open sideBar" aria-expanded="false"
@@ -50,15 +49,15 @@
                     <i class="bi bi-backspace"></i>
                 </button>
                 <li class="inicio-li" id="link_nav">
-                    <a href="">Inicio</a>
-                    <a href="">Transparencia</a>
-                    <a href="">Atención y Servicio a la Ciudadanía</a>
-                    <a href="">Participa</a>
-                    <a href="">La Entidad</a>
-                    <a href="">Formación</a>
-                    <a href="">Empleabilidad</a>
-                    <a href="">Empresarios</a>
-                    <a href="">Sala de Prensa</a>
+                    <a href="./index.html">Inicio</a>
+                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/default.aspx" target="_blank">Transparencia</a>
+                    <a href="https://www.sena.edu.co/es-co/ciudadano/Paginas/default.aspx" target="_blank">Atención y Servicio a la Ciudadanía</a>
+                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/participa.aspx" target="_blank">Participa</a>
+                    <a href="https://www.sena.edu.co/es-co/sena/Paginas/quienesSomos.aspx" target="_blank">La Entidad</a>
+                    <a href="https://www.sena.edu.co/es-co/formacion/Paginas/Estudie-en-el-SENA.aspx" target="_blank">Formación</a>
+                    <a href="https://www.sena.edu.co/es-co/trabajo/Paginas/busqueEmpleo.aspx" target="_blank">Empleabilidad</a>
+                    <a href="https://www.sena.edu.co/es-co/Empresarios/Paginas/default.aspx" target="_blank">Empresarios</a>
+                    <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/default.aspx" target="_blank">Sala de Prensa</a>
                 </li>
             </ul>
         </nav>
@@ -69,13 +68,10 @@
     <!-- CONTENIDO -->
     <div class="boxEscucharMas">
         <div class="boxTitleEscuchar">
-            <h2 class="titleEscuchar">
+            <h2 class="titleEscuchar" onclick="linkEscucharMas()">
                 Escuchar Más
             </h2>
-            <div class="btn-left">
-                <i class="bi bi-chevron-left"></i>
-            </div>
-            <div class="btn-right">
+            <div class="btn-right" onclick="linkEscucharMas()">
                 <i class="bi bi-chevron-right"></i>
             </div>
         </div>
@@ -84,164 +80,40 @@
     <!-- BANBER -->
     <div class="divGlobal-banner">
         <div class="box-bannerWS">
-            <div class="carruselesWS" id="sliderWS">
-                <section class="slider-imgWS">
-                    <div class="boxEscuchar2">
-                        <div class="boxInfoTextImg">
-                            <div class="textoBanner">
-                                <p class="textInfo">
-                                    Campesinos e indígenas de
-                                    Obandos, construyendo
-                                    propuestas para fortalecer la
-                                    formación y el desarrollo rural
-                                </p>
-                            </div>
-                            <div class="boxSliderImg">
-                                <img class="imgWS-banner" src="./src/img/evento-01.jpg" alt="Demon Slayer">
-                            </div>
+            <section class="slider-imgWS">
+                <div class="boxEscuchar2">
+                    <div class="boxInfoTextImg">
+                        <div class="textoBanner">
+                            <p id="textoAudio" class="textInfo">
+                                Campesinos e indígenas de
+                                Obandos, construyendo
+                                propuestas para fortalecer la
+                                formación y el desarrollo rural
+                            </p>
                         </div>
-                        <div class="boxControls">
-                            <div class="controlesPod">
-                                <button id="" class="boton-reproducir-pausarP iconoControlP">
-                                    <i class="bi bi-play"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-left"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-right"></i>
-                                </button>
-                                <input type="range" value="0" id="progresoPod" />
-                            </div>
+                        <div class="boxSliderImg">
+                            <img class="imgWS-banner" src="./src/img/evento-01.jpg" alt="Imagen acerca del evento ...">
                         </div>
                     </div>
-                </section>
-                <section class="slider-imgWS">
-                    <div class="boxEscuchar2">
-                        <div class="boxInfoTextImg">
-                            <div class="textoBanner">
-                                <p class="textInfo">
-                                    Campesinos e indígenas de
-                                    Obandos, construyendo
-                                    propuestas para fortalecer la
-                                    formación y el desarrollo rural
-                                </p>
-                            </div>
-                            <div class="boxSliderImg">
-                                <img class="imgWS-banner" src="./src/img/evento-02.jpg" alt="Demon Slayer">
-                            </div>
-                        </div>
-                        <div class="boxControls">
-                            <div class="controlesPod">
-                                <button id="" class="boton-reproducir-pausarP iconoControlP">
-                                    <i class="bi bi-play"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-left"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-right"></i>
-                                </button>
-                                <input type="range" value="0" id="progresoPod" />
-                            </div>
+                    <div class="boxControls">
+                        <div class="controlesPod">
+                            <button id="btnPlay" class="boton-reproducir-pausarP iconoControlP">
+                                <i class="bi bi-play" id="iconoControlP"></i>
+                            </button>
+                            <button id="btnLeft" class="atrasP">
+                                <i class="bi bi-arrow-bar-left"></i>
+                            </button>
+                            <button id="btnRight" class="siguienteP">
+                                <i class="bi bi-arrow-bar-right"></i>
+                            </button>
+                            <audio id="podcasts">
+                                <source src="" type="audio/mpeg">
+                            </audio>
+                            <input type="range" value="0" id="progresoPod" />
                         </div>
                     </div>
-                </section>
-                <section class="slider-imgWS">
-                    <div class="boxEscuchar2">
-                        <div class="boxInfoTextImg">
-                            <div class="textoBanner">
-                                <p class="textInfo">
-                                    Campesinos e indígenas de
-                                    Obandos, construyendo
-                                    propuestas para fortalecer la
-                                    formación y el desarrollo rural
-                                </p>
-                            </div>
-                            <div class="boxSliderImg">
-                                <img class="imgWS-banner" src="./src/img/evento-03.jpg" alt="Demon Slayer">
-                            </div>
-                        </div>
-                        <div class="boxControls">
-                            <div class="controlesPod">
-                                <button id="" class="boton-reproducir-pausarP iconoControlP">
-                                    <i class="bi bi-play"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-left"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-right"></i>
-                                </button>
-                                <input type="range" value="0" id="progresoPod" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="slider-imgWS">
-                    <div class="boxEscuchar2">
-                        <div class="boxInfoTextImg">
-                            <div class="textoBanner">
-                                <p class="textInfo">
-                                    Campesinos e indígenas de
-                                    Obandos, construyendo
-                                    propuestas para fortalecer la
-                                    formación y el desarrollo rural
-                                </p>
-                            </div>
-                            <div class="boxSliderImg">
-                                <img class="imgWS-banner" src="./src/img/evento-04.jpg" alt="Demon Slayer">
-                            </div>
-                        </div>
-                        <div class="boxControls">
-                            <div class="controlesPod">
-                                <button id="" class="boton-reproducir-pausarP iconoControlP">
-                                    <i class="bi bi-play"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-left"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-right"></i>
-                                </button>
-                                <input type="range" value="0" id="progresoPod" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="slider-imgWS">
-                    <div class="boxEscuchar2">
-                        <div class="boxInfoTextImg">
-                            <div class="textoBanner">
-                                <p class="textInfo">
-                                    Campesinos e indígenas de
-                                    Obandos, construyendo
-                                    propuestas para fortalecer la
-                                    formación y el desarrollo rural
-                                </p>
-                            </div>
-                            <div class="boxSliderImg">
-                                <img class="imgWS-banner" src="./src/img/evento-05.jpg" alt="Demon Slayer">
-                            </div>
-                        </div>
-                        <div class="boxControls">
-                            <div class="controlesPod">
-                                <button id="" class="boton-reproducir-pausarP iconoControlP">
-                                    <i class="bi bi-play"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-left"></i>
-                                </button>
-                                <button>
-                                    <i class="bi bi-arrow-bar-right"></i>
-                                </button>
-                                <input type="range" value="0" id="progresoPod" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
+                </div>
+            </section>
         </div>
     </div>
 
@@ -265,7 +137,7 @@
                 </p>
             </div>
             <div class="boxImgOferta">
-                <img src="./src/img/oferta (2).jpg"  alt="Imagen de Oferta Educativa SENA">
+                <img src="./src/img/oferta (2).jpg" alt="Imagen de Oferta Educativa SENA">
             </div>
         </div>
     </div>
@@ -283,93 +155,79 @@
         <div class="carrusel-noticias" id="slider-noticia">
             <div class="Noticia">
                 <div class="boxImg">
-                    <img src="./src/img/noticias.jpg"
+                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/bol4825.jpeg"
                         alt="Imagen de Noticia">
                 </div>
                 <div class="box-info-noticia-carrusel">
                     <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel"> Conmemoramos el Día del Servidor
-                            Público y celebramos el II Encuentro de
-                            Cultura Organizacional </h3>
+                        <h3 class="titulo-noticia-carrusel"> SENA impulsa en Pitalito el diálogo de saberes campesinos
+                            para la transformación del campo colombiano </h3>
                     </div>
                     <div class="box-link-noticia">
                         <div class="lineVerde"></div>
-                        <a href="" class="link-carrusel">Ver más</a>
+                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8468" target="_blank" class="link-carrusel">Ver más</a>
                     </div>
                 </div>
             </div>
             <div class="Noticia">
                 <div class="boxImg">
-                    <img src="./src/img/noticias.jpg"
-                        alt="Imagen de Noticia">
+                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/FOTO%201-1825.png" alt="Imagen de Noticia">
                 </div>
                 <div class="box-info-noticia-carrusel">
                     <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel"> Conmemoramos el Día del Servidor
-                            Público y celebramos el II Encuentro de
-                            Cultura Organizacional </h3>
+                        <h3 class="titulo-noticia-carrusel"> Peter Rosset cerrará su gira por Colombia con el SENA en Viotá: “La voz protagónica es la de las comunidades campesinas”</h3>
                     </div>
                     <div class="box-link-noticia">
                         <div class="lineVerde"></div>
-                        <a href="" class="link-carrusel">Ver más</a>
+                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8467" target="_blank" class="link-carrusel">Ver más</a>
                     </div>
                 </div>
             </div>
             <div class="Noticia">
                 <div class="boxImg">
-                    <img src="./src/img/noticias.jpg"
-                        alt="Imagen de Noticia">
+                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/Dialogos%202-1825.jpg" alt="Imagen de Noticia">
                 </div>
                 <div class="box-info-noticia-carrusel">
                     <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel"> Conmemoramos el Día del Servidor
-                            Público y celebramos el II Encuentro de
-                            Cultura Organizacional </h3>
+                        <h3 class="titulo-noticia-carrusel">SENA Arauca lidera primer Diálogo Territorial para fortalecer el campesinado y la economía popular</h3>
                     </div>
                     <div class="box-link-noticia">
                         <div class="lineVerde"></div>
-                        <a href="" class="link-carrusel">Ver más</a>
+                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8466" target="_blank" class="link-carrusel">Ver más</a>
                     </div>
                 </div>
             </div>
             <div class="Noticia">
                 <div class="boxImg">
-                    <img src="./src/img/noticias.jpg"
-                        alt="Imagen de Noticia">
+                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/bol1825-2.jpeg" alt="Imagen de Noticia">
                 </div>
                 <div class="box-info-noticia-carrusel">
                     <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel"> Conmemoramos el Día del Servidor
-                            Público y celebramos el II Encuentro de
-                            Cultura Organizacional </h3>
+                        <h3 class="titulo-noticia-carrusel">Sembrando cambio: comunidades campesinas y academia impulsan la agroecología en Colombia</h3>
                     </div>
                     <div class="box-link-noticia">
                         <div class="lineVerde"></div>
-                        <a href="" class="link-carrusel">Ver más</a>
+                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8465" target="_blank" class="link-carrusel">Ver más</a>
                     </div>
                 </div>
             </div>
             <div class="Noticia">
                 <div class="boxImg">
-                    <img src="./src/img/noticias.jpg"
-                        alt="Imagen de Noticia">
+                    <img src="https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/senaComunica12-1825.png" alt="Imagen de Noticia">
                 </div>
                 <div class="box-info-noticia-carrusel">
                     <div class="boxTitulo-noticia">
-                        <h3 class="titulo-noticia-carrusel"> Conmemoramos el Día del Servidor
-                            Público y celebramos el II Encuentro de
-                            Cultura Organizacional </h3>
+                        <h3 class="titulo-noticia-carrusel">Ya está disponible la 12.ª edición de la Revista Digital SENA Comunica</h3>
                     </div>
                     <div class="box-link-noticia">
                         <div class="lineVerde"></div>
-                        <a href="" class="link-carrusel">Ver más</a>
+                        <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/noticia.aspx?IdNoticia=8464" target="_blank" class="link-carrusel">Ver más</a>
                     </div>
                 </div>
             </div>
             <div class="Noticia">
                 <div class="boxImg">
-                    <img src="./src/img/noticias.jpg"
-                        alt="Imagen de Noticia">
+                    <img src="./src/img/noticias.jpg" alt="Imagen de Noticia">
                 </div>
                 <div class="box-info-noticia-carrusel">
                     <div class="boxTitulo-noticia">
@@ -401,22 +259,25 @@
                     <p class="text-anuncio">El SENA brinda a la ciudadanía, atención presencial en las 33 Regionales y
                         118 Centros de Formación</p>
 
-                    <p class="text-contacto">Línea de WhatsApp: <a href="https://api.whatsapp.com/send/?phone=573112545028&text&type=phone_number&app_absent=0" class="link-contacto">3112545028</a></p>
+                    <p class="text-contacto">Línea de WhatsApp: <a
+                            href="https://api.whatsapp.com/send/?phone=573112545028&text&type=phone_number&app_absent=0"
+                            class="link-contacto">3112545028</a></p>
 
-                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/mecanismosContacto.aspx" class="puntos-atencion">Conozca aquí los puntos de atención</a>
+                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/mecanismosContacto.aspx"
+                        class="puntos-atencion">Conozca aquí los puntos de atención</a>
 
                     <p class="lineas-atencion">Líneas de atención al ciudadanos, empresarios y línea PQRS:
                         Bogotá +(57) 601 736 60 60 - Línea gratuita y resto del país 018000 910270</p>
                 </div>
             </div>
             <div class="footer-logos">
- 
+
             </div>
         </div>
     </footer>
 
     <script src="./js/player.js"></script>
-    <script src="./js/banner.js"></script>
+    <script src="./js/audio.js"></script>
 </body>
 
 </html>

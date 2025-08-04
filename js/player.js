@@ -9,14 +9,20 @@ const boxLogoGov = document.querySelector(".govLogo");
 var boxNavBar = document.querySelector(".boxNavBar");
 const escucharMas = document.querySelector(".boxEscucharMas");
 
+const titleLink = document.querySelector('.titleEscuchar');
+const iconLink = document.querySelector('.btn-right');
+
+titleLink.addEventListener('click', linkEscucharMas);
+iconLink.addEventListener('click', linkEscucharMas);
+
 window.addEventListener("scroll", () => {
   var boxLogos = document.querySelector(".boxSENAyGov");
-  boxLogos.classList.toggle("abajo", window.scrollY > 50);
+  boxLogos.classList.toggle("abajo", window.scrollY > 0);
 
-  boxNavBar.classList.toggle("navAbajo", window.scrollY > 50);
-  escucharMas.classList.toggle("espacioArriba", window.scrollY > 50);
+  boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
+  escucharMas.classList.toggle("espacioArriba", window.scrollY > 0);
 
-  if (window.scrollY > 50) {
+  if (window.scrollY > 0) {
     logoSENA.src = "./src/img/SENA_SENA VERDE.png";
     logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
 
@@ -60,14 +66,9 @@ function closeSideBar() {
   navbar.setAttribute("inert", "");
 }
 
-// Inavilita la Nav al dar el primer click :: hay que solucionar
-
-// const navLinks = document.querySelectorAll('nav a')
-// navLinks.forEach(Link => {
-//     Link.addEventListener('click', () => {
-//         closeSideBar()
-//     })
-// })
+function linkEscucharMas(){
+  window.location.href = './pages/escucharMas.html'
+}
 
 updateNavbar(media);
 
