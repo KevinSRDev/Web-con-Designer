@@ -15,9 +15,11 @@
     --textColorTwo: white;
     --bgGobierno: #285ec3;
 }
-main{
+
+main {
     position: static;
 }
+
 /* parte de arriba */
 header {
     width: 100%;
@@ -331,6 +333,9 @@ nav a:hover {
     width: 50%;
     height: auto;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: rgba(338, 338, 338, 0.8);
 }
 
@@ -375,8 +380,8 @@ nav a:hover {
 }
 
 .controlesPod button {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -386,8 +391,11 @@ nav a:hover {
     cursor: pointer;
     transition: all 0.1s linear;
 }
-.controlesPod button:hover{
-    transform: scale(1.2);
+
+.controlesPod button:hover {
+    transform: scale(1.1);
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 .controlesPod button i {
@@ -782,7 +790,7 @@ footer {
     }
 
     .boxSliderImg {
-        width: 90%;
+        width: 100%;
         height: 200px;
     }
 
@@ -806,10 +814,11 @@ footer {
 
     .boxControls {
         position: relative;
-        bottom: 0;
+        bottom: 5px;
         left: 0;
         width: 100%;
-        padding: 10px;
+        height: auto;
+        padding: 20px;
     }
 
     #progresoPod {
