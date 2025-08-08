@@ -38,6 +38,19 @@ window.addEventListener("scroll", () => {
 
     boxLogoGov.style.width = `150px`;
   }
+
+  if(window.matchMedia < 600){
+    boxLogoSena.style.width = `60px`;
+    boxLogoSena.style.height = `60px`;
+
+    boxLogoGov.style.width = `100px`;
+  }
+  else{
+    boxLogoSena.style.width = `60px`;
+    boxLogoSena.style.height = `60px`;
+
+    boxLogoGov.style.width = `100px`;
+  }
 });
 
 media.addEventListener("change", (e) => updateNavbar(e));
