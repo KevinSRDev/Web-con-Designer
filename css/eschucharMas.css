@@ -312,58 +312,6 @@ nav a:hover {
     left: 0;
 }
 
-#progresoPod {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 300px;
-    height: 3px;
-    background-color: gray;
-    border-radius: 10px;
-    margin: 24px 5px;
-    cursor: pointer;
-}
-
-#progresoPod::-webkit-slider-thumb {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: var(--primerColor);
-    width: 10px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-}
-
-.controlesPod {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: auto;
-    gap: 15px;
-    height: 50px;
-}
-
-.controlesPod button {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: gray;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.1s linear;
-}
-
-.controlesPod button:hover{
-    transform: scale(1.1);
-    border: 1px solid gray;
-    border-radius: 5px;
-}
-
-.controlesPod button i {
-    font-size: 1.6rem;
-}
-
 /* AUDIO */
 .boxGlobaAudio {
     width: 100%;
