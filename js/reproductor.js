@@ -71,11 +71,11 @@ function aplicarGradienteVolumen(inputRange, valor0a1) {
   inputRange.style.background = `linear-gradient(90deg, #39a900 ${p}%, #dcdcdc ${p}%)`;
 }
 
-function asegurar200Caracteres(texto) {
+function asegurar250Caracteres(texto) {
   const t = (texto ?? "").trim();
-  if (t.length === 200) return t;
-  if (t.length > 200) return t.slice(0, 200);
-  // rellenar con espacios invisibles hasta 200
+  if (t.length === 250) return t;
+  if (t.length > 200) return t.slice(0, 250);
+  // rellenar con espacios invisibles hasta 250
   return t + " ".repeat(200 - t.length);
 }
 
@@ -119,7 +119,7 @@ function cargarPista(indice) {
   imagenPortada.alt = `Portada: ${pista.titulo}`;
 
   textoTitulo.textContent = pista.titulo;
-  textoDescripcion.textContent = asegurar200Caracteres(pista.descripcion);
+  textoDescripcion.textContent = asegurar250Caracteres(pista.descripcion);
 
   textoTiempoActual.textContent = "0:00";
   textoDuracion.textContent = "0:00";
