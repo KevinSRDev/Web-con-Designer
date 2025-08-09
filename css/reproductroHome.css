@@ -195,7 +195,7 @@
 /* Adaptativo */
 @media (max-width:680px) {
     .contenedor-reproductor {
-        width: 70%;
+        width: 80%;
         height: auto;
         background: var(--color-superficie);
         display: flex;
@@ -219,7 +219,7 @@
 
 @media (min-width: 681px) and  (max-width:1000px) {
     .contenedor-reproductor {
-        width: 90%;
+        width: 80%;
         height: auto;
         background: var(--color-superficie);
     }
