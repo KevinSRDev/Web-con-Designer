@@ -223,107 +223,33 @@ nav a:hover {
     font-weight: 200;
 }
 
-/**/
-.divGlobal-banner {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.box-bannerWS {
-    width: 980px;
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-    background-color: rgba(228, 228, 228, 0.5);
-}
-
-
-.slider-imgWS {
-    width: 100%;
-}
-
-.boxSliderImg {
-    width: 200px;
-    height: 200px;
-}
-
-.boxSliderImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.btn-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    margin-left: 10px;
-    padding: 5px;
-    font-size: 1.5rem;
-    background-color: transparent;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--primerColor);
-    user-select: none;
-}
-
-/**CARRUSEL DE ESCUCHAR MAS**/
-
-.boxEscuchar2 {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.boxInfoTextImg {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.textoBanner {
-    width: 50%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(338, 338, 338, 0.8);
-}
-
-.boxControls {
-    width: 50%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 30px;
-    left: 0;
-}
 
 /* AUDIO */
 .boxGlobaAudio {
     width: 100%;
     height: auto;
+    padding: 50px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    background-color: none;
 }
 
 .boxGalleryAudio {
     width: 980px;
+    height: auto;
+}
+
+.titleAudiosGlobal {
+    color: var(--primerColor);
+    height: auto;
+    font-size: 2rem;
+    font-weight: 300;
+    padding: 0 0 20px 0;
+    border-top: 2px solid black;
+}
+
+.list-audios {
     display: grid;
     align-items: center;
     justify-content: center;
@@ -332,10 +258,20 @@ nav a:hover {
     gap: 60px;
 }
 
+.list-audios li {
+    list-style: none;
+    cursor: pointer;
+}
+
 .cardAudio {
     width: 100%;
     height: auto;
     border-bottom: 2px solid black;
+}
+
+.cardAudio:hover,
+.cardAudio:focus {
+    background: #eee;
 }
 
 .cardImgAudio {
@@ -376,6 +312,93 @@ nav a:hover {
 
 .time {
     color: #4b4b4b;
+}
+
+/* VISTAS AUDIOS */
+.view {
+    width: 980px;
+    height: auto;
+    background-color: rgba(228, 228, 228, 0.5);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px 10px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.boxAudio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+}
+
+#imagenAudio {
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+}
+
+.infoAudio {
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+}
+
+.infoAudio p {
+    color: var(--textColor);
+}
+
+.imgAudioInfo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#back-btn {
+    background: none;
+    border: none;
+    color: var(--primerColor);
+    padding: 5px;
+    font-size: 1.1em;
+    font-weight: 300;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+
+#back-btn:hover {
+    color: var(--segundoColor);
+}
+
+#audio-title {
+    color: var(--primerColor);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.boxBarraAudio {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(228, 228, 228, 0.5);
 }
 
 
@@ -534,73 +557,6 @@ footer {
         font-size: 1.6rem;
     }
 
-    .divGlobal-banner {
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .box-bannerWS {
-        width: 80%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .boxSliderImg {
-        width: 100%;
-        height: 200px;
-    }
-
-    .boxInfoTextImg {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .textoBanner {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        background: rgba(338, 338, 338, 0.8);
-    }
-
-    .controlesPod {
-        width: 100%;
-        height: 50px;
-    }
-
-    .boxControls {
-        position: relative;
-        bottom: 5px;
-        left: 0;
-        width: 100%;
-        height: auto;
-        padding: 20px;
-    }
-
-    #progresoPod {
-        appearance: none;
-        -webkit-appearance: none;
-        width: 100%;
-        height: 3px;
-        background-color: gray;
-        border-radius: 10px;
-        margin: 24px 5px;
-        cursor: pointer;
-    }
-
-    #progresoPod::-webkit-slider-thumb {
-        appearance: none;
-        -webkit-appearance: none;
-        background-color: var(--primerColor);
-        width: 10px;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-    }
-
-
 
     /* Navegación en la parte inferior de la web */
 
@@ -689,6 +645,9 @@ footer {
 
     .boxGalleryAudio {
         width: 90%;
+    }
+
+    .list-audios {
         display: grid;
         align-items: center;
         justify-content: center;
@@ -707,6 +666,23 @@ footer {
     .cardImgAudio {
         width: 100%;
         height: 300px;
+    }
+
+    /* VISTAS AUDIOS */
+    .view {
+        width: 90%;
+        height: auto;
+        padding: 20px 10px;
+        margin-bottom: 50px;
+    }
+
+    .imgAudioInfo {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
     }
 
 
@@ -803,13 +779,6 @@ footer {
         z-index: 0;
     }
 
-    .box-bannerWS {
-        width: 90%;
-        height: 100%;
-        display: flex;
-        overflow: hidden;
-        background-color: rgba(228, 228, 228, 0.5);
-    }
 
     /* AUDIO */
     .boxGlobaAudio {
@@ -823,6 +792,10 @@ footer {
 
     .boxGalleryAudio {
         width: 90%;
+
+    }
+
+    .list-audios {
         display: grid;
         align-items: center;
         justify-content: center;
@@ -831,6 +804,8 @@ footer {
         grid-template-rows: auto;
         gap: 35px;
     }
+
+
 
     .cardAudio {
         width: 100%;
@@ -841,6 +816,21 @@ footer {
     .cardImgAudio {
         width: 100%;
         height: 300px;
+    }
+
+    /* VISTAS AUDIOS */
+    .view {
+        width: 90%;
+        height: auto;
+        background-color: rgba(228, 228, 228, 0.5);
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 20px 10px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
 

@@ -259,38 +259,7 @@ nav a:hover {
     color: var(--primerColor);
     font-size: 2rem;
     font-weight: 200;
-}
-
-.divGlobal-banner {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.box-bannerWS {
-    width: 980px;
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-    background-color: rgba(228, 228, 228, 0.5);
-}
-
-
-.slider-imgWS {
-    width: 100%;
-}
-
-.boxSliderImg {
-    width: 200px;
-    height: 200px;
-}
-
-.boxSliderImg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    cursor: pointer;
 }
 
 .btn-right {
@@ -306,100 +275,6 @@ nav a:hover {
     cursor: pointer;
     color: var(--primerColor);
     user-select: none;
-}
-
-
-/**CARRUSEL DE ESCUCHAR MAS**/
-
-.boxEscuchar2 {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.boxInfoTextImg {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.textoBanner {
-    width: 50%;
-    height: auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(338, 338, 338, 0.8);
-}
-
-.boxControls {
-    width: 50%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 30px;
-    left: 0;
-}
-
-#progresoPod {
-    appearance: none;
-    -webkit-appearance: none;
-    width: 300px;
-    height: 3px;
-    background-color: gray;
-    border-radius: 10px;
-    margin: 24px 5px;
-    cursor: pointer;
-}
-
-#progresoPod::-webkit-slider-thumb {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: var(--primerColor);
-    width: 10px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-}
-
-.controlesPod {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: auto;
-    gap: 15px;
-    height: 50px;
-}
-
-.controlesPod button {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: gray;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.1s linear;
-}
-
-.controlesPod button:hover {
-    transform: scale(1.1);
-    border: 1px solid gray;
-    border-radius: 5px;
-}
-
-.controlesPod button i {
-    font-size: 1.6rem;
 }
 
 

@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./src/img/SENA_SENA VERDE.png" type="image/png">
     <title>SENA-RA</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reproductroHome.css">
 </head>
 
 <body>
@@ -87,39 +88,55 @@
         </div>
 
         <!-- BANBER -->
-        <div class="divGlobal-banner">
-            <div class="box-bannerWS">
-                <section class="slider-imgWS">
-                    <div class="boxEscuchar2">
-                        <div class="boxInfoTextImg">
-                            <div class="textoBanner">
-                                <p id="textoAudio" class="textInfo"> </p>
-                            </div>
-                            <div class="boxSliderImg">
-                                <img class="imgWS-banner" src="./src/img/evento-01.jpg"
-                                    alt="Imagen acerca del evento ...">
-                            </div>
-                        </div>
-                        <div class="boxControls">
-                            <div class="controlesPod">
-                                <button id="btnPlay" class="boton-reproducir-pausarP iconoControlP">
-                                    <i class="bi bi-play" id="iconoControlP"></i>
-                                </button>
-                                <button id="btnLeft" class="atrasP">
-                                    <i class="bi bi-arrow-bar-left"></i>
-                                </button>
-                                <button id="btnRight" class="siguienteP">
-                                    <i class="bi bi-arrow-bar-right"></i>
-                                </button>
-                                <audio id="podcasts">
-                                    <source src="" type="audio/mpeg">
-                                </audio>
-                                <input type="range" value="0" id="progresoPod" />
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="contenedor-reproductor" aria-label="Reproductor de audio minimalista">
+            <img id="imagen-portada" class="portada" src="" alt="Portada del audio actual" />
+
+            <section class="bloque-informacion" aria-live="polite">
+                <h1 id="texto-titulo" class="texto-titulo">Cargando pista…</h1>
+                <p id="texto-descripcion" class="texto-descripcion">Descripción en 200 caracteres.</p>
+            </section>
+
+            <div class="fila-controles">
+                <button id="boton-anterior" class="boton-control" aria-label="Pista anterior" title="Anterior (J)">
+                    <svg class="icono" viewBox="0 0 24 24">
+                        <path d="M6 6h2v12H6V6zm3.5 6 9.5 6V6l-9.5 6z" />
+                    </svg>
+                </button>
+
+                <button id="boton-reproducir" class="boton-control boton-principal" aria-label="Reproducir (K)"
+                    title="Reproducir/Pausar (K)">
+                    <svg id="icono-play" class="icono icono-grande" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </button>
+
+                <button id="boton-siguiente" class="boton-control" aria-label="Pista siguiente" title="Siguiente (L)">
+                    <svg class="icono" viewBox="0 0 24 24">
+                        <path d="M16 6h2v12h-2V6zM5 18l9.5-6L5 6v12z" />
+                    </svg>
+                </button>
+
+
+
+                <div class="grupo-volumen">
+                    <button id="boton-silencio" class="boton-control" aria-label="Silenciar" title="Silenciar (M)">
+                        <svg id="icono-volumen" class="icono" viewBox="0 0 24 24">
+                            <path d="M5 9v6h4l5 5V4L9 9H5z" />
+                        </svg>
+                    </button>
+                    <input id="control-volumen" class="control-range volumen" type="range" min="0" max="1" step="0.01"
+                        value="0.85" aria-label="Volumen">
+                </div>
             </div>
+
+            <div class="fila-progreso">
+                <span id="texto-tiempo-actual" class="etiqueta-tiempo" aria-label="Tiempo actual">0:00</span>
+                <input id="barra-progreso" class="control-range" type="range" min="0" max="100" step="0.1" value="0"
+                    aria-label="Progreso de reproducción">
+                <span id="texto-duracion" class="etiqueta-tiempo" aria-label="Duración total">0:00</span>
+            </div>
+
+            <audio id="elemento-audio" preload="metadata" crossorigin="anonymous"></audio>
         </div>
 
         <!-- OFERTA -->
