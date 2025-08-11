@@ -384,11 +384,17 @@ CONTENIDO
     background: #eee;
 }
 
+.cardAudio:active {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
 .cardImgAudio {
     width: 100%;
     height: 200px;
     box-shadow: 0px 8px 20px 0px black;
 }
+
 
 .cardImgAudio img {
     width: 100%;
@@ -411,18 +417,6 @@ CONTENIDO
     text-decoration: underline;
 }
 
-.boxDuration {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
-}
-
-.time {
-    color: #4b4b4b;
-}
 
 /* ---------------------------------------------
     VISTAS AUDIOS
@@ -430,13 +424,15 @@ CONTENIDO
 .view {
     width: 980px;
     height: auto;
-    background-color: var(--primerColor);
+    background-color: rgba(228, 228, 228, 0.5);
     padding: 20px 10px;
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    border-radius: 10px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .boxAudio {
@@ -458,13 +454,13 @@ CONTENIDO
 }
 
 .infoAudio {
-    width: 100%;
+    width: 80%;
     height: 100px;
     padding: 20px;
 }
 
 .infoAudio p {
-    color: white;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .imgAudioInfo {
@@ -484,7 +480,7 @@ CONTENIDO
 #back-btn {
     background: none;
     border: none;
-    color: white;
+    color: var(--primerColor);
     padding: 5px;
     font-size: 2rem;
     font-weight: bold;
@@ -499,22 +495,149 @@ CONTENIDO
 }
 
 #audio-title {
-    color: white;
+    color: var(--primerColor);
     font-size: 2rem;
     font-weight: bold;
 }
 
-.boxBarraAudio {
-    width: 100%;
-    height: auto;
+
+/* -------------------------------------------
+    BARRA DE PROGRESO PARA AUDIOS DE FORMACIÓN
+---------------------------------------------- */
+.fila-controles-audios-formacion {
+    grid-area: controles;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
     padding: 10px;
-    background-color: rgba(228, 228, 228, 0.5);
+    width: 80%;
 }
 
-/* FOOTER */
+.boton-control-F {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: transform .08s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+    user-select: none;
+}
+
+.boton-control-F:hover {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.boton-control-F:active {
+    transform: scale(.96)
+}
+
+.boton-principal-F {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primerColor);
+    font-weight: 700;
+}
+
+.boton-principal-F:hover {
+    filter: brightness(1.1)
+}
+
+.grupo-volumen-F {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.etiqueta-tiempoF {
+    font-variant-numeric: tabular-nums;
+    font-size: .9rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.fila-progreso-F {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 300px;
+}
+
+/* ---------------------------------------------------------
+    Controles tipo range con dos colores (progreso y resto)
+------------------------------------------------------------ */
+.control-range-F {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(yellow) 0%, var(--primerColor) 0%, var(gray) 0%, var(gray) 100%);
+    outline: none;
+    transition: filter .15s ease;
+}
+
+.control-range-F:hover {
+    filter: brightness(1.05)
+}
+
+.control-range-F::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #39a900;
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+.control-range-F::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.control-range-F.volumen-F {
+    height: 5px;
+    width: 80px;
+    background: linear-gradient(90deg, #5a5a5a 0%, #fff 50%);
+    border-radius: 999px;
+}
+
+.control-range-F.volumen-F::-webkit-slider-thumb {
+    border-color: #39a900;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
+}
+
+.control-range-F.volumen-F::-moz-range-thumb {
+    border-color: #5a5a5a;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
+}
+
+/* Iconos SVG */
+.iconoF {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    color: gray;
+}
+
+.icono-grandeF {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+}
+
+/* -------------------------------------
+    FOOTER
+---------------------------------------- */
 footer {
     width: 100%;
     height: auto;
@@ -628,7 +751,7 @@ footer {
 @media only screen and (max-width: 600px) {
     .boxLogos {
         position: relative;
-        top: -72px;
+        top: -88px;
     }
 
     .boxSENAyGov {
@@ -694,7 +817,8 @@ footer {
         z-index: 2;
         padding-left: 0;
     }
-    .boxMensaje i{
+
+    .boxMensaje i {
         font-size: 2rem;
     }
 
@@ -802,12 +926,66 @@ footer {
     /* -----------------------------------------
         AUDIOS  
     -------------------------------------------- */
-    .titleAudiosGlobal{
+    .titleAudiosGlobal {
         width: 80%;
         font-size: 1.5rem;
     }
-    .boxGalleryAudio{
+
+    .boxGalleryAudio {
         width: 90%;
+    }
+
+    /* ---------------------------------------------
+    VISTAS AUDIOS
+------------------------------------------------ */
+    .view {
+        width: 80%;
+        height: auto;
+        background-color: var(--primerColor);
+        padding: 20px 10px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #imagenAudio {
+        width: 90%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    #audio-title {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .infoAudio p {
+        color: white;
+    }
+
+    #back-btn {
+        background: none;
+        border: none;
+        color: white;
+        padding: 5px;
+        font-size: 2rem;
+    }
+
+    /* -------------------------------------------
+    BARRA DE PROGRESO PARA AUDIOS DE FORMACIÓN
+---------------------------------------------- */
+    .fila-controles-audios-formacion {
+        grid-area: controles;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        width: 80%;
     }
 
     /* FOOTER */
@@ -968,14 +1146,14 @@ footer {
         VISTAS AUDIOS
     ------------------------------------------ */
     .view {
-        width: 95%;
+        width: 85%;
         height: auto;
         padding: 0;
         margin-bottom: 50px;
     }
 
     .imgAudioInfo {
-        width: 100%;
+        width: 80%;
         height: auto;
         display: flex;
         align-items: center;
@@ -998,7 +1176,7 @@ footer {
 
     .infoAudio {
         width: 100%;
-        height: 300px;
+        height: auto;
         padding: 20px;
     }
 
