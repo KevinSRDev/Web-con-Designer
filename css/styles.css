@@ -16,9 +16,6 @@
     --bgGobierno: #285ec3;
 }
 
-main {
-    position: static;
-}
 
 /* parte de arriba */
 header {
@@ -51,30 +48,16 @@ header {
     z-index: 1;
 }
 
-/* BOX LOGOS */
-.boxLogos {
-    width: 100%;
-    height: auto;
-    background-image: url(https://www.sena.edu.co/es-co/Noticias/GaleriaHomeHTML/caldas1.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    fill-opacity: 0.6;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 100px;
-    position: relative;
-}
-
 .boxSENAyGov {
     width: 100%;
-    height: 300px;
+    height: 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.8); */
     z-index: 5;
-    position: relative;
+    position: sticky;
+    top: 60px;
     transition: 0.3s;
 }
 
@@ -87,8 +70,8 @@ header {
 
 
 .senaLogo {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
 }
 
 .senaLogo img {
@@ -110,23 +93,104 @@ header {
     object-fit: contain;
 }
 
+/* BOX LOGOS */
+.boxLogos {
+    width: 100%;
+    height: 600px;
+    background-image: url(../src/img/FachadaSENA.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    fill-opacity: 0.6;
+    display: flex;
+    align-items: end;
+    position: relative;
+    top: -60px;
+}
+
+/* BUSQUEDA */
+.formUp {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: auto;
+    padding: 3px;
+    border-radius: 50px;
+}
+
+.formUp.formAbajo {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.inputSearch {
+    flex: 1;
+    width: 450px;
+    max-width: 450px;
+    height: 30px;
+    border-radius: 50px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #000;
+    background: transparent;
+}
+
+#search.textoBuscar {
+    color: var(--primerColor);
+}
+
+.btnBuscar {
+    width: auto;
+    height: auto;
+    padding: 6px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--segundoColor);
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#btnLupa.btnLupaWhite {
+    color: var(--primerColor);
+}
+
+.logoSenaRa {
+    width: 100px;
+    height: 100px;
+}
+
+.logoSenaRa img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .boxMensaje {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    gap: 40px;
+    padding-left: 200px;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 0;
 }
 
+.boxMensaje i {
+    font-size: 4rem;
+    color: white;
+    flex: 1;
+    text-align: center;
+}
+
 .mensaje {
-    width: 80%;
+    width: 400px;
     height: 150px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-right: 20rem;
 }
 
 .textMensaje {
@@ -136,12 +200,15 @@ header {
 }
 
 
-/* NavBar fijada en la parte inferior de la pagina */
+/* --------------------------------------------------------
+    NavBar fijada en la parte inferior de la pagina
+------------------------------------------------------------ */
 .boxNavBar {
     width: 100%;
     height: auto;
-    position: relative;
     transition: 0.7s;
+    position: relative;
+    top: -60px;
     background-color: white;
     z-index: 10;
 }
@@ -150,14 +217,13 @@ header {
     position: fixed;
     top: 136px;
     background-color: white;
-    border-top: 1px solid black;
 }
 
 nav {
     width: 100%;
     height: 60px;
-    border-bottom: 1px solid var(--segundoColor);
     background-color: white;
+    border-bottom: 1px solid #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,18 +297,16 @@ nav a:hover {
     display: none;
 }
 
-/* Contenido */
+/* ----------------
+CONTENIDO
+------------------*/
 .boxEscucharMas {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 0 20px 0;
-}
-
-.espacioArriba {
-    padding: 200px 0 20px 0;
+    padding: 0 0 20px 0;
 }
 
 .boxTitleEscuchar {
@@ -255,227 +319,199 @@ nav a:hover {
     z-index: 0;
 }
 
-.titleEscuchar {
+.titleEscucharMas {
     color: var(--primerColor);
     font-size: 2rem;
-    font-weight: 200;
-    cursor: pointer;
+    font-weight: 400;
 }
 
-.btn-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    margin-left: 5px;
-    padding: 5px;
-    font-size: 1.5rem;
-    background-color: transparent;
-    font-weight: 600;
-    cursor: pointer;
-    color: var(--primerColor);
-    user-select: none;
-}
-
-
-/* OFERTA EDUCATIVA */
-.boxWhite {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px;
-}
-
-.boxLineBlack {
-    width: 980px;
-    height: 50px;
-    border-top: 2px solid black;
-}
-
-.boxOferta {
+/* ---------------------------------------
+    AUDIO
+------------------------------------------ */
+.boxGlobaAudio {
     width: 100%;
     height: auto;
+    padding: 50px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 80px;
+    background-color: none;
 }
 
-.contenedorOferta {
-    width: 980px;
-    height: 300px;
-    background-color: rgba(228, 228, 228, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.boxTextoOferta {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    color: var(--primerColor);
-    gap: 10px;
-}
-
-.boxTitle-text {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.boxTitle-text h2 {
-    font-size: 3rem;
-    text-align: center;
-}
-
-.boxTitle-text p {
-    font-size: 2.1rem;
-    font-weight: 300;
-    text-align: center;
-}
-
-.linkCatalogo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-.boxImgOferta {
-    width: 50%;
-    height: 100%;
-    background-color: var(--segundoColor);
-}
-
-.boxImgOferta img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* NOTICIAS */
-.boxTitle {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.boxTitleNoticias {
+.boxGalleryAudio {
     width: 980px;
     height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border-top: 2px solid black;
-}
-
-.titleNoticias {
-    color: var(--primerColor);
-    padding: 10px;
-    font-weight: 200;
-    font-size: 2rem;
-}
-
-/* CARRUSEL DE NOTICIAS */
-.boxGlobalNoticias {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 80px;
-    background-color: rgba(228, 228, 228, 0.8);
-}
-
-.carrusel-noticias {
-    width: 980px;
-    height: auto;
-    display: flex;
-    align-items: center;
     overflow-x: scroll;
     scroll-behavior: smooth;
     gap: 30px;
 }
 
-.Noticia {
-    flex: 0 0 auto;
-    width: 400px;
-    height: 310px;
-    display: flex;
-    margin: 20px;
-    align-items: center;
-    flex-direction: column;
-    background-color: #fff;
+.titleAudiosGlobal {
+    color: var(--primerColor);
+    height: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px 0 20px 0;
+    border-top: 2px solid black;
+    width: 980px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
-.boxImg {
+.list-audios {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    gap: 60px;
+}
+
+.list-audios li {
+    list-style: none;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.cardAudio {
+    width: 200px;
+    height: auto;
+    border-bottom: 2px solid black;
+}
+
+.cardAudio:hover,
+.cardAudio:focus {
+    background: #eee;
+}
+
+.cardImgAudio {
     width: 100%;
     height: 200px;
+    box-shadow: 0px 8px 20px 0px black;
 }
 
-.boxImg img {
+.cardImgAudio img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
-.box-info-noticia-carrusel {
+.textAudio {
     width: 100%;
     height: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 5px;
+    padding: 30px 10px;
 }
 
-.boxTitulo-noticia {
+.textA {
+    font-weight: 300;
+    font-size: medium;
+}
+
+.textA:hover {
+    text-decoration: underline;
+}
+
+.boxDuration {
     width: 100%;
-    height: 70px;
+    height: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 0 20px;
+    padding: 10px;
 }
 
-.titulo-noticia-carrusel {
-    font-size: 1.1rem;
-    color: var(--primerColor);
-    font-weight: 300;
+.time {
+    color: #4b4b4b;
 }
 
-.box-link-noticia {
+/* ---------------------------------------------
+    VISTAS AUDIOS
+------------------------------------------------ */
+.view {
+    width: 980px;
+    height: auto;
+    background-color: var(--primerColor);
+    padding: 20px 10px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.boxAudio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+}
+
+#imagenAudio {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.infoAudio {
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+}
+
+.infoAudio p {
+    color: white;
+}
+
+.imgAudioInfo {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
-.lineVerde {
-    width: 70%;
-    height: 2px;
-    border-bottom: 1px solid var(--primerColor);
+.hidden {
+    display: none;
 }
 
-.link-carrusel {
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: var(--primerColor);
+#back-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    transition: all .5s;
+}
+
+#back-btn:hover {
+    font-size: 2.3rem;
+}
+
+#audio-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.boxBarraAudio {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(228, 228, 228, 0.5);
 }
 
 /* FOOTER */
@@ -592,8 +628,7 @@ footer {
 @media only screen and (max-width: 600px) {
     .boxLogos {
         position: relative;
-        top: 80px;
-        padding-top: 20px;
+        top: -72px;
     }
 
     .boxSENAyGov {
@@ -618,8 +653,8 @@ footer {
     }
 
     .senaLogo {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
 
     .senaLogo img {
@@ -641,14 +676,30 @@ footer {
         object-fit: contain;
     }
 
+    /* ----------------------------------------------
+        BARRA DE BUSQUEDA
+    ------------------------------------------------- */
+    .formUp {
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .inputSearch {
+        width: 170px;
+    }
+
     .boxMensaje {
         width: 100%;
         height: auto;
         z-index: 2;
+        padding-left: 0;
+    }
+    .boxMensaje i{
+        font-size: 2rem;
     }
 
     .mensaje {
-        width: 90%;
+        width: 50%;
         height: auto;
         display: flex;
         align-items: center;
@@ -658,7 +709,7 @@ footer {
     }
 
     .textMensaje {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 600;
         color: var(--textColorTwo);
     }
@@ -748,90 +799,15 @@ footer {
         font-size: 1.5em;
     }
 
-    /* OFERTA */
-    .boxLineBlack {
+    /* -----------------------------------------
+        AUDIOS  
+    -------------------------------------------- */
+    .titleAudiosGlobal{
         width: 80%;
-        height: 50px;
+        font-size: 1.5rem;
     }
-
-    .contenedorOferta {
-        width: 80%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .boxTextoOferta {
-        width: 100%;
-        height: 50%;
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        align-items: center;
-        color: var(--primerColor);
-        gap: 10px;
-        padding: 20px;
-    }
-
-    .boxImgOferta {
-        width: 100%;
-        height: 50%;
-    }
-
-    .boxTitle-text h2 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .boxTitle-text p {
-        font-size: 1.1rem;
-    }
-
-    .linkCatalogo {
-        font-size: 1.1rem;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    /* NOTICIAS */
-    .boxTitleNoticias {
-        width: 80%;
-        height: auto;
-    }
-
-    /* CARRUSEL Noticias */
-    .carrusel-noticias {
+    .boxGalleryAudio{
         width: 90%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        gap: 30px;
-    }
-
-    .Noticia {
-        flex: 0 0 auto;
-        width: 90%;
-        height: 310px;
-        display: flex;
-        margin: 20px;
-        align-items: center;
-        flex-direction: column;
-        background-color: #fff;
-    }
-
-    .titulo-noticia-carrusel {
-        font-size: 1rem;
-    }
-
-
-    .lineVerde {
-        width: 70%;
-        height: 2px;
-        border-bottom: 1px solid var(--primerColor);
     }
 
     /* FOOTER */
@@ -881,6 +857,18 @@ footer {
         top: 39px;
         height: 100px;
     }
+
+    /* ----------------------------------------------
+        BARRA DE BUSQUEDA
+    ------------------------------------------------- */
+    .formUp {
+        width: 250px;
+    }
+
+    .inputSearch {
+        width: 200px;
+    }
+
 
     /* NavBar fijada en la parte inferior de la pagina */
     .boxNavBar {
@@ -937,58 +925,84 @@ footer {
         padding: 20px;
     }
 
-    /* CARRUSEL */
+    /* ------------------------
+        AUDIOS
+    --------------------------- */
     .boxTitleEscuchar {
-        width: 80%;
+        width: 90%;
         height: 50px;
     }
 
-    .box-bannerWS {
-        width: 80%;
-        height: 100%;
-        overflow: hidden;
-        border: 2px solid var(--segundoColor);
+    .titleEscucharMas {
+        color: var(--primerColor);
+        font-size: 2rem;
+        font-weight: 400;
     }
 
-    /* OFERTA */
-    .boxLineBlack {
-        width: 80%;
-        height: 50px;
+    .titleAudiosGlobal {
+        color: var(--primerColor);
+        height: auto;
+        font-size: 2rem;
+        width: 90%;
     }
 
-    .contenedorOferta {
-        width: 80%;
+    .boxGalleryAudio {
+        width: 90%;
+        height: auto;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        gap: 30px;
+    }
+
+    .cardAudio {
+        width: 150px;
+        height: auto;
+    }
+
+    .cardImgAudio {
+        width: 100%;
+        height: 150px;
+    }
+
+    /* ---------------------------------------
+        VISTAS AUDIOS
+    ------------------------------------------ */
+    .view {
+        width: 95%;
+        height: auto;
+        padding: 0;
+        margin-bottom: 50px;
+    }
+
+    .imgAudioInfo {
+        width: 100%;
         height: auto;
         display: flex;
-        justify-content: center;
         align-items: center;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .boxImgOferta {
-        width: 50%;
-        height: 100%;
-    }
-
-    .boxTitle-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .boxTitle-text p {
-        font-size: 1.1rem;
-        font-weight: 200;
-    }
-
-    .linkCatalogo {
-        font-size: 1rem;
-        font-weight: bold;
+    #audio-title {
+        color: var(--primerColor);
+        font-size: 1.3rem;
+        font-weight: 500;
         text-align: center;
     }
 
-    /* NOTICIAS */
-    .boxTitleNoticias {
-        width: 80%;
-        height: auto;
+    #imagenAudio {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
     }
+
+    .infoAudio {
+        width: 100%;
+        height: 300px;
+        padding: 20px;
+    }
+
+
 
     /* FOOTER */
     .box-footer {
