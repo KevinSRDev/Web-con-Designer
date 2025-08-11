@@ -153,10 +153,6 @@ function pistaAnterior() {
   cargarPista(anterior);
 }
 
-function historialEnTitulo() {
-  // Opcional: refleja la pista en el título de la página
-  document.title = `${listaPistas[indiceActual].titulo} · Reproductor`;
-}
 
 // ---------------------------
 // Progreso y eventos

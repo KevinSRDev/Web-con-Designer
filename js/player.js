@@ -7,22 +7,54 @@ const boxLogoSena = document.querySelector(".senaLogo");
 const logoGov = document.getElementById("logoCobierno");
 const boxLogoGov = document.querySelector(".govLogo");
 var boxNavBar = document.querySelector(".boxNavBar");
-const escucharMas = document.querySelector(".boxEscucharMas");
+let formBuscar = document.querySelector('.formUp')
+let inputSearch = document.getElementById('search')
+let lupa = document.getElementById('btnLupa')
 
-const titleLink = document.querySelector('.titleEscuchar');
-const iconLink = document.querySelector('.btn-right');
 
-titleLink.addEventListener('click', linkEscucharMas);
-iconLink.addEventListener('click', linkEscucharMas);
+// BUSCADOR
+function buscar() {
+  const valor = document.getElementById("search").value.toLowerCase().trim();
+
+  // Mapear términos de búsqueda con ids de secciones
+  const secciones = {
+    "formación": "formacion",
+    "campesena": "campesena"
+  };
+  const id = secciones[valor];
+
+  if (id) {
+    // Navegar a la sección
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  } else {
+    alert("Sección no encontrada");
+  }
+}
+
+if (window.matchMedia < 600) {
+  boxLogoSena.style.width = `60px`;
+  boxLogoSena.style.height = `60px`
+
+  boxLogoGov.style.width = `100px`;
+  logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+  logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
+} else {
+  boxLogoSena.style.width = `60px`;
+  boxLogoSena.style.height = `60px`;
+
+  boxLogoGov.style.width = `100px`;
+}
 
 window.addEventListener("scroll", () => {
   var boxLogos = document.querySelector(".boxSENAyGov");
   boxLogos.classList.toggle("abajo", window.scrollY > 0);
 
   boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
-  escucharMas.classList.toggle("espacioArriba", window.scrollY > 0);
+  formBuscar.classList.toggle('formAbajo', window.scrollY > 0);
+  lupa.classList.toggle('btnLupaWhite', window.scrollY > 0);
+  inputSearch.classList.toggle('textoBuscar', window.scrollY > 0)
 
-  if (window.scrollY > 0) {
+  if (window.scrollY > 10) {
     logoSENA.src = "./src/img/SENA_SENA VERDE.png";
     logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
 
@@ -33,24 +65,12 @@ window.addEventListener("scroll", () => {
   } else {
     logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
     logoGov.src = "./src/img/SENA_TRABAJO.png";
-    boxLogoSena.style.width = `150px`;
-    boxLogoSena.style.height = `150px`;
+    boxLogoSena.style.width = `100px`;
+    boxLogoSena.style.height = `100px`;
 
     boxLogoGov.style.width = `150px`;
   }
 
-  if(window.matchMedia < 600){
-    boxLogoSena.style.width = `60px`;
-    boxLogoSena.style.height = `60px`;
-
-    boxLogoGov.style.width = `100px`;
-  }
-  else{
-    boxLogoSena.style.width = `60px`;
-    boxLogoSena.style.height = `60px`;
-
-    boxLogoGov.style.width = `100px`;
-  }
 });
 
 media.addEventListener("change", (e) => updateNavbar(e));
@@ -79,7 +99,7 @@ function closeSideBar() {
   navbar.setAttribute("inert", "");
 }
 
-function linkEscucharMas(){
+function linkEscucharMas() {
   window.location.href = './pages/escucharMas.html'
 }
 
@@ -91,6 +111,8 @@ function linkOferta() {
     "_blank"
   );
 }
+
+
 
 // footer
 // Función para verificar el tamaño de la ventana
@@ -108,7 +130,7 @@ function insertarHTMLSiEsNecesario() {
                     <img src="http://www.sena.edu.co/Style%20Library/alayout/images/Icontec03_all.png" alt="Logos icontect">
                 </div>
         `;
-        originalContenedor.innerHTML = ''
+    originalContenedor.innerHTML = ''
   } else {
     contenedor.innerHTML = ''
     originalContenedor.innerHTML = `

@@ -1,4 +1,5 @@
 :root {
+    --color-fondo: #fff;
     --color-superficie: rgba(228, 228, 228, 0.4);
     --color-borde: #2a2a2a;
     --color-texto: #000;
@@ -6,7 +7,9 @@
     --color-acento: #39a900;
     --color-acento1: yellow;
     --color-acento2: #39a900;
+    /* toque tipo YouTube */
     --color-resto: #b9b9b9;
+    /* color restante de la barra */
     --radio: 14px;
     --gap: 14px;
 }
@@ -17,9 +20,8 @@
     height: auto;
     background: var(--color-superficie);
     padding: 18px;
-    display: grid;
-    grid-template-columns: 300px auto;
-    grid-template-rows: auto auto auto;
+    display: flex;
+    flex-direction: column;
     grid-template-areas:
         "portada titulo"
         "portada controles"
@@ -28,11 +30,12 @@
     position: relative;
     left: 50%;
     transform: translate(-50%, -0%);
+    margin-bottom: 50px;
 }
 
 .portada {
     grid-area: portada;
-    width: 100%;
+    width: 30%;
     aspect-ratio: 1/1;
     object-fit: cover;
     background: #00304d;
@@ -41,17 +44,26 @@
 .bloque-informacion {
     grid-area: titulo;
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 8px;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
     min-height: 72px;
+}
+.boxTextoActualAudio{
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
 }
 
 .texto-titulo {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 700;
+    width: 100%;
+    height: 50px;
     letter-spacing: .2px;
     color: var(--color-acento);
 }
@@ -61,12 +73,14 @@
     color: var(--color-secundario);
     line-height: 1.45;
     font-size: .95rem;
+    height: 150px;
 }
 
 .fila-controles {
     grid-area: controles;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     padding: 10px;
 }
@@ -94,8 +108,8 @@
 }
 
 .boton-principal {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     background: var(--color-acento);
     color: white;
     font-weight: 700;
@@ -127,6 +141,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    width: 450px;
 }
 
 /* Controles tipo range con dos colores (progreso y resto) */
@@ -166,6 +181,7 @@
 
 .control-range.volumen {
     height: 5px;
+    width: 80px;
     background: linear-gradient(90deg, #5a5a5a 0%, #fff 50%);
     border-radius: 999px;
 }
@@ -201,11 +217,31 @@
         display: flex;
         flex-direction: column;
     }
+    .bloque-informacion{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .boxTextoActualAudio{
+        width: 100%;
+    }
 
     .portada {
         width: 100%;
-        max-width: 420px;
+        max-width: 200px;
         justify-self: center
+    }
+
+    .texto-titulo{
+        font-size: 1rem;
+    }
+    .texto-descripcion{
+        font-size: 1rem;
+    }
+
+    .fila-controles{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .grupo-volumen {
@@ -219,14 +255,14 @@
 
 @media (min-width: 681px) and  (max-width:1000px) {
     .contenedor-reproductor {
-        width: 80%;
+        width: 90%;
         height: auto;
         background: var(--color-superficie);
     }
 
     .portada {
         width: 100%;
-        max-width: 420px;
+        max-width: 200px;
         justify-self: center
     }
 
