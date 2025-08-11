@@ -153,6 +153,7 @@ function pistaAnterior() {
   cargarPista(anterior);
 }
 
+
 // ---------------------------
 // Progreso y eventos
 // ---------------------------
