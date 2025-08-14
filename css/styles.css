@@ -93,7 +93,6 @@ header {
     width: 100px;
     height: 20px;
     position: relative;
-    transition: 0.7s;
 }
 
 .boxGov img {
@@ -155,6 +154,7 @@ header {
     width: auto;
     padding: 3px;
     border-radius: 50px;
+    display: flex;
 }
 
 .formUp.formAbajo {
@@ -269,7 +269,7 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 2px solid var(--primerColor);
+    border-bottom: 1px solid var(--primerColor);
 }
 
 #open-SideBar-btn {
@@ -277,7 +277,6 @@ nav a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    transition: 1s;
 }
 
 #open-SideBar-btn i {
@@ -1023,7 +1022,6 @@ footer {
         top: 40px;
         height: 100px;
         z-index: 10;
-        border-bottom: 1px solid black;
     }
 
     .senaLogo {
@@ -1079,7 +1077,6 @@ footer {
         height: 100%;
         width: 100%;
         background-color: var(--bg);
-        backdrop-filter: blur(10px);
         transition: bottom 400ms ease-out;
         z-index: 100;
         display: flex;
@@ -1131,12 +1128,14 @@ footer {
         BARRA DE BUSQUEDA
     ------------------------------------------------- */
     .formUp {
-        width: 50%;
+        width: 40%;
         background-color: rgba(0, 0, 0, 0.1);
+        display: flex;
+        overflow: hidden;
     }
 
     .inputSearch {
-        width: 170px;
+        width: 100%;
     }
 
     .boxMensaje {
@@ -1341,11 +1340,11 @@ footer {
         BARRA DE BUSQUEDA
     ------------------------------------------------- */
     .formUp {
-        width: 250px;
+        width: 40%;
     }
 
     .inputSearch {
-        width: 200px;
+        width: 100%;
     }
 
 
@@ -1358,8 +1357,7 @@ footer {
 
     nav {
         width: 100%;
-        height: auto;
-        border-bottom: 1px solid var(--segundoColor);
+        height: 88px;
         display: flex;
         justify-content: center;
         align-items: center;
