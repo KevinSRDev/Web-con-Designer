@@ -26,9 +26,6 @@ const listaPistas = [
   },
 ];
 
-// ---------------------------
-// Referencias del DOM
-// ---------------------------
 const elementoAudio = document.getElementById("elemento-audio");
 const imagenPortada = document.getElementById("imagen-portada");
 const textoTitulo = document.getElementById("texto-titulo");

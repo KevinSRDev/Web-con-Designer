@@ -66,19 +66,19 @@ function buscar() {
   }
 }
 
-if (window.matchMedia < 600) {
-  boxLogoSena.style.width = `60px`;
-  boxLogoSena.style.height = `60px`;
+// if (window.matchMedia < 600) {
+//   boxLogoSena.style.width = `60px`;
+//   boxLogoSena.style.height = `60px`;
 
-  boxLogoGov.style.width = `100px`;
-  logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-  logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
-} else {
-  boxLogoSena.style.width = `60px`;
-  boxLogoSena.style.height = `60px`;
+//   boxLogoGov.style.width = `100px`;
+//   logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+//   logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
+// } else {
+//   boxLogoSena.style.width = `60px`;
+//   boxLogoSena.style.height = `60px`;
 
-  boxLogoGov.style.width = `100px`;
-}
+//   boxLogoGov.style.width = `100px`;
+// }
 
 // window.addEventListener("scroll", () => {
 //   var boxLogos = document.querySelector(".boxSENAyGov");
