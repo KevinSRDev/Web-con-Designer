@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    padding: 20px 0;
+}
+
+/* ---------------------------------------------
+    VISTAS AUDIOS
+------------------------------------------------ */
+.title-f-view{
+    width: 980PX;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-top: 50px;
+}
+.title-f-view h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primerColor);
+    border-top: 2PX solid var(--textColor);
+    padding: 20px 0 20px 0;
+}
+.view {
+    width: 980px;
+    height: auto;
+    background-color: var(--color-superficie);
+    padding: 20px 10px;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.boxAudio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+}
+
+#imagenAudio {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.infoAudio {
+    width: 80%;
+    height: auto;
+    padding: 20px;
+}
+
+.infoAudio p {
+    color: var(--textColor);
+}
+
+.imgAudioInfo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+#back-btn {
+    background: none;
+    border: none;
+    color: var(--primerColor);
+    padding: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    transition: all .5s;
+}
+
+#back-btn:hover {
+    font-size: 2.3rem;
+}
+
+#audio-title {
+    color: var(--primerColor);
+    font-size: 2rem;
+    font-weight: bold;
+}
