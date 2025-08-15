@@ -1,6 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Inconsolata:wght@200..900&family=M+PLUS+Rounded+1c&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
 
+@view-transition {
+    navegation: auto;
+}
+
 * {
     font-family: "Work Sans", sans-serif;
     padding: 0;
@@ -72,7 +76,9 @@
 }
 
 
-/* parte de arriba */
+/* ------------------------------------------
+    HEADER : GOV
+--------------------------------------------- */
 header {
     width: 100%;
     background-color: var(--bgGobierno);
@@ -110,7 +116,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 5;
+    z-index: 10;
     position: fixed;
     top: 40px;
     background-color: var(--bg);
@@ -191,21 +197,6 @@ header {
     font-weight: 400;
     cursor: pointer;
 }
-
-
-.logoSenaRa {
-    width: 100px;
-    height: 100px;
-}
-
-.logoSenaRa img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-
-
 
 /* --------------------------------------------------------
     NavBar fijada en la parte inferior de la pagina
@@ -312,32 +303,85 @@ main {
     background-color: var(--bg);
 }
 
-.boxLogos {
-    width: 100%;
+.sliderSenaRa {
     height: 500px;
-    background-image: url(../src/img/FachadaSENA.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    fill-opacity: 0.6;
+    width: 100%;
     display: flex;
-    align-items: end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+}
+
+.sliderSenaRa::before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.sliderSenaRa #imgSlider {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.img-slider {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slider.imgSliderActive {
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease-in-out;
+    transition-property: clip-path;
+}
+
+.boxSliderInfo {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    display: none;
+}
+
+.boxSliderInfo.infoSliderActive {
+    display: block;
+}
+
+.logoSenaRa {
+    width: 70px;
+    height: 70px;
+}
+
+.logoSenaRa img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .boxMensaje {
     width: 100%;
     height: auto;
+    padding-left: 150px;
     display: flex;
-    justify-content: start;
-    gap: 40px;
-    padding-left: 200px;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 0;
+    gap: 20px;
+    position: relative;
 }
 
 .boxMensaje i {
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--textColorTwo);
     flex: 1;
     text-align: center;
@@ -345,17 +389,47 @@ main {
 
 .mensaje {
     width: 400px;
-    height: 150px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
 .textMensaje {
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: var(--textColorTwo);
 }
+
+.slider-navegation {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-navegation .btn-nav-slider {
+    width: 15px;
+    height: 5px;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.btn-nav-slider:hover {
+    transform: scale(1.2);
+}
+
+.btn-nav-slider.btnSliderActive {
+    background-color: #39a900;
+}
+
+
 
 .boxEscucharMas {
     width: 100%;
@@ -627,6 +701,10 @@ main {
     flex: 0 0 auto;
 }
 
+.list-audios li a {
+    text-decoration: none;
+}
+
 .cardAudio {
     width: 200px;
     height: auto;
@@ -660,224 +738,6 @@ main {
 
 .textA:hover {
     text-decoration: underline;
-}
-
-
-/* ---------------------------------------------
-    VISTAS AUDIOS
------------------------------------------------- */
-.view {
-    width: 980px;
-    height: auto;
-    background-color: var(--color-superficie);
-    padding: 20px 10px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.boxAudio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    height: auto;
-}
-
-#imagenAudio {
-    width: 400px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.infoAudio {
-    width: 80%;
-    height: auto;
-    padding: 20px;
-}
-
-.infoAudio p {
-    color: var(--textColor);
-}
-
-.imgAudioInfo {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-}
-
-.hidden {
-    display: none;
-}
-
-#back-btn {
-    background: none;
-    border: none;
-    color: var(--primerColor);
-    padding: 5px;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100px;
-    height: 40px;
-    transition: all .5s;
-}
-
-#back-btn:hover {
-    font-size: 2.3rem;
-}
-
-#audio-title {
-    color: var(--primerColor);
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-
-/* -------------------------------------------
-    BARRA DE PROGRESO PARA AUDIOS DE FORMACIÓN
----------------------------------------------- */
-.fila-controles-audios-formacion {
-    grid-area: controles;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    width: 80%;
-}
-
-.boton-control-F {
-    display: inline-grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    background-color: transparent;
-    border: none;
-    border-radius: 10px;
-    color: var(--textColorTwo);
-    cursor: pointer;
-    transition: transform .08s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
-    user-select: none;
-}
-
-.boton-control-F:hover {
-    border: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.boton-control-F:active {
-    transform: scale(.96)
-}
-
-.boton-principal-F {
-    width: 40px;
-    height: 40px;
-    background-color: var(--primerColor);
-    font-weight: 700;
-}
-
-.boton-principal-F:hover {
-    filter: brightness(1.1)
-}
-
-.grupo-volumen-F {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 180px;
-}
-
-.etiqueta-tiempoF {
-    font-variant-numeric: tabular-nums;
-    font-size: .9rem;
-    color: var(--textColor);
-}
-
-.fila-progreso-F {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 300px;
-}
-
-/* ---------------------------------------------------------
-    Controles tipo range con dos colores (progreso y resto)
------------------------------------------------------------- */
-.control-range-F {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 5px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(yellow) 0%, var(--primerColor) 0%, var(gray) 0%, var(gray) 100%);
-    outline: none;
-    transition: filter .15s ease;
-}
-
-.control-range-F:hover {
-    filter: brightness(1.05)
-}
-
-.control-range-F::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: #39a900;
-    border: 3px solid white;
-    cursor: pointer;
-}
-
-.control-range-F::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
-
-.control-range-F.volumen-F {
-    height: 5px;
-    width: 80px;
-    background: linear-gradient(90deg, #5a5a5a 0%, #fff 50%);
-    border-radius: 999px;
-}
-
-.control-range-F.volumen-F::-webkit-slider-thumb {
-    border-color: #39a900;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
-}
-
-.control-range-F.volumen-F::-moz-range-thumb {
-    border-color: #5a5a5a;
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
-}
-
-/* Iconos SVG */
-.iconoF {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
-    color: gray;
-}
-
-.icono-grandeF {
-    width: 24px;
-    height: 24px;
-    color: #fff;
 }
 
 /* -------------------------------------
@@ -994,11 +854,21 @@ footer {
     object-fit: cover;
 }
 
+#f-gov {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    bottom: -200px;
+    background-color: var(--bgGobierno);
+}
+
 
 @media only screen and (max-width: 600px) {
-    #theme-switch{
+    #theme-switch {
         width: 50px;
     }
+
     .boxLogos {
         position: relative;
         top: -88px;
@@ -1173,6 +1043,32 @@ footer {
 
     .titleEscuchar {
         font-size: 1.6rem;
+    }
+
+    .sliderSenaRa {
+        height: 300px;
+        width: 100%;
+    }
+
+    .boxSliderInfo{
+        height: 80px;
+    }
+    .boxMensaje {
+        padding: 0 10px;
+    }
+
+    .mensaje {
+        width: 50%;
+        height: auto;
+        padding: 10px;
+    }
+    .textMensaje{
+        font-size: 1rem;
+    }
+
+    .slider-navegation .btn-nav-slider{
+        width: 20px;
+        height: 10px;
     }
 
     /* -----------------------------------------
@@ -1400,13 +1296,26 @@ footer {
         position: relative;
         top: 196px;
     }
-    .boxMensaje{
+
+    .sliderSenaRa {
+        height: 400px;
+        width: 100%;
+    }
+
+    .boxSliderInfo{
+        height: 100px;
+    }
+    .boxMensaje {
         padding: 0 10px;
     }
+
     .mensaje {
         width: 50%;
         height: auto;
         padding: 20px;
+    }
+    .textMensaje{
+        font-size: 1.3rem;
     }
 
     /* -----------------------------------------

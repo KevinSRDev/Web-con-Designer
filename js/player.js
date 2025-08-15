@@ -7,6 +7,9 @@ const boxLogoSena = document.querySelector(".senaLogo");
 const logoGov = document.getElementById("logoCobierno");
 const boxLogoGov = document.querySelector(".govLogo");
 const themeSwitch = document.getElementById("theme-switch");
+const btnsSlider = document.querySelectorAll(".btn-nav-slider")
+const imgSlider = document.querySelectorAll(".img-slider")
+const infoSlider = document.querySelectorAll(".boxSliderInfo")
 
 let darkmode = localStorage.getItem("darkmode");
 
@@ -29,11 +32,11 @@ themeSwitch.addEventListener("click", () => {
   darkmode = localStorage.getItem("darkmode");
   darkmode !== "active" ? enableDarMode() : disableDarkMode();
   if (darkmode !== "active") {
-    logoSENA.src = "src/img/SENA_SENA BLANCO.png";
-    logoGov.src = "src/img/SENA_TRABAJO.png";
+    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+    logoGov.src = "./src/img/SENA_TRABAJO.png";
   } else {
-    logoSENA.src = "src/img/SENA_SENA VERDE.png";
-    logoGov.src = "src/img/SENA_TRABAJO COLOR.png";
+    logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+    logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
   }
 });
 
@@ -68,8 +71,8 @@ if (window.matchMedia < 600) {
   boxLogoSena.style.height = `60px`;
 
   boxLogoGov.style.width = `100px`;
-  logoSENA.src = "src/img/SENA_SENA VERDE.png";
-  logoGov.src = "src/img/SENA_TRABAJO COLOR.png";
+  logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+  logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
 } else {
   boxLogoSena.style.width = `60px`;
   boxLogoSena.style.height = `60px`;
@@ -111,16 +114,41 @@ function closeSideBar() {
   navbar.setAttribute("inert", "");
 }
 
-updateNavbar(media);
+
+// ----------------------------------------------
+// FOR SLIDER NAVEGATION
+// ----------------------------------------------
+
+var sliderNav = function(maual){
+  btnsSlider.forEach((btn) =>{
+    btn.classList.remove("btnSliderActive");
+  })
+
+  imgSlider.forEach((img) =>{
+    img.classList.remove("imgSliderActive");
+  })
+
+  infoSlider.forEach((info) =>{
+    info.classList.remove("infoSliderActive");
+  })
+
+  btnsSlider[maual].classList.add("btnSliderActive");
+  imgSlider[maual].classList.add("imgSliderActive");
+  infoSlider[maual].classList.add("infoSliderActive");
+}
+
+btnsSlider.forEach((btn, i) => {
+  btn.addEventListener('click', ()=> {
+    sliderNav(i);
+  });
+});
+
+
+
 
 // ----------------------------------------------
 //  FOOTER
 // ----------------------------------------------
-
-// ----------------------------------------------
-// Función para verificar el tamaño de la ventana
-// ----------------------------------------------
-
 function insertarHTMLSiEsNecesario() {
   const anchoVentana = window.innerWidth;
   const contenedor = document.querySelector(".box-f-logos");
@@ -129,7 +157,7 @@ function insertarHTMLSiEsNecesario() {
   if (anchoVentana < 600) {
     contenedor.innerHTML = `
           <div class="f-box-logo-sena">
-                    <img src="src/img/SENA_SENA VERDE.png" alt="Logo SENA">
+                    <img src="./src/img/SENA_SENA VERDE.png" alt="Logo SENA">
                 </div>
                 <div class="f-box-logos-icontec">
                     <img src="http://www.sena.edu.co/Style%20Library/alayout/images/Icontec03_all.png" alt="Logos icontect">
@@ -140,7 +168,7 @@ function insertarHTMLSiEsNecesario() {
     contenedor.innerHTML = "";
     originalContenedor.innerHTML = `
     <div class="f-box-logo-sena">
-                    <img src="src/img/SENA_SENA VERDE.png" alt="Logo SENA">
+                    <img src="./src/img/SENA_SENA VERDE.png" alt="Logo SENA">
                 </div>
                 <div class="f-box-logos-icontec">
                     <img src="http://www.sena.edu.co/Style%20Library/alayout/images/Icontec03_all.png" alt="Logos icontect">
@@ -148,6 +176,8 @@ function insertarHTMLSiEsNecesario() {
     `;
   }
 }
+
+updateNavbar(media);
 
 // Ejecutar la función al cargar la página
 insertarHTMLSiEsNecesario();

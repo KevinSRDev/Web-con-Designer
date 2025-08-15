@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="src/img/SENA_SENA VERDE.png" type="image/png" />
+    <link rel="shortcut icon" href="./src/img/SENA_SENA VERDE.png" type="image/png" />
     <title>SENA-RA</title>
     <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -41,7 +41,7 @@
             </button>
         </form>
         <div class="govLogo">
-            <img id="logoCobierno" src="src/img/SENA_TRABAJO COLOR.png" alt="Ministerio del Trabajo" />
+            <img id="logoCobierno" src="./src/img/SENA_TRABAJO COLOR.png" alt="Ministerio del Trabajo" />
         </div>
     </div>
     <!-- NAVBAR -->
@@ -84,26 +84,77 @@
 
     <!-- CONTENIDO -->
     <main>
-        <div class="boxLogos">
-            <div class="boxMensaje">
-                <div class="logoSenaRa">
-                    <img src="src/img/sena-radio.jpg" alt="Logo SENA RA, la radio" />
+        <section id="sliderSenaRa" class="sliderSenaRa">
+            <img id="imgSlider" src="./src/img/slider/foto-01.jpg" alt="Imagen de Slider ..."
+                class="img-slider imgSliderActive">
+            <img id="imgSlider" src="./src/img/slider/foto-02.jpg" alt="Imagen de Slider ..." class="img-slider">
+            <img id="imgSlider" src="./src/img/slider/foto-03.jpg" alt="Imagen de Slider ..." class="img-slider">
+            <img id="imgSlider" src="./src/img/slider/foto-04.jpg" alt="Imagen de Slider ..." class="img-slider">
+            <div class="boxSliderInfo infoSliderActive">
+                <div class="boxMensaje">
+                    <div class="logoSenaRa">
+                        <img src="./src/img/sena-radio.jpg" alt="Logo SENA RA, la radio" />
+                    </div>
+                    <div class="mensaje">
+                        <p class="textMensaje">
+                            ¡La moda brilla en la pasarela de aprendices SENA!
+                        </p>
+                    </div>
+                    <i class="bi bi-play-circle"></i>
                 </div>
-                <div class="mensaje">
-                    <p class="textMensaje">
-                        ¡La moda brilla en la pasarela de aprendices SENA!
-                    </p>
-                </div>
-                <i class="bi bi-play-circle"></i>
             </div>
-        </div>
+            <div class="boxSliderInfo">
+                <div class="boxMensaje">
+                    <div class="logoSenaRa">
+                        <img src="./src/img/sena-radio.jpg" alt="Logo SENA RA, la radio" />
+                    </div>
+                    <div class="mensaje">
+                        <p class="textMensaje">
+                            SENA-RA innova
+                        </p>
+                    </div>
+                    <i class="bi bi-play-circle"></i>
+                </div>
+            </div>
+            <div class="boxSliderInfo">
+                <div class="boxMensaje">
+                    <div class="logoSenaRa">
+                        <img src="./src/img/sena-radio.jpg" alt="Logo SENA RA, la radio" />
+                    </div>
+                    <div class="mensaje">
+                        <p class="textMensaje">
+                            Hello!
+                        </p>
+                    </div>
+                    <i class="bi bi-play-circle"></i>
+                </div>
+            </div>
+            <div class="boxSliderInfo">
+                <div class="boxMensaje">
+                    <div class="logoSenaRa">
+                        <img src="./src/img/sena-radio.jpg" alt="Logo SENA RA, la radio" />
+                    </div>
+                    <div class="mensaje">
+                        <p class="textMensaje">
+                            Podcasts SENA-RA
+                        </p>
+                    </div>
+                    <i class="bi bi-play-circle"></i>
+                </div>
+            </div>
+            <div class="slider-navegation">
+                <div class="btn-nav-slider btnSliderActive"></div>
+                <div class="btn-nav-slider"></div>
+                <div class="btn-nav-slider"></div>
+                <div class="btn-nav-slider"></div>
+            </div>
+        </section>
 
         <div class="boxEscucharMas">
             <div class="boxTitleEscuchar">
                 <h2 class="titleEscucharMas">Escuchar Más</h2>
             </div>
         </div>
-
         <!-- REPRODUCTOR -->
         <div class="contenedor-reproductor" aria-label="Reproductor de audio minimalista">
             <section class="bloque-informacion" aria-live="polite">
@@ -163,174 +214,130 @@
                 <div class="boxGalleryAudio" id="view-list">
                     <ul class="list-audios">
                         <li data-audio="audio1" class="audio1">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                            <a href="./viewAudiosFor.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio2" class="audio2">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                            <a href="./viewAudiosFor.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio3" class="audio3">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                            <a href="./viewAudiosFor.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio4" class="audio4">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                            <a href="./viewAudiosFor.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio5" class="audio5">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                            <a href="./viewAudiosFor.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio6" class="audio6">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                            <a href="./viewAudiosFor.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio7" class="audio7">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                            <a href="./viewAudiosFor.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio8" class="audio8">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                            <a href="./viewAudiosFor.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- VISTAS AUDIOS -->
-        <!-- TODAVIA NO FUNCIONAN LOS CONTROLES -->
-        <section id="view-detail" class="view hidden">
-            <button id="back-btn" aria-label="Volver">
-                <i class="bi bi-chevron-down"></i>
-            </button>
-            <div class="boxAudio">
-                <img id="imagenAudio" src="" alt="Imagen" />
-                <div class="imgAudioInfo">
-                    <h2 id="audio-title"></h2>
-                    <div class="infoAudio">
-                        <p id="audio-info"></p>
-                    </div>
-                </div>
-
-                <!-- PROGRESO -->
-                <!-- HAY QUE INTEGRAR LA FUNCIONALIDAD CON EL MISMO DISEÑO DEL REPRODUCTOR PRINCIPAL -->
-                <div class="fila-controles-audios-formacion">
-                    <button id="boton-anterior-F" class="boton-control-F" aria-label="Pista anterior-F"
-                        title="Anterior (J)">
-                        <svg class="iconoF" viewBox="0 0 24 24">
-                            <path d="M6 6h2v12H6V6zm3.5 6 9.5 6V6l-9.5 6z" />
-                        </svg>
-                    </button>
-
-                    <button id="boton-reproducir-F" class="boton-control-F boton-principal-F"
-                        aria-label="Reproducir (K)" title="Reproducir/Pausar (K)">
-                        <svg id="icono-playF" class="iconoF icono-grandeF" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                        </svg>
-                    </button>
-
-                    <button id="boton-siguiente-F" class="boton-control-F" aria-label="Pista siguienteF"
-                        title="Siguiente (L)">
-                        <svg class="iconoF" viewBox="0 0 24 24">
-                            <path d="M16 6h2v12h-2V6zM5 18l9.5-6L5 6v12z" />
-                        </svg>
-                    </button>
-
-                    <div class="fila-progreso-F">
-                        <span id="texto-tiempo-actual-F" class="etiqueta-tiempoF" aria-label="Tiempo actual">0:00</span>
-                        <input id="barra-progreso-F" class="control-range-F" type="range" min="0" max="100" step="0.1"
-                            value="0" aria-label="Progreso de reproducción" />
-                        <span id="texto-duracion-F" class="etiqueta-tiempoF" aria-label="Duración total">0:00</span>
-                    </div>
-
-                    <div class="grupo-volumen-F">
-                        <button id="boton-silencio-F" class="boton-control-F" aria-label="Silenciar"
-                            title="Silenciar (M)">
-                            <svg id="icono-volumen-F" class="iconoF" viewBox="0 0 24 24">
-                                <path d="M5 9v6h4l5 5V4L9 9H5z" />
-                            </svg>
-                        </button>
-                        <input id="control-volumen-F" class="control-rangeF volumenF" type="range" min="0" max="1"
-                            step="0.01" value="0.85" aria-label="Volumen" />
-                    </div>
-                </div>
-                <audio id="elemento-audioF" class="audioSound" preload="metadata" crossorigin="anonymous"></audio>
-            </div>
-        </section>
 
         <section id="campesena">
             <h2 class="titleAudiosGlobal">CAMPESENA</h2>
@@ -338,116 +345,124 @@
                 <div class="boxGalleryAudio" id="view-list">
                     <ul class="list-audios">
                         <li data-audio="audio1" class="audio1">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="https://tustreaming.co/AUDIO/SENACOMUNICARADIO/assets/senac.jpg"
-                                        alt="Imagen de Audio" />
+                            <a href="./viewAudiosCam.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio2" class="audio2">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="https://tustreaming.co/AUDIO/SENACOMUNICARADIO/assets/senac.jpg"
-                                        alt="Imagen de Audio" />
+                            <a href="./viewAudiosCam.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio3" class="audio3">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="https://tustreaming.co/AUDIO/SENACOMUNICARADIO/assets/senac.jpg"
-                                        alt="Imagen de Audio" />
+                            <a href="./viewAudiosCam.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio4" class="audio4">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="https://tustreaming.co/AUDIO/SENACOMUNICARADIO/assets/senac.jpg"
-                                        alt="Imagen de Audio" />
+                            <a href="./viewAudiosCam.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio5" class="audio5">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="https://tustreaming.co/AUDIO/SENACOMUNICARADIO/assets/senac.jpg"
-                                        alt="Imagen de Audio" />
+                            <a href="./viewAudiosCam.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio6" class="audio6">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="https://tustreaming.co/AUDIO/SENACOMUNICARADIO/assets/senac.jpg"
-                                        alt="Imagen de Audio" />
+                            <a href="./viewAudiosCam.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio7" class="audio7">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="https://tustreaming.co/AUDIO/SENACOMUNICARADIO/assets/senac.jpg"
-                                        alt="Imagen de Audio" />
+                            <a href="./viewAudiosCam.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                         <li data-audio="audio8" class="audio8">
-                            <div class="cardAudio">
-                                <div class="cardImgAudio">
-                                    <img src="https://tustreaming.co/AUDIO/SENACOMUNICARADIO/assets/senac.jpg"
-                                        alt="Imagen de Audio" />
+                            <a href="./viewAudiosCam.html" class="linkAudio">
+                                <div class="cardAudio">
+                                    <div class="cardImgAudio">
+                                        <img src="./src/img/sena-radio.jpg" alt="Imagen de Audio" />
+                                    </div>
+                                    <div class="textAudio">
+                                        <p class="textA">
+                                            Campesinos e indígenas de Obandos, construyendo propuestas
+                                            para fortalecer la formación y el desarrollo rural
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="textAudio">
-                                    <p class="textA">
-                                        Campesinos e indígenas de Obandos, construyendo propuestas
-                                        para fortalecer la formación y el desarrollo rural
-                                    </p>
-                                </div>
-                            </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -492,11 +507,18 @@
             <div class="footer-logos"></div>
         </div>
     </footer>
+    <footer id="f-gov">
+        <div class="contenBosGov">
+            <div class="boxGov">
+                <img src="https://css.mintic.gov.co/mt/mintic/img/header_govco.png" alt="Gov Co" />
+            </div>
+        </div>
+    </footer>
 
-    <script src="js/player.js"></script>
-    <script src="js/audioHome.js"></script>
-    <script src="js/viewAudios.js"></script>
-    <script type="text/javascript" src="js/player.js" defer></script>
+    <script src="./js/player.js"></script>
+    <script src="./js/audioHome.js"></script>
+    <script src="./js/viewAudios.js"></script>
+    <script type="text/javascript" src="./js/player.js" defer></script>
 </body>
 
 </html>
