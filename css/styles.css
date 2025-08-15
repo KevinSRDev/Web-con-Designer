@@ -116,7 +116,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 10;
+    z-index: 20;
     position: fixed;
     top: 40px;
     background-color: var(--bg);
@@ -408,7 +408,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -1035,6 +1035,10 @@ footer {
     }
 
     /* ESCUCHAR MAS */
+    main {
+        position: relative;
+        top: 185px;
+    }
 
     .boxTitleEscuchar {
         width: 80%;
