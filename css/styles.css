@@ -1,6 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Inconsolata:wght@200..900&family=M+PLUS+Rounded+1c&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap');
 
+@view-transition {
+    navegation: auto;
+}
+
 * {
     font-family: "Work Sans", sans-serif;
     padding: 0;
@@ -9,15 +13,72 @@
 }
 
 :root {
+    --bg: #fff;
     --primerColor: #39a900;
     --segundoColor: #00304d;
     --textColor: #000;
     --textColorTwo: white;
     --bgGobierno: #285ec3;
+    --color-fondo: #fff;
+    --cardShadow: rgba(47, 47, 47, 0.821);
+    --color-superficie: rgba(236, 236, 236, 0.4);
+    --color-acento: #39a900;
+    --color-acento1: yellow;
+    --color-acento2: #39a900;
+    --color-resto: #b9b9b9;
+    --radio: 14px;
+    --gap: 14px;
+    --bg-btn-theme: rgb(220, 220, 220);
+    --btn-theme-light-dark: #616161;
+    --form: rgba(222, 222, 222, 0.901);
+}
+
+.darkmode {
+    --bg: #2a2a2a;
+    --primerColor: #39a900;
+    --segundoColor: #00304d;
+    --textColor: #ffffff;
+    --color-superficie: rgba(34, 34, 34, 0.4);
+    --cardShadow: rgba(99, 99, 99, 0.74);
+    --btn-theme-light-dark: rgb(220, 220, 220);
+    --form: rgba(59, 59, 59, 0.901);
+    --bg-btn-theme: #616161;
+}
+
+#theme-switch {
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#theme-switch svg {
+    fill: var(--btn-theme-light-dark);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
 }
 
 
-/* parte de arriba */
+/* ------------------------------------------
+    HEADER : GOV
+--------------------------------------------- */
 header {
     width: 100%;
     background-color: var(--bgGobierno);
@@ -38,7 +99,6 @@ header {
     width: 100px;
     height: 20px;
     position: relative;
-    transition: 0.7s;
 }
 
 .boxGov img {
@@ -48,21 +108,22 @@ header {
     z-index: 1;
 }
 
+
+/* BOX LOGOS */
 .boxSENAyGov {
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    /* background-color: rgba(0, 0, 0, 0.8); */
-    z-index: 5;
-    position: sticky;
-    top: 60px;
-    transition: 0.3s;
+    z-index: 20;
+    position: fixed;
+    top: 40px;
+    background-color: var(--bg);
 }
 
+
 .boxSENAyGov.abajo {
-    background-color: white;
     position: fixed;
     top: 39px;
     height: 100px;
@@ -70,8 +131,8 @@ header {
 
 
 .senaLogo {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }
 
 .senaLogo img {
@@ -82,8 +143,8 @@ header {
 }
 
 .govLogo {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: auto;
     padding: 50px 0;
 }
 
@@ -93,32 +154,17 @@ header {
     object-fit: contain;
 }
 
-/* BOX LOGOS */
-.boxLogos {
-    width: 100%;
-    height: 600px;
-    background-image: url(../src/img/FachadaSENA.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    fill-opacity: 0.6;
-    display: flex;
-    align-items: end;
-    position: relative;
-    top: -60px;
-}
-
 /* BUSQUEDA */
 .formUp {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--form);
     width: auto;
     padding: 3px;
     border-radius: 50px;
+    display: flex;
 }
 
 .formUp.formAbajo {
-    background-color: rgba(0, 0, 0, 0.1);
-    color: white;
+    background-color: var(--form);
 }
 
 .inputSearch {
@@ -130,12 +176,13 @@ header {
     padding: 10px;
     border: none;
     outline: none;
-    color: #000;
+    color: var(--textColor);
     background: transparent;
 }
 
-#search.textoBuscar {
-    color: var(--primerColor);
+.inputSearch:focus,
+.inputSearch:active {
+    background: none;
 }
 
 .btnBuscar {
@@ -145,60 +192,11 @@ header {
     border: none;
     border-radius: 10px;
     background: transparent;
-    color: var(--segundoColor);
+    color: var(--primerColor);
     font-size: 1rem;
     font-weight: 400;
     cursor: pointer;
 }
-
-#btnLupa.btnLupaWhite {
-    color: var(--primerColor);
-}
-
-.logoSenaRa {
-    width: 100px;
-    height: 100px;
-}
-
-.logoSenaRa img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.boxMensaje {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: start;
-    gap: 40px;
-    padding-left: 200px;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 0;
-}
-
-.boxMensaje i {
-    font-size: 4rem;
-    color: white;
-    flex: 1;
-    text-align: center;
-}
-
-.mensaje {
-    width: 400px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.textMensaje {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--textColorTwo);
-}
-
 
 /* --------------------------------------------------------
     NavBar fijada en la parte inferior de la pagina
@@ -206,24 +204,24 @@ header {
 .boxNavBar {
     width: 100%;
     height: auto;
-    transition: 0.7s;
-    position: relative;
-    top: -60px;
-    background-color: white;
     z-index: 10;
+    position: fixed;
+    top: 140px;
+    background-color: var(--bg);
 }
 
 .navAbajo {
     position: fixed;
     top: 136px;
-    background-color: white;
+}
+
+.navAbajo a {
+    color: var(--textColor);
 }
 
 nav {
     width: 100%;
     height: 60px;
-    background-color: white;
-    border-bottom: 1px solid #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -262,7 +260,7 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 2px solid var(--primerColor);
+    border-bottom: 1px solid var(--primerColor);
 }
 
 #open-SideBar-btn {
@@ -270,7 +268,6 @@ nav a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    transition: 1s;
 }
 
 #open-SideBar-btn i {
@@ -300,13 +297,147 @@ nav a:hover {
 /* ----------------
 CONTENIDO
 ------------------*/
+main {
+    position: relative;
+    top: 200px;
+    background-color: var(--bg);
+}
+
+.sliderSenaRa {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+}
+
+.sliderSenaRa::before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.sliderSenaRa #imgSlider {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.img-slider {
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+
+.img-slider.imgSliderActive {
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease-in-out;
+    transition-property: clip-path;
+}
+
+.boxSliderInfo {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    display: none;
+}
+
+.boxSliderInfo.infoSliderActive {
+    display: block;
+}
+
+.logoSenaRa {
+    width: 70px;
+    height: 70px;
+}
+
+.logoSenaRa img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.boxMensaje {
+    width: 100%;
+    height: auto;
+    padding-left: 150px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.boxMensaje i {
+    font-size: 3rem;
+    color: var(--textColorTwo);
+    flex: 1;
+    text-align: center;
+}
+
+.mensaje {
+    width: 400px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.textMensaje {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--textColorTwo);
+}
+
+.slider-navegation {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-navegation .btn-nav-slider {
+    width: 20px;
+    height: 6px;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.btn-nav-slider:hover {
+    transform: scale(1.2);
+}
+
+.btn-nav-slider.btnSliderActive {
+    background-color: #39a900;
+}
+
+
+
 .boxEscucharMas {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 0 20px 0;
+    padding: 50px 0 20px 0;
 }
 
 .boxTitleEscuchar {
@@ -315,7 +446,7 @@ CONTENIDO
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-top: 2px solid black;
+    border-top: 2px solid var(--textColor);
     z-index: 0;
 }
 
@@ -324,6 +455,209 @@ CONTENIDO
     font-size: 2rem;
     font-weight: 400;
 }
+
+/* -----------------------------------------
+    REPRODUCTOR DE AUDIO
+-------------------------------------------- */
+.contenedor-reproductor {
+    width: 980px;
+    height: auto;
+    background: var(--color-superficie);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    grid-template-areas:
+        "portada titulo"
+        "portada controles"
+        "portada progreso";
+    gap: var(--gap);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    margin-bottom: 50px;
+}
+
+.portada {
+    grid-area: portada;
+    width: 30%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    background: var(--segundoColor);
+}
+
+.bloque-informacion {
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+    min-height: 72px;
+}
+
+.boxTextoActualAudio {
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.texto-titulo {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    width: 100%;
+    height: 50px;
+    letter-spacing: .2px;
+    color: var(--color-acento);
+}
+
+.texto-descripcion {
+    margin: 0;
+    color: var(--textColor);
+    line-height: 1.45;
+    font-size: .95rem;
+    height: 150px;
+}
+
+.fila-controles {
+    grid-area: controles;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.boton-control {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: var(--textColor);
+    cursor: pointer;
+    transition: transform .08s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+    user-select: none;
+}
+
+.boton-control:hover {
+    border: 1px solid var(--color-resto);
+}
+
+.boton-control:active {
+    transform: scale(.96)
+}
+
+.boton-principal {
+    width: 40px;
+    height: 40px;
+    background: var(--color-acento);
+    color: white;
+    font-weight: 700;
+}
+
+.boton-principal:hover {
+    filter: brightness(1.05)
+}
+
+
+.grupo-volumen {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.etiqueta-tiempo {
+    font-variant-numeric: tabular-nums;
+    font-size: .9rem;
+    color: var(--textColor);
+}
+
+.fila-progreso {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 450px;
+}
+
+/* ---------------------------------------------------------------
+    Controles tipo range con dos colores (progreso y resto)
+------------------------------------------------------------------ */
+.control-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-acento1) 0%, var(--color-acento2) 0%, var(--color-resto) 0%, var(--color-resto) 100%);
+    outline: none;
+    transition: filter .15s ease;
+}
+
+.control-range:hover {
+    filter: brightness(1.05)
+}
+
+/* -------------------------------------------------------------------
+    BAVEGADOR EDGE
+---------------------------------------------------------------------- */
+.control-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-acento);
+    cursor: pointer;
+}
+.control-range.volumen::-webkit-slider-thumb {
+    border-color: #39a900;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.222);
+}
+
+/* -------------------------------------------------------------------
+    BAVEGADOR MOZILLA FIREFOX
+---------------------------------------------------------------------- */
+.control-range::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #39a900;
+    cursor: pointer;
+}
+
+.control-range.volumen {
+    height: 5px;
+    width: 80px;
+    background: linear-gradient(90deg, #5a5a5a 0%, #fff 50%);
+    border-radius: 999px;
+}
+.control-range.volumen::-moz-range-thumb {
+    border-color: #39a900;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
+}
+
+
+/* Iconos SVG */
+.icono {
+    width: 22px;
+    height: 22px;
+    fill: currentColor
+}
+
+.icono-grande {
+    width: 24px;
+    height: 24px
+}
+
+
 
 /* ---------------------------------------
     AUDIO
@@ -344,6 +678,7 @@ CONTENIDO
     overflow-x: scroll;
     scroll-behavior: smooth;
     gap: 30px;
+    padding: 20px 0;
 }
 
 .titleAudiosGlobal {
@@ -352,7 +687,7 @@ CONTENIDO
     font-size: 2rem;
     font-weight: bold;
     padding: 20px 0 20px 0;
-    border-top: 2px solid black;
+    border-top: 2px solid var(--textColor);
     width: 980px;
     position: relative;
     left: 50%;
@@ -365,6 +700,7 @@ CONTENIDO
     justify-content: space-around;
     padding-bottom: 20px;
     gap: 60px;
+    padding: 0 20px;
 }
 
 .list-audios li {
@@ -373,22 +709,22 @@ CONTENIDO
     flex: 0 0 auto;
 }
 
+.list-audios li a {
+    text-decoration: none;
+}
+
 .cardAudio {
     width: 200px;
     height: auto;
-    border-bottom: 2px solid black;
-}
-
-.cardAudio:hover,
-.cardAudio:focus {
-    background: #eee;
+    border-bottom: 2px solid var(--textColor);
 }
 
 .cardImgAudio {
     width: 100%;
     height: 200px;
-    box-shadow: 0px 8px 20px 0px black;
+    box-shadow: 0px 8px 20px 0px var(--cardShadow);
 }
+
 
 .cardImgAudio img {
     width: 100%;
@@ -405,123 +741,25 @@ CONTENIDO
 .textA {
     font-weight: 300;
     font-size: medium;
+    color: var(--textColor);
 }
 
 .textA:hover {
     text-decoration: underline;
 }
 
-.boxDuration {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
-}
-
-.time {
-    color: #4b4b4b;
-}
-
-/* ---------------------------------------------
-    VISTAS AUDIOS
------------------------------------------------- */
-.view {
-    width: 980px;
-    height: auto;
-    background-color: var(--primerColor);
-    padding: 20px 10px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-radius: 10px;
-}
-
-.boxAudio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    height: auto;
-}
-
-#imagenAudio {
-    width: 400px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.infoAudio {
-    width: 100%;
-    height: 100px;
-    padding: 20px;
-}
-
-.infoAudio p {
-    color: white;
-}
-
-.imgAudioInfo {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-}
-
-.hidden {
-    display: none;
-}
-
-#back-btn {
-    background: none;
-    border: none;
-    color: white;
-    padding: 5px;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100px;
-    height: 40px;
-    transition: all .5s;
-}
-
-#back-btn:hover {
-    font-size: 2.3rem;
-}
-
-#audio-title {
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.boxBarraAudio {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(228, 228, 228, 0.5);
-}
-
-/* FOOTER */
+/* -------------------------------------
+    FOOTER
+---------------------------------------- */
 footer {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 20px;
+    padding: 20px 0;
+    position: relative;
+    bottom: -200px;
 }
 
 .box-footer {
@@ -624,16 +862,29 @@ footer {
     object-fit: cover;
 }
 
+#f-gov {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    position: relative;
+    bottom: -200px;
+    background-color: var(--bgGobierno);
+}
+
 
 @media only screen and (max-width: 600px) {
+    #theme-switch {
+        width: 50px;
+    }
+
     .boxLogos {
         position: relative;
-        top: -72px;
+        top: -88px;
     }
 
     .boxSENAyGov {
         width: 100%;
-        height: auto;
+        height: 110px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -643,13 +894,12 @@ footer {
 
     .boxSENAyGov.abajo {
         position: fixed;
-        background-color: white;
+        background-color: var(--bg);
         display: flex;
         flex-direction: row;
-        top: 74px;
+        top: 40px;
         height: 100px;
         z-index: 10;
-        border-bottom: 1px solid black;
     }
 
     .senaLogo {
@@ -676,64 +926,17 @@ footer {
         object-fit: contain;
     }
 
-    /* ----------------------------------------------
-        BARRA DE BUSQUEDA
-    ------------------------------------------------- */
-    .formUp {
-        width: 50%;
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-
-    .inputSearch {
-        width: 170px;
-    }
-
-    .boxMensaje {
-        width: 100%;
-        height: auto;
-        z-index: 2;
-        padding-left: 0;
-    }
-    .boxMensaje i{
-        font-size: 2rem;
-    }
-
-    .mensaje {
-        width: 50%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-right: 0;
-        padding: 10px;
-    }
-
-    .textMensaje {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--textColorTwo);
-    }
-
-    /* CARRUSEL */
-
-    .boxTitleEscuchar {
-        width: 80%;
-        height: 50px;
-    }
-
-    .titleEscuchar {
-        font-size: 1.6rem;
-    }
-
-
+    /* ---------------------------------------------
+        NAVBAR
+    ------------------------------------------------*/
     /* Navegación en la parte inferior de la web */
 
     #open-SideBar-btn {
         display: flex;
-        background-color: white;
-        border-bottom: 1px solid var(--segundoColor);
+        background-color: var(--bg);
         height: 40px;
         position: fixed;
+        top: 144px;
         z-index: 100;
         width: 100%;
     }
@@ -751,8 +954,7 @@ footer {
         top: -100%;
         height: 100%;
         width: 100%;
-        background-color: white;
-        backdrop-filter: blur(10px);
+        background-color: var(--bg);
         transition: bottom 400ms ease-out;
         z-index: 100;
         display: flex;
@@ -795,19 +997,204 @@ footer {
     }
 
     #close-SideBar-btn i {
-        color: var(--segundoColor);
+        color: var(--textColor);
         font-size: 1.5em;
     }
+
+
+    /* ----------------------------------------------
+        BARRA DE BUSQUEDA
+    ------------------------------------------------- */
+    .formUp {
+        width: 40%;
+        background-color: rgba(0, 0, 0, 0.1);
+        display: flex;
+        overflow: hidden;
+    }
+
+    .inputSearch {
+        width: 100%;
+    }
+
+    .boxMensaje {
+        width: 100%;
+        height: auto;
+        padding-left: 0;
+    }
+
+    .boxMensaje i {
+        font-size: 2rem;
+    }
+
+    .mensaje {
+        width: 50%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 0;
+        padding: 10px;
+    }
+
+    .textMensaje {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--textColorTwo);
+    }
+
+    /* ESCUCHAR MAS */
+    main {
+        position: relative;
+        top: 184px;
+    }
+
+    .boxTitleEscuchar {
+        width: 80%;
+        height: 50px;
+    }
+
+    .titleEscuchar {
+        font-size: 1.6rem;
+    }
+
+    .sliderSenaRa {
+        height: 300px;
+        width: 100%;
+    }
+
+    .boxSliderInfo{
+        height: 80px;
+    }
+    .boxMensaje {
+        padding: 0 10px;
+    }
+
+    .mensaje {
+        width: 50%;
+        height: auto;
+        padding: 10px;
+    }
+    .textMensaje{
+        font-size: 1rem;
+    }
+
+    .slider-navegation .btn-nav-slider{
+        width: 20px;
+        height: 10px;
+    }
+
+    /* -----------------------------------------
+        REPRODUCTOR DE AUDIO
+    ---------------------------------------- */
+    .contenedor-reproductor {
+        width: 80%;
+        height: auto;
+        background: var(--color-superficie);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bloque-informacion {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .boxTextoActualAudio {
+        width: 100%;
+        height: auto;
+    }
+
+    .portada {
+        width: 100%;
+        max-width: 200px;
+        justify-self: center
+    }
+
+    .texto-titulo {
+        font-size: 1rem;
+    }
+
+    .texto-descripcion {
+        font-size: 1rem;
+        height: auto;
+    }
+
+    .fila-controles {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .grupo-volumen {
+        min-width: 0
+    }
+
+    .separador-flex {
+        display: none
+    }
+
 
     /* -----------------------------------------
         AUDIOS  
     -------------------------------------------- */
-    .titleAudiosGlobal{
+    .titleAudiosGlobal {
         width: 80%;
         font-size: 1.5rem;
     }
-    .boxGalleryAudio{
+
+    .boxGalleryAudio {
+        width: 95%;
+    }
+
+    /* ---------------------------------------------
+    VISTAS AUDIOS
+------------------------------------------------ */
+    .view {
+        width: 80%;
+        height: auto;
+        background-color: var(--segundoColor);
+        padding: 20px 10px;
+        margin-bottom: 50px;
+        gap: 10px;
+    }
+
+    #imagenAudio {
         width: 90%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    #audio-title {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .infoAudio p {
+        color: white;
+    }
+
+    #back-btn {
+        background: none;
+        border: none;
+        color: white;
+        padding: 5px;
+        font-size: 2rem;
+    }
+
+    /* -------------------------------------------
+    BARRA DE PROGRESO PARA AUDIOS DE FORMACIÓN
+---------------------------------------------- */
+    .fila-controles-audios-formacion {
+        grid-area: controles;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+        width: 80%;
     }
 
     /* FOOTER */
@@ -862,11 +1249,11 @@ footer {
         BARRA DE BUSQUEDA
     ------------------------------------------------- */
     .formUp {
-        width: 250px;
+        width: 40%;
     }
 
     .inputSearch {
-        width: 200px;
+        width: 100%;
     }
 
 
@@ -874,13 +1261,12 @@ footer {
     .boxNavBar {
         width: 100%;
         height: auto;
-        position: relative;
+        position: fixed;
     }
 
     nav {
         width: 100%;
-        height: auto;
-        border-bottom: 1px solid var(--segundoColor);
+        height: 88px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -919,11 +1305,55 @@ footer {
         font-size: 0.7rem;
     }
 
+    main {
+        position: relative;
+        top: 196px;
+    }
+
+    .sliderSenaRa {
+        height: 400px;
+        width: 100%;
+    }
+
+    .boxSliderInfo{
+        height: 100px;
+    }
+    .boxMensaje {
+        padding: 0 10px;
+    }
+
     .mensaje {
-        width: 90%;
+        width: 50%;
         height: auto;
         padding: 20px;
     }
+    .textMensaje{
+        font-size: 1.3rem;
+    }
+
+    /* -----------------------------------------
+        REPRODUCTOR DE AUDIO
+    -------------------------------------------- */
+    .contenedor-reproductor {
+        width: 90%;
+        height: auto;
+        background: var(--color-superficie);
+    }
+
+    .portada {
+        width: 100%;
+        max-width: 200px;
+        justify-self: center
+    }
+
+    .grupo-volumen {
+        min-width: 0
+    }
+
+    .separador-flex {
+        display: none
+    }
+
 
     /* ------------------------
         AUDIOS
@@ -968,14 +1398,14 @@ footer {
         VISTAS AUDIOS
     ------------------------------------------ */
     .view {
-        width: 95%;
+        width: 85%;
         height: auto;
         padding: 0;
         margin-bottom: 50px;
     }
 
     .imgAudioInfo {
-        width: 100%;
+        width: 80%;
         height: auto;
         display: flex;
         align-items: center;
@@ -998,7 +1428,7 @@ footer {
 
     .infoAudio {
         width: 100%;
-        height: 300px;
+        height: auto;
         padding: 20px;
     }
 

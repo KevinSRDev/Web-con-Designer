@@ -3,7 +3,7 @@
     --color-superficie: rgba(228, 228, 228, 0.4);
     --color-borde: #2a2a2a;
     --color-texto: #000;
-    --color-secundario: #b3b3b3;
+    --color-secundario: rgba(0, 0, 0, 0.5);
     --color-acento: #39a900;
     --color-acento1: yellow;
     --color-acento2: #39a900;
@@ -119,9 +119,6 @@
     filter: brightness(1.05)
 }
 
-.separador-flex {
-    flex: 1 1 auto
-}
 
 .grupo-volumen {
     display: flex;
@@ -137,7 +134,6 @@
 }
 
 .fila-progreso {
-    grid-area: progreso;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -223,6 +219,7 @@
     }
     .boxTextoActualAudio{
         width: 100%;
+        height: auto;
     }
 
     .portada {

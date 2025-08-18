@@ -26,9 +26,6 @@ const listaPistas = [
   },
 ];
 
-// ---------------------------
-// Referencias del DOM
-// ---------------------------
 const elementoAudio = document.getElementById("elemento-audio");
 const imagenPortada = document.getElementById("imagen-portada");
 const textoTitulo = document.getElementById("texto-titulo");
@@ -126,7 +123,7 @@ function cargarPista(indice) {
   barraProgreso.value = 0;
   aplicarGradienteDosColores(barraProgreso, 0);
 
-  // Autoplay al cambiar de pista
+  //Autoplay al cambiar de pista
   elementoAudio.play().catch(() => {
     /* reproducción bloqueada por el navegador */
   });

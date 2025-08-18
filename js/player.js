@@ -6,72 +6,87 @@ const logoSENA = document.getElementById("logoSena");
 const boxLogoSena = document.querySelector(".senaLogo");
 const logoGov = document.getElementById("logoCobierno");
 const boxLogoGov = document.querySelector(".govLogo");
-var boxNavBar = document.querySelector(".boxNavBar");
-let formBuscar = document.querySelector('.formUp')
-let inputSearch = document.getElementById('search')
-let lupa = document.getElementById('btnLupa')
+const themeSwitch = document.getElementById("theme-switch");
+const btnsSlider = document.querySelectorAll(".btn-nav-slider")
+const imgSlider = document.querySelectorAll(".img-slider")
+const infoSlider = document.querySelectorAll(".boxSliderInfo")
 
+let darkmode = localStorage.getItem("darkmode");
 
+//---------------------
+// THEME: LIGHT OR DARK
+// --------------------
+const enableDarMode = () => {
+  document.body.classList.add("darkmode");
+  localStorage.setItem("darkmode", "active");
+};
+
+const disableDarkMode = () => {
+  document.body.classList.remove("darkmode");
+  localStorage.setItem("darkmode", null);
+};
+
+if (darkmode === "active") enableDarMode();
+
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem("darkmode");
+  darkmode !== "active" ? enableDarMode() : disableDarkMode();
+  if (darkmode !== "active") {
+    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+    logoGov.src = "./src/img/SENA_TRABAJO.png";
+  } else {
+    logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+    logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
+  }
+});
+
+// --------------
 // BUSCADOR
+// --------------
 function buscar() {
   const valor = document.getElementById("search").value.toLowerCase().trim();
 
   // Mapear términos de búsqueda con ids de secciones
   const secciones = {
-    "formación": "formacion",
-    "campesena": "campesena"
+    formación: "formacion",
+    Formación: "formacion",
+    formacion: "formacion",
+    Formacion: "formacion",
+    FORMACIÓN: "formacion",
+    campesena: "campesena",
+    Campesena: "campesena",
   };
   const id = secciones[valor];
 
   if (id) {
     // Navegar a la sección
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   } else {
     alert("Sección no encontrada");
   }
 }
 
-if (window.matchMedia < 600) {
-  boxLogoSena.style.width = `60px`;
-  boxLogoSena.style.height = `60px`
+// if (window.matchMedia < 600) {
+//   boxLogoSena.style.width = `60px`;
+//   boxLogoSena.style.height = `60px`;
 
-  boxLogoGov.style.width = `100px`;
-  logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-  logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
-} else {
-  boxLogoSena.style.width = `60px`;
-  boxLogoSena.style.height = `60px`;
+//   boxLogoGov.style.width = `100px`;
+//   logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+//   logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
+// } else {
+//   boxLogoSena.style.width = `60px`;
+//   boxLogoSena.style.height = `60px`;
 
-  boxLogoGov.style.width = `100px`;
-}
+//   boxLogoGov.style.width = `100px`;
+// }
 
-window.addEventListener("scroll", () => {
-  var boxLogos = document.querySelector(".boxSENAyGov");
-  boxLogos.classList.toggle("abajo", window.scrollY > 0);
+// window.addEventListener("scroll", () => {
+//   var boxLogos = document.querySelector(".boxSENAyGov");
+//   boxLogos.classList.toggle("abajo", window.scrollY > 0);
 
-  boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
-  formBuscar.classList.toggle('formAbajo', window.scrollY > 0);
-  lupa.classList.toggle('btnLupaWhite', window.scrollY > 0);
-  inputSearch.classList.toggle('textoBuscar', window.scrollY > 0)
-
-  if (window.scrollY > 10) {
-    logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-    logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
-
-    boxLogoSena.style.width = `60px`;
-    boxLogoSena.style.height = `60px`;
-
-    boxLogoGov.style.width = `100px`;
-  } else {
-    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-    logoGov.src = "./src/img/SENA_TRABAJO.png";
-    boxLogoSena.style.width = `100px`;
-    boxLogoSena.style.height = `100px`;
-
-    boxLogoGov.style.width = `150px`;
-  }
-
-});
+//   boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
+//   formBuscar.classList.toggle("formAbajo", window.scrollY > 0);
+// });
 
 media.addEventListener("change", (e) => updateNavbar(e));
 
@@ -99,27 +114,45 @@ function closeSideBar() {
   navbar.setAttribute("inert", "");
 }
 
-function linkEscucharMas() {
-  window.location.href = './pages/escucharMas.html'
+
+// ----------------------------------------------
+// FOR SLIDER NAVEGATION
+// ----------------------------------------------
+
+var sliderNav = function(maual){
+  btnsSlider.forEach((btn) =>{
+    btn.classList.remove("btnSliderActive");
+  })
+
+  imgSlider.forEach((img) =>{
+    img.classList.remove("imgSliderActive");
+  })
+
+  infoSlider.forEach((info) =>{
+    info.classList.remove("infoSliderActive");
+  })
+
+  btnsSlider[maual].classList.add("btnSliderActive");
+  imgSlider[maual].classList.add("imgSliderActive");
+  infoSlider[maual].classList.add("infoSliderActive");
 }
 
-updateNavbar(media);
-
-function linkOferta() {
-  window.open(
-    "https://app.powerbi.com/view?r=eyJrIjoiZjhhZDcyM2EtOGFhMi00Y2EwLTgyNGMtZTg5MDBkZDZlMjllIiwidCI6ImNiYzJjMzgxLTJmMmUtNGQ5My05MWQxLTUwNmM5MzE2YWNlNyIsImMiOjR9",
-    "_blank"
-  );
-}
+btnsSlider.forEach((btn, i) => {
+  btn.addEventListener('click', ()=> {
+    sliderNav(i);
+  });
+});
 
 
 
-// footer
-// Función para verificar el tamaño de la ventana
+
+// ----------------------------------------------
+//  FOOTER
+// ----------------------------------------------
 function insertarHTMLSiEsNecesario() {
   const anchoVentana = window.innerWidth;
   const contenedor = document.querySelector(".box-f-logos");
-  const originalContenedor = document.querySelector('.footer-logos')
+  const originalContenedor = document.querySelector(".footer-logos");
 
   if (anchoVentana < 600) {
     contenedor.innerHTML = `
@@ -130,9 +163,9 @@ function insertarHTMLSiEsNecesario() {
                     <img src="http://www.sena.edu.co/Style%20Library/alayout/images/Icontec03_all.png" alt="Logos icontect">
                 </div>
         `;
-    originalContenedor.innerHTML = ''
+    originalContenedor.innerHTML = "";
   } else {
-    contenedor.innerHTML = ''
+    contenedor.innerHTML = "";
     originalContenedor.innerHTML = `
     <div class="f-box-logo-sena">
                     <img src="./src/img/SENA_SENA VERDE.png" alt="Logo SENA">
@@ -140,9 +173,11 @@ function insertarHTMLSiEsNecesario() {
                 <div class="f-box-logos-icontec">
                     <img src="http://www.sena.edu.co/Style%20Library/alayout/images/Icontec03_all.png" alt="Logos icontect">
                 </div>
-    `
+    `;
   }
 }
+
+updateNavbar(media);
 
 // Ejecutar la función al cargar la página
 insertarHTMLSiEsNecesario();
