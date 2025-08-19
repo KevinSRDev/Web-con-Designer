@@ -35,12 +35,6 @@
         <div class="senaLogo">
             <img id="logoSena" src="src/img/SENA_SENA VERDE.png" alt="Gobierno SENA" />
         </div>
-        <form class="formUp formAbajo" action="#" method="get">
-            <input class="inputSearch" type="text" name="search" id="search" placeholder="Buscar" />
-            <button id="btnLupa" class="btnBuscar" onclick="buscar()">
-                <i class="bi bi-search"></i>
-            </button>
-        </form>
         <div class="govLogo">
             <img id="logoCobierno" src="./src/img/SENA_TRABAJO COLOR.png" alt="Ministerio del Trabajo" />
         </div>
@@ -49,7 +43,7 @@
     <div class="boxNavBar">
         <button id="open-SideBar-btn" onclick="openSideBar()" aria-label="open sideBar" aria-expanded="false"
             aria-controls="navBarM">
-            <i class="bi bi-filter"></i>
+            <i class="bi bi-list"></i>
         </button>
         <nav id="navBarM">
             <ul>
@@ -87,18 +81,57 @@
         <div class="title-f-view">
             <h1> <span onclick="backHome()"><i class="bi bi-chevron-left"></i></span> CAMPESENA</h1>
         </div>
-        <!-- VISTAS AUDIOS -->
-        <section id="view-detail" class="view hidden">
-            <div class="boxAudio">
-                <img id="imagenAudio" src="./src/img/evento-02.jpg" alt="Imagen" />
-                <div class="imgAudioInfo">
-                    <h2 id="audio-title">Title</h2>
-                    <div class="infoAudio">
-                        <p id="audio-info">Description</p>
-                    </div>
+        <!-- REPRODUCTOR -->
+        <div class="contenedor-reproductor" aria-label="Reproductor de audio minimalista">
+            <section class="bloque-informacion" aria-live="polite">
+                <div class="boxTextoActualAudio">
+                    <h1 id="texto-titulo" class="texto-titulo">Cargando pista…</h1>
+                    <p id="texto-descripcion" class="texto-descripcion">
+                        Descripción en 200 caracteres.
+                    </p>
+                </div>
+                <img id="imagen-portada" class="portada" src="" alt="Portada del audio actual" />
+            </section>
+
+            <div class="fila-controles">
+                <button id="boton-anterior" class="boton-control" aria-label="Pista anterior" title="Anterior (J)">
+                    <svg class="icono" viewBox="0 0 24 24">
+                        <path d="M6 6h2v12H6V6zm3.5 6 9.5 6V6l-9.5 6z" />
+                    </svg>
+                </button>
+
+                <button id="boton-reproducir" class="boton-control boton-principal" aria-label="Reproducir (K)"
+                    title="Reproducir/Pausar (K)">
+                    <svg id="icono-play" class="icono icono-grande" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                </button>
+
+                <button id="boton-siguiente" class="boton-control" aria-label="Pista siguiente" title="Siguiente (L)">
+                    <svg class="icono" viewBox="0 0 24 24">
+                        <path d="M16 6h2v12h-2V6zM5 18l9.5-6L5 6v12z" />
+                    </svg>
+                </button>
+
+                <div class="fila-progreso">
+                    <span id="texto-tiempo-actual" class="etiqueta-tiempo" aria-label="Tiempo actual">0:00</span>
+                    <input id="barra-progreso" class="control-range" type="range" min="0" max="100" step="0.1" value="0"
+                        aria-label="Progreso de reproducción" />
+                    <span id="texto-duracion" class="etiqueta-tiempo" aria-label="Duración total">0:00</span>
+                </div>
+
+                <div class="grupo-volumen">
+                    <button id="boton-silencio" class="boton-control" aria-label="Silenciar" title="Silenciar (M)">
+                        <svg id="icono-volumen" class="icono" viewBox="0 0 24 24">
+                            <path d="M5 9v6h4l5 5V4L9 9H5z" />
+                        </svg>
+                    </button>
+                    <input id="control-volumen" class="control-range volumen" type="range" min="0" max="1" step="0.01"
+                        value="0.85" aria-label="Volumen" />
                 </div>
             </div>
-        </section>
+            <audio id="elemento-audio" preload="metadata" crossorigin="anonymous"></audio>
+        </div>
     </main>
 
     <!-- <FOOTER></FOOTER> -->
@@ -145,8 +178,8 @@
         </div>
     </footer>
 
-    <script src="./js/viewAudios.js"></script>
     <script src="./js/player.js"></script>
+    <script src="./js/audioCamp.js"></script>
 </body>
 
 </html>

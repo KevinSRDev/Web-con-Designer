@@ -40,54 +40,6 @@ themeSwitch.addEventListener("click", () => {
   }
 });
 
-// --------------
-// BUSCADOR
-// --------------
-function buscar() {
-  const valor = document.getElementById("search").value.toLowerCase().trim();
-
-  // Mapear términos de búsqueda con ids de secciones
-  const secciones = {
-    formación: "formacion",
-    Formación: "formacion",
-    formacion: "formacion",
-    Formacion: "formacion",
-    FORMACIÓN: "formacion",
-    campesena: "campesena",
-    Campesena: "campesena",
-  };
-  const id = secciones[valor];
-
-  if (id) {
-    // Navegar a la sección
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-  } else {
-    alert("Sección no encontrada");
-  }
-}
-
-// if (window.matchMedia < 600) {
-//   boxLogoSena.style.width = `60px`;
-//   boxLogoSena.style.height = `60px`;
-
-//   boxLogoGov.style.width = `100px`;
-//   logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-//   logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
-// } else {
-//   boxLogoSena.style.width = `60px`;
-//   boxLogoSena.style.height = `60px`;
-
-//   boxLogoGov.style.width = `100px`;
-// }
-
-// window.addEventListener("scroll", () => {
-//   var boxLogos = document.querySelector(".boxSENAyGov");
-//   boxLogos.classList.toggle("abajo", window.scrollY > 0);
-
-//   boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
-//   formBuscar.classList.toggle("formAbajo", window.scrollY > 0);
-// });
-
 media.addEventListener("change", (e) => updateNavbar(e));
 
 function updateNavbar(e) {
