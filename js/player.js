@@ -26,7 +26,11 @@ const disableDarkMode = () => {
   localStorage.setItem("darkmode", null);
 };
 
-if (darkmode === "active") enableDarMode();
+if (darkmode === "active") {
+  enableDarMode()
+  logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+  logoGov.src = "./src/img/SENA_TRABAJO.png";
+};
 
 themeSwitch.addEventListener("click", () => {
   darkmode = localStorage.getItem("darkmode");

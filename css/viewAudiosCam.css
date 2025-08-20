@@ -1,5 +1,6 @@
-
-
+main {
+    padding-bottom: 50px;
+}
 
 /* ---------------------------------------------
     VISTAS AUDIOS
@@ -20,20 +21,23 @@
 #back-btn:hover {
     font-size: 2.3rem;
 }
-.title-f-view{
+
+.title-f-view {
     width: 980PX;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
     padding-top: 50px;
 }
-.title-f-view h1{
+
+.title-f-view h1 {
     font-size: 2rem;
     font-weight: bold;
     color: var(--primerColor);
     border-top: 2PX solid var(--textColor);
     padding: 20px 0 20px 0;
 }
+
 .view {
     width: 980px;
     height: auto;
@@ -47,26 +51,8 @@
     left: 50%;
     transform: translate(-50%, 0);
 }
-:root {
-    --color-fondo: #fff;
-    --color-superficie: rgba(228, 228, 228, 0.4);
-    --color-borde: #2a2a2a;
-    --color-texto: #000;
-    --color-secundario: rgba(0, 0, 0, 0.5);
-    --color-acento: #39a900;
-    --color-acento1: yellow;
-    --color-acento2: #39a900;
-    /* toque tipo YouTube */
-    --color-resto: #b9b9b9;
-    /* color restante de la barra */
-    --radio: 14px;
-    --gap: 14px;
-}
-
 
 .contenedor-reproductor {
-    width: 980px;
-    height: auto;
     background: var(--color-superficie);
     padding: 18px;
     display: flex;
@@ -79,7 +65,6 @@
     position: relative;
     left: 50%;
     transform: translate(-50%, -0%);
-    margin-bottom: 50px;
 }
 
 .portada {
@@ -98,7 +83,8 @@
     gap: 30px;
     min-height: 72px;
 }
-.boxTextoActualAudio{
+
+.boxTextoActualAudio {
     width: 60%;
     height: auto;
     display: flex;
@@ -114,12 +100,12 @@
     width: 100%;
     height: 50px;
     letter-spacing: .2px;
-    color: var(--color-acento);
+    color: #39a900;
 }
 
 .texto-descripcion {
     margin: 0;
-    color: var(--color-secundario);
+    color: var(--textColor);
     line-height: 1.45;
     font-size: .95rem;
     height: 150px;
@@ -142,7 +128,7 @@
     background-color: transparent;
     border: none;
     border-radius: 10px;
-    color: gray;
+    color: var(--textColor);
     cursor: pointer;
     transition: transform .08s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
     user-select: none;
@@ -179,7 +165,7 @@
 .etiqueta-tiempo {
     font-variant-numeric: tabular-nums;
     font-size: .9rem;
-    color: var(--color-secundario);
+    color: var(--textColor);
 }
 
 .fila-progreso {
@@ -253,7 +239,62 @@
     height: 24px
 }
 
-
+/* -----------------------------------------------------
+    PLAYLIST CAMPESENA
+-------------------------------------------------------- */
+.playlistAudios {
+    width: 980px;
+    height: auto;
+    background-color: var(--color-superficie);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px;
+    top: -50px;
+}
+.title-playlist{
+    color: var(--primerColor);
+    padding: 20px 0;
+}
+.items-playlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 300px;
+    padding: 10px 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.itemsCam{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.itemsCam:hover{
+    background-color: #39a900;
+}
+.itemsCam a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-left: 15px;
+}
+.itemsCam img{
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+}
 
 @media only screen and (max-width: 600px) {
     #theme-switch {
@@ -454,6 +495,30 @@
         font-size: 2rem;
     }
 
+    .portada {
+        width: 100%;
+    }
+
+    .boxTextoActualAudio {
+        width: 100%;
+        height: auto;
+    }
+
+    .texto-descripcion {
+        height: auto;
+    }
+
+    /* -----------------------------------------------------
+        PLAYLIST CAMPESENA
+    -------------------------------------------------------- */
+    .playlistAudios {
+        width: 80%;
+        height: auto;
+        background-color: var(--color-superficie);
+    }
+
+
+
     /* FOOTER */
     .box-footer {
         width: 90%;
@@ -606,6 +671,14 @@
         padding: 20px;
     }
 
+
+    /* -----------------------------------------------------
+    PLAYLIST CAMPESENA
+    -------------------------------------------------------- */
+    .playlistAudios {
+        width: 90%;
+        height: auto;
+    }
 
 
     /* FOOTER */

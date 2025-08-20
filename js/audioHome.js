@@ -3,23 +3,23 @@
 // ---------------------------
 const listaPistas = [
   {
-    titulo: "Have You Ever Seen The Rain",
-    archivo: "./src/podcasts/Creedence Clearwater Revival Have You Ever Seen The Rain Official.mp3",
+    titulo: "Para Que La Plata",
+    archivo: "./src/audiosHome/Para Que La Plata(MP3_320K).mp3",
     portada: "./src/img/evento-02.jpg",
     descripcion:
       "Una guitarra suave acompaña una tarde lluviosa en la ciudad. Melodías cálidas y pausadas invitan a respirar y dejar que el tiempo se estire, como un té humeante cerca de la ventana, lento y reconfortante.",
   },
   {
-    titulo: "Showtek - Bad",
-    archivo: "./src/podcasts/David Guetta _ Showtek - Bad ft.Vassy (Lyrics Video)(MP3_320K).mp3",
+    titulo: "La Niña De Mis Sueños",
+    archivo: "./src/audiosHome/La Energia Norteña - La Niña De Mis Sueños (Video Oficial)(MP3_320K).mp3",
     portada: "./src/img/evento-03.jpg",
     descripcion:
       "Sintetizadores retro, autopistas mojadas y carteles de neón. Un pulso constante que guía el viaje nocturno, entre nostalgia y futuro. Conduce, piensa, siente cada luz pasar como un latido que no se agota.",
   },
   {
-    titulo: "Soy Yo",
+    titulo: "ADMV",
     archivo:
-      "./src/podcasts/Don Omar - _Soy Yo_ feat. Wisin _ Gente De Zona(MP3_320K).mp3",
+      "./src/audiosHome/Maluma - ADMV (Official Video)(MP3_160K).mp3",
     portada: "./src/img/evento-04.jpg",
     descripcion:
       "Cuerdas, charango y viento frío. El sol despierta los cerros mientras el ritmo crece. Camino de tierra, pasos firmes, horizonte claro. Música que abraza y empuja, sencilla, viva, abierta como el cielo.",
