@@ -1,5 +1,7 @@
 const openButton = document.getElementById("open-SideBar-btn");
 const navbar = document.getElementById("navBarM");
+const boxLogos = document.querySelector(".boxSENAyGov");
+const boxNavBar = document.querySelector(".boxNavBar");
 const media = window.matchMedia("(width < 600px)");
 const linkOfertaSena = document.getElementById("oferta-sena");
 const logoSENA = document.getElementById("logoSena");
@@ -10,6 +12,7 @@ const themeSwitch = document.getElementById("theme-switch");
 const btnsSlider = document.querySelectorAll(".btn-nav-slider")
 const imgSlider = document.querySelectorAll(".img-slider")
 const infoSlider = document.querySelectorAll(".boxSliderInfo")
+const btnNavBar = document.getElementById("open-SideBar-btn");
 
 let darkmode = localStorage.getItem("darkmode");
 
@@ -44,6 +47,36 @@ themeSwitch.addEventListener("click", () => {
   }
 });
 
+
+//----------------------------------------------------------
+//  AL HACER SCROLL
+// ---------------------------------------------------------
+
+window.addEventListener("scroll", () => {
+  boxLogos.classList.toggle("boxSENAyGovDown", window.scrollY > 0);
+  boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
+  btnNavBar.classList.toggle("btnNavBarDown", window.scrollY > 0);
+
+  if(window.scrollY > 0 && darkmode !== "active"){
+    logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+    logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
+  } else if(window.scrollY == 0 && darkmode !== "active"){
+    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+    logoGov.src = "./src/img/SENA_TRABAJO.png";
+  } 
+  if(window.scrollY == 0 && darkmode === "active"){
+    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+    logoGov.src = "./src/img/SENA_TRABAJO.png";
+  } else if(window.scrollY > 0 && darkmode === "active"){
+    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+    logoGov.src = "./src/img/SENA_TRABAJO.png";
+  } 
+  
+  
+});
+
+
+
 media.addEventListener("change", (e) => updateNavbar(e));
 
 function updateNavbar(e) {
@@ -70,7 +103,6 @@ function closeSideBar() {
   navbar.setAttribute("inert", "");
 }
 
-
 // ----------------------------------------------
 // FOR SLIDER NAVEGATION
 // ----------------------------------------------
@@ -90,7 +122,6 @@ var sliderNav = function(maual){
 
   btnsSlider[maual].classList.add("btnSliderActive");
   imgSlider[maual].classList.add("imgSliderActive");
-  infoSlider[maual].classList.add("infoSliderActive");
 }
 
 btnsSlider.forEach((btn, i) => {
@@ -98,7 +129,6 @@ btnsSlider.forEach((btn, i) => {
     sliderNav(i);
   });
 });
-
 
 
 
@@ -137,6 +167,7 @@ updateNavbar(media);
 
 // Ejecutar la función al cargar la página
 insertarHTMLSiEsNecesario();
+
 
 // Escuchar cambios en el tamaño de la ventana
 window.addEventListener("resize", insertarHTMLSiEsNecesario);

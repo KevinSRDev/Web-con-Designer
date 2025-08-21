@@ -123,10 +123,10 @@ function cargarPista(indice) {
   barraProgreso.value = 0;
   aplicarGradienteDosColores(barraProgreso, 0);
 
-  //Autoplay al cambiar de pista
-  elementoAudio.play().catch(() => {
-    /* reproducción bloqueada por el navegador */
-  });
+  // //Autoplay al cambiar de pista
+  // elementoAudio.play().catch(() => {
+  //   /* reproducción bloqueada por el navegador */
+  // });
   actualizarIconoReproducir(elementoAudio.paused);
   historialEnTitulo();
 }

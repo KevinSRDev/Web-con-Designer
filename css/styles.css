@@ -71,6 +71,18 @@
     display: block;
 }
 
+/* ------------------------------------------------
+    RADIO 
+---------------------------------------------------*/
+.audioSENA-RA {
+    background-color: #39a900;
+    padding: 10px;
+    border-radius: 0;
+    z-index: 30;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
 
 /* ------------------------------------------
     HEADER : GOV
@@ -108,31 +120,34 @@ header {
 /* BOX LOGOS */
 .boxSENAyGov {
     width: 100%;
-    height: 100px;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 20;
+    z-index: 30;
     position: fixed;
     top: 40px;
+    /* background-color: var(--bg); */
+}
+
+.boxSENAyGovDown {
     background-color: var(--bg);
 }
 
 
 .senaLogo {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
 }
 
 .senaLogo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    z-index: 1;
 }
 
 .govLogo {
-    width: 100px;
+    width: 150px;
     height: auto;
     padding: 50px 0;
 }
@@ -152,14 +167,16 @@ header {
     height: auto;
     z-index: 10;
     position: fixed;
-    top: 140px;
-    background-color: var(--bg);
+    top: 690px;
     box-shadow: 0 0 5px var(--textColor);
+    transition: 0.5s;
 }
 
 .navAbajo {
     position: fixed;
-    top: 136px;
+    top: 190px;
+    background-color: var(--bg);
+    box-shadow: 0 0 5px var(--textColor);
 }
 
 .navAbajo a {
@@ -213,6 +230,7 @@ nav a:hover {
 }
 
 #open-SideBar-btn {
+    transition: 0.5s;
     display: none;
     background: none;
     border: none;
@@ -253,20 +271,21 @@ main {
 }
 
 .sliderSenaRa {
-    height: 500px;
+    height: 650px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     position: relative;
+    top: -160px;
 }
 
 .sliderSenaRa::before {
     z-index: 1;
     content: '';
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 100%;
     top: 0;
@@ -301,16 +320,23 @@ main {
     padding: 10px 0;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
-.boxSliderInfo.infoSliderActive {
-    display: block;
-}
-
+/* ----------------------------------------
+    AUDIO SENA-RA
+------------------------------------------- */
 .logoSenaRa {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 60%;
+    left: 0%;
+    transform: translate(0, -50%);
 }
 
 .logoSenaRa img {
@@ -322,25 +348,20 @@ main {
 .boxMensaje {
     width: 100%;
     height: auto;
-    padding-left: 150px;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 20px;
-    position: relative;
-}
-
-.boxMensaje i {
-    font-size: 3rem;
-    color: var(--textColorTwo);
-    flex: 1;
-    text-align: center;
 }
 
 .mensaje {
-    width: 400px;
+    width: 60%;
     height: auto;
+    padding: 10px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
     justify-content: flex-start;
 }
 
@@ -348,11 +369,57 @@ main {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--textColorTwo);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
 }
 
+.boton-controlSena-RA {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform .08s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+    user-select: none;
+}
+
+.boton-controlSena-RA:hover {
+    border: 3px solid var(--color-resto);
+}
+
+.boton-principalSena-RA {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border: 1px solid #fff;
+    font-weight: 700;
+}
+
+.boton-principalSena-RA:hover {
+    filter: brightness(1.05)
+}
+
+.icono-grandeSena-RA {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;align-items: center;
+    font-size: 18px;
+}
+
+
+/* -----------------------------------------------------
+    SLIDER
+-------------------------------------------------------- */
 .slider-navegation {
     width: 100%;
-    height: 50px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -378,7 +445,9 @@ main {
     background-color: #39a900;
 }
 
-
+/* ----------------------------------------
+    REPRODUCTRO 
+------------------------------------------*/
 
 .boxEscucharMas {
     width: 100%;
@@ -565,6 +634,7 @@ main {
     border: 3px solid var(--color-acento);
     cursor: pointer;
 }
+
 .control-range.volumen::-webkit-slider-thumb {
     border-color: #39a900;
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.222);
@@ -588,6 +658,7 @@ main {
     background: linear-gradient(90deg, #5a5a5a 0%, #fff 50%);
     border-radius: 999px;
 }
+
 .control-range.volumen::-moz-range-thumb {
     border-color: #39a900;
     box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
@@ -882,21 +953,23 @@ footer {
 
     #open-SideBar-btn {
         display: flex;
+        align-items: center;
         background-color: var(--bg);
         height: 40px;
         position: fixed;
-        top: 144px;
+        top: 440px;
         z-index: 100;
         width: 100%;
+    }
+    #open-SideBar-btn.btnNavBarDown{
+        position: fixed;
+        top: 150px;
     }
 
     .boxNavBar {
         width: 100%;
         height: auto;
-        position: absolute;
-        top: 39px;
     }
-
     nav {
         position: fixed;
         bottom: -100%;
@@ -980,7 +1053,7 @@ footer {
     /* ESCUCHAR MAS */
     main {
         position: relative;
-        top: 184px;
+        top: 40px;
     }
 
     .boxTitleEscuchar {
@@ -993,13 +1066,16 @@ footer {
     }
 
     .sliderSenaRa {
-        height: 300px;
+        height: 400px;
         width: 100%;
+        position: relative;
+        top: 0;
     }
 
-    .boxSliderInfo{
+    .boxSliderInfo {
         height: 80px;
     }
+
     .boxMensaje {
         padding: 0 10px;
     }
@@ -1009,11 +1085,12 @@ footer {
         height: auto;
         padding: 10px;
     }
-    .textMensaje{
+
+    .textMensaje {
         font-size: 1rem;
     }
 
-    .slider-navegation .btn-nav-slider{
+    .slider-navegation .btn-nav-slider {
         height: 10px;
         margin-right: 20px;
     }
@@ -1180,23 +1257,18 @@ footer {
         height: 100px;
     }
 
-    /* ----------------------------------------------
-        BARRA DE BUSQUEDA
-    ------------------------------------------------- */
-    .formUp {
-        width: 40%;
-    }
-
-    .inputSearch {
-        width: 100%;
-    }
-
 
     /* NavBar fijada en la parte inferior de la pagina */
     .boxNavBar {
         width: 100%;
         height: auto;
         position: fixed;
+        top: 540px;
+    }
+    .boxNavBar.navAbajo {
+        position: fixed;
+        top: 197px;
+        border-top: 1px solid black;
     }
 
     nav {
@@ -1206,13 +1278,6 @@ footer {
         justify-content: center;
         align-items: center;
         z-index: 10;
-    }
-
-    .navAbajo {
-        position: fixed;
-        top: 136px;
-        background-color: white;
-        border-top: 1px solid black;
     }
 
     nav ul {
@@ -1242,17 +1307,20 @@ footer {
 
     main {
         position: relative;
-        top: 196px;
+        top: 40px;
     }
 
     .sliderSenaRa {
-        height: 400px;
+        height: 500px;
         width: 100%;
+        position: relative;
+        top: 0;
     }
 
-    .boxSliderInfo{
+    .boxSliderInfo {
         height: 100px;
     }
+
     .boxMensaje {
         padding: 0 10px;
     }
@@ -1262,8 +1330,12 @@ footer {
         height: auto;
         padding: 20px;
     }
-    .textMensaje{
+
+    .textMensaje {
         font-size: 1.3rem;
+    }
+    .boxEscucharMas{
+        padding-top: 100px;
     }
 
     /* -----------------------------------------

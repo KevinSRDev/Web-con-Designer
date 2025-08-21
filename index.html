@@ -21,7 +21,6 @@
                 d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z" />
         </svg>
     </button>
-
     <header>
         <div class="contenBosGov">
             <div class="boxGov">
@@ -32,10 +31,10 @@
 
     <div class="boxSENAyGov">
         <div class="senaLogo">
-            <img id="logoSena" src="src/img/SENA_SENA VERDE.png" alt="Gobierno SENA" />
+            <img id="logoSena" src="src/img/SENA_SENA BLANCO.png" alt="Gobierno SENA" />
         </div>
         <div class="govLogo">
-            <img id="logoCobierno" src="./src/img/SENA_TRABAJO COLOR.png" alt="Ministerio del Trabajo" />
+            <img id="logoCobierno" src="./src/img/SENA_TRABAJO.png" alt="Ministerio del Trabajo" />
         </div>
     </div>
     <!-- NAVBAR -->
@@ -84,19 +83,6 @@
             <img id="imgSlider" src="./src/img/slider/foto-02.jpg" alt="Imagen de Slider ..." class="img-slider">
             <img id="imgSlider" src="./src/img/slider/foto-03.jpg" alt="Imagen de Slider ..." class="img-slider">
             <img id="imgSlider" src="./src/img/slider/foto-04.jpg" alt="Imagen de Slider ..." class="img-slider">
-            <div class="boxSliderInfo infoSliderActive">
-                <div class="boxMensaje">
-                    <div class="logoSenaRa">
-                        <img src="./src/img/sena-radio.jpg" alt="Logo SENA RA, la radio" />
-                    </div>
-                    <div class="mensaje">
-                        <p class="textMensaje">
-                            ¡La moda brilla en la pasarela de aprendices SENA!
-                        </p>
-                    </div>
-                    <i class="bi bi-play-circle"></i>
-                </div>
-            </div>
             <div class="boxSliderInfo">
                 <div class="boxMensaje">
                     <div class="logoSenaRa">
@@ -104,36 +90,14 @@
                     </div>
                     <div class="mensaje">
                         <p class="textMensaje">
-                            SENA-RA innova
+                            SENA-RA <span><button id="boton-reproducirSena-RA"
+                                    class="boton-controlSena-RA boton-principalSena-RA" aria-label="ReproducirSena-Ra (K)"
+                                    title="ReproducirSena-Ra/PausarSena-Ra (K)">
+                                    <i id="icono-playSena-RA" class="bi bi-play-fill icono-grandeSena-RA"></i>
+                                </button></span>
                         </p>
+                        <audio id="elemento-audioSena-Ra" src="https://sonic.paulatina.co/8176/stream"></audio>
                     </div>
-                    <i class="bi bi-play-circle"></i>
-                </div>
-            </div>
-            <div class="boxSliderInfo">
-                <div class="boxMensaje">
-                    <div class="logoSenaRa">
-                        <img src="./src/img/sena-radio.jpg" alt="Logo SENA RA, la radio" />
-                    </div>
-                    <div class="mensaje">
-                        <p class="textMensaje">
-                            Hello!
-                        </p>
-                    </div>
-                    <i class="bi bi-play-circle"></i>
-                </div>
-            </div>
-            <div class="boxSliderInfo">
-                <div class="boxMensaje">
-                    <div class="logoSenaRa">
-                        <img src="./src/img/sena-radio.jpg" alt="Logo SENA RA, la radio" />
-                    </div>
-                    <div class="mensaje">
-                        <p class="textMensaje">
-                            Podcasts SENA-RA
-                        </p>
-                    </div>
-                    <i class="bi bi-play-circle"></i>
                 </div>
             </div>
             <div class="slider-navegation">
@@ -496,6 +460,7 @@
     <script src="./js/player.js"></script>
     <script src="./js/audioHome.js"></script>
     <script type="text/javascript" src="./js/player.js" defer></script>
+    <script src="./js/audioSenaRa.js"></script>
 </body>
 
 </html>
