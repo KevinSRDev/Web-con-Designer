@@ -13,6 +13,7 @@
     --primerColor: #39a900;
     --segundoColor: #00304d;
     --textColor: #4b4b4b;
+    --colorBorderTop: #4b4b4b;
     --textColorTwo: white;
     --bgGobierno: #285ec3;
     --color-fondo: #fff;
@@ -30,12 +31,12 @@
 }
 
 .darkmode {
-    --bg: #2a2a2a;
+    --bg: #343434;
     --primerColor: #39a900;
     --segundoColor: #00304d;
     --textColor: #ffffff;
+    --colorBorderTop: #39a900;
     --color-superficie: rgba(34, 34, 34, 0.4);
-    --cardShadow: rgba(99, 99, 99, 0.74);
     --btn-theme-light-dark: rgb(220, 220, 220);
     --form: rgba(59, 59, 59, 0.901);
     --bg-btn-theme: #616161;
@@ -394,8 +395,8 @@ main {
 }
 
 .boton-principalSena-RA {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     color: #fff;
     border: 1px solid #fff;
     font-weight: 700;
@@ -406,11 +407,10 @@ main {
 }
 
 .icono-grandeSena-RA {
-    width: 24px;
-    height: 24px;
     display: flex;
-    justify-content: center;align-items: center;
-    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
 }
 
 
@@ -464,7 +464,7 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-top: 2px solid var(--textColor);
+    border-top: 2px solid var(--colorBorderTop);
     z-index: 0;
 }
 
@@ -484,11 +484,9 @@ main {
     padding: 18px;
     display: flex;
     flex-direction: column;
-    grid-template-areas:
-        "portada titulo"
-        "portada controles"
-        "portada progreso";
-    gap: var(--gap);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--textColor);
     position: relative;
     left: 50%;
     transform: translate(-50%, -0%);
@@ -496,47 +494,37 @@ main {
 }
 
 .portada {
-    grid-area: portada;
-    width: 30%;
+    width: 200px;
     aspect-ratio: 1/1;
     object-fit: cover;
     background: var(--segundoColor);
 }
 
 .bloque-informacion {
-    grid-area: titulo;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 30px;
-    min-height: 72px;
+    justify-content: center;
+    flex-direction: row-reverse;
+    gap: 50px;
+    min-height: 250px;
+    width: 100%;
 }
 
 .boxTextoActualAudio {
-    width: 60%;
+    width: 50%;
     height: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
     padding: 20px;
 }
 
-.texto-titulo {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 700;
-    width: 100%;
-    height: 50px;
-    letter-spacing: .2px;
-    color: var(--color-acento);
-}
-
 .texto-descripcion {
-    margin: 0;
+    text-align: left;
     color: var(--textColor);
     line-height: 1.45;
-    font-size: .95rem;
-    height: 150px;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .fila-controles {
@@ -546,16 +534,19 @@ main {
     justify-content: center;
     gap: 10px;
     padding: 10px;
+    width: 100%;
 }
 
 .boton-control {
-    display: inline-grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 42px;
     height: 42px;
     background-color: transparent;
+    color: var(--btn-theme-light-dark);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--textColor);
     cursor: pointer;
     transition: transform .08s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
@@ -568,14 +559,6 @@ main {
 
 .boton-control:active {
     transform: scale(.96)
-}
-
-.boton-principal {
-    width: 40px;
-    height: 40px;
-    background: var(--color-acento);
-    color: white;
-    font-weight: 700;
 }
 
 .boton-principal:hover {
@@ -669,12 +652,21 @@ main {
 .icono {
     width: 22px;
     height: 22px;
-    fill: currentColor
+    font-size: 20px;
+    fill: currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ;
 }
 
 .icono-grande {
     width: 24px;
-    height: 24px
+    height: 24px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -701,13 +693,26 @@ main {
     padding: 20px 0;
 }
 
+.boxGalleryAudio::-webkit-scrollbar {
+    height: 15px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 10px;
+}
+
+.boxGalleryAudio::-webkit-scrollbar-thumb {
+    background-color: rgb(220, 220, 220);
+    border-radius: 10px;
+}
+
 .titleAudiosGlobal {
     color: var(--primerColor);
     height: auto;
     font-size: 2rem;
     font-weight: bold;
     padding: 20px 0 20px 0;
-    border-top: 2px solid var(--textColor);
+    border-top: 2px solid var(--colorBorderTop);
     width: 980px;
     position: relative;
     left: 50%;
@@ -742,7 +747,7 @@ main {
 .cardImgAudio {
     width: 100%;
     height: 200px;
-    box-shadow: 0px 8px 20px 0px var(--cardShadow);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -779,7 +784,7 @@ footer {
     align-items: center;
     padding: 20px 0;
     position: relative;
-    bottom: -200px;
+    bottom: -180px;
 }
 
 .box-footer {
@@ -887,7 +892,7 @@ footer {
     align-items: center;
     padding: 0;
     position: relative;
-    bottom: -200px;
+    bottom: -180px;
     background-color: var(--bgGobierno);
 }
 
@@ -961,7 +966,8 @@ footer {
         z-index: 100;
         width: 100%;
     }
-    #open-SideBar-btn.btnNavBarDown{
+
+    #open-SideBar-btn.btnNavBarDown {
         position: fixed;
         top: 150px;
     }
@@ -970,6 +976,7 @@ footer {
         width: 100%;
         height: auto;
     }
+
     nav {
         position: fixed;
         bottom: -100%;
@@ -1210,6 +1217,11 @@ footer {
     }
 
     /* FOOTER */
+    footer {
+        position: relative;
+        bottom: 20px;
+    }
+
     .box-footer {
         width: 90%;
         height: auto;
@@ -1218,6 +1230,8 @@ footer {
         flex-direction: column;
         align-items: center;
         border-top: 2px solid black;
+        position: relative;
+        bottom: -40px;
     }
 
     .footer-text {
@@ -1246,6 +1260,11 @@ footer {
         height: 100%;
         object-fit: contain;
     }
+
+    #f-gov {
+        position: relative;
+        bottom: 0;
+    }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1100px) {
@@ -1265,6 +1284,7 @@ footer {
         position: fixed;
         top: 540px;
     }
+
     .boxNavBar.navAbajo {
         position: fixed;
         top: 197px;
@@ -1334,7 +1354,8 @@ footer {
     .textMensaje {
         font-size: 1.3rem;
     }
-    .boxEscucharMas{
+
+    .boxEscucharMas {
         padding-top: 100px;
     }
 
@@ -1442,6 +1463,11 @@ footer {
 
 
     /* FOOTER */
+    footer {
+        position: relative;
+        bottom: -20px;
+    }
+
     .box-footer {
         width: 90%;
         height: auto;
@@ -1471,5 +1497,10 @@ footer {
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+
+    #f-gov {
+        position: relative;
+        bottom: 0;
     }
 }

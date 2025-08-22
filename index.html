@@ -49,24 +49,23 @@
                     <i class="bi bi-chevron-left"></i>
                 </button>
                 <li class="inicio-li" id="link_nav">
-                    <a href="./index.html">Inicio</a>
-                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/default.aspx"
-                        target="_blank">Transparencia</a>
-                    <a href="https://www.sena.edu.co/es-co/ciudadano/Paginas/default.aspx" target="_blank">Atención
-                        y
-                        Servicio a la Ciudadanía</a>
-                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/participa.aspx"
-                        target="_blank">Participa</a>
-                    <a href="https://www.sena.edu.co/es-co/sena/Paginas/quienesSomos.aspx" target="_blank">La
-                        Entidad</a>
-                    <a href="https://www.sena.edu.co/es-co/formacion/Paginas/Estudie-en-el-SENA.aspx"
-                        target="_blank">Formación</a>
-                    <a href="https://www.sena.edu.co/es-co/trabajo/Paginas/busqueEmpleo.aspx"
-                        target="_blank">Empleabilidad</a>
-                    <a href="https://www.sena.edu.co/es-co/Empresarios/Paginas/default.aspx"
-                        target="_blank">Empresarios</a>
-                    <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/default.aspx" target="_blank">Sala de
-                        Prensa</a>
+                    <a href="./index.html" aria-label="Incio de Pagina" title="Información de SENA Radial">Inicio</a>
+                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/default.aspx" target="_blank"
+                        aria-label="Transparencia Sena"
+                        title="Enlace a Transparencia y Acceso a la Información Publica">Transparencia</a>
+                    <a href="https://www.sena.edu.co/es-co/ciudadano/Paginas/default.aspx" target="_blank" aria-label="Atención y Servicio a la Ciudadanía" title="Enlace a la Atención y Servicio a la Ciudadanía">Atención y Servicio a la Ciudadanía</a>
+                    <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/participa.aspx" target="_blank"
+                        aria-label="Participa" title="Enlace a Participa">Participa</a>
+                    <a href="https://www.sena.edu.co/es-co/sena/Paginas/quienesSomos.aspx" target="_blank"
+                        aria-label="La Entidad" title="Enlace a La Entidad">La Entidad</a>
+                    <a href="https://www.sena.edu.co/es-co/formacion/Paginas/Estudie-en-el-SENA.aspx" target="_blank"
+                        aria-label="Formación" title="Enlace a Formación">Formación</a>
+                    <a href="https://www.sena.edu.co/es-co/trabajo/Paginas/busqueEmpleo.aspx" target="_blank"
+                        aria-label="Empleabilidad" title="Enlace a Empleabilidad">Empleabilidad</a>
+                    <a href="https://www.sena.edu.co/es-co/Empresarios/Paginas/default.aspx" target="_blank"
+                        aria-label="Empresarios" title="Enlace a Empresarios">Empresarios</a>
+                    <a href="https://www.sena.edu.co/es-co/Noticias/Paginas/default.aspx" target="_blank"
+                        aria-label="Sala de Prensa" title="Enlace a Sala de Prensa">Sala de Prensa</a>
                 </li>
             </ul>
         </nav>
@@ -91,8 +90,8 @@
                     <div class="mensaje">
                         <p class="textMensaje">
                             SENA-RA <span><button id="boton-reproducirSena-RA"
-                                    class="boton-controlSena-RA boton-principalSena-RA" aria-label="ReproducirSena-Ra (K)"
-                                    title="ReproducirSena-Ra/PausarSena-Ra (K)">
+                                    class="boton-controlSena-RA boton-principalSena-RA"
+                                    aria-label="ReproducirSena-Ra (K)" title="ReproducirSena-Ra/PausarSena-Ra (K)">
                                     <i id="icono-playSena-RA" class="bi bi-play-fill icono-grandeSena-RA"></i>
                                 </button></span>
                         </p>
@@ -114,10 +113,9 @@
             </div>
         </div>
         <!-- REPRODUCTOR -->
-        <div class="contenedor-reproductor" aria-label="Reproductor de audio">
+        <div class="contenedor-reproductor" aria-label="Reproductor de audio" title="Reproductor de Audios">
             <section class="bloque-informacion" aria-live="polite">
                 <div class="boxTextoActualAudio">
-                    <h1 id="texto-titulo" class="texto-titulo">Cargando pista…</h1>
                     <p id="texto-descripcion" class="texto-descripcion">
                         Descripción en 200 caracteres.
                     </p>
@@ -126,23 +124,18 @@
             </section>
 
             <div class="fila-controles">
-                <button id="boton-anterior" class="boton-control" aria-label="Pista anterior" title="Anterior (J)">
-                    <svg class="icono" viewBox="0 0 24 24">
-                        <path d="M6 6h2v12H6V6zm3.5 6 9.5 6V6l-9.5 6z" />
-                    </svg>
+                <button id="boton-reproducir" class="boton-control boton-principal" aria-label="Reproducir (K)"
+                    title="Reproducir/Pausar (M)">
+                    <i id="icono-play" class="bi bi-play icono icono-grande"></i>
                 </button>
 
-                <button id="boton-reproducir" class="boton-control boton-principal" aria-label="Reproducir (K)"
-                    title="Reproducir/Pausar (K)">
-                    <svg id="icono-play" class="icono icono-grande" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
+                <button id="boton-anterior" class="boton-control" aria-label="Pista anterior" title="Anterior (J)">
+                    <i class="bi bi-chevron-bar-left icono"></i>
                 </button>
+
 
                 <button id="boton-siguiente" class="boton-control" aria-label="Pista siguiente" title="Siguiente (L)">
-                    <svg class="icono" viewBox="0 0 24 24">
-                        <path d="M16 6h2v12h-2V6zM5 18l9.5-6L5 6v12z" />
-                    </svg>
+                    <i class="bi bi-chevron-bar-right icono"></i>
                 </button>
 
                 <div class="fila-progreso">
@@ -154,9 +147,7 @@
 
                 <div class="grupo-volumen">
                     <button id="boton-silencio" class="boton-control" aria-label="Silenciar" title="Silenciar (M)">
-                        <svg id="icono-volumen" class="icono" viewBox="0 0 24 24">
-                            <path d="M5 9v6h4l5 5V4L9 9H5z" />
-                        </svg>
+                        <i id="icono-volumen" class="bi bi-volume-up icono"></i>
                     </button>
                     <input id="control-volumen" class="control-range volumen" type="range" min="0" max="1" step="0.01"
                         value="0.85" aria-label="Volumen" />
@@ -433,11 +424,11 @@
                     <p class="text-contacto">
                         Línea de WhatsApp:
                         <a href="https://api.whatsapp.com/send/?phone=573112545028&text&type=phone_number&app_absent=0"
-                            class="link-contacto">3112545028</a>
+                            class="link-contacto" aria-label="Línea de WhatsApp" title="Línea de WhatsApp">3112545028</a>
                     </p>
 
                     <a href="https://www.sena.edu.co/es-co/transparencia/Paginas/mecanismosContacto.aspx"
-                        class="puntos-atencion">Conozca aquí los puntos de atención</a>
+                        class="puntos-atencion" aria-label="Puntos de atención" title="Enlace a los puntos de atención">Conozca aquí los puntos de atención</a>
 
                     <p class="lineas-atencion">
                         Líneas de atención al ciudadanos, empresarios y línea PQRS: Bogotá

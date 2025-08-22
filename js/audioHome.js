@@ -3,32 +3,28 @@
 // ---------------------------
 const listaPistas = [
   {
-    titulo: "Para Que La Plata",
     archivo: "./src/audiosHome/Para Que La Plata(MP3_320K).mp3",
     portada: "./src/img/evento-02.jpg",
     descripcion:
       "Una guitarra suave acompaña una tarde lluviosa en la ciudad. Melodías cálidas y pausadas invitan a respirar y dejar que el tiempo se estire, como un té humeante cerca de la ventana, lento y reconfortante.",
   },
   {
-    titulo: "La Niña De Mis Sueños",
     archivo: "./src/audiosHome/La Energia Norteña - La Niña De Mis Sueños (Video Oficial)(MP3_320K).mp3",
     portada: "./src/img/evento-03.jpg",
     descripcion:
       "Sintetizadores retro, autopistas mojadas y carteles de neón. Un pulso constante que guía el viaje nocturno, entre nostalgia y futuro. Conduce, piensa, siente cada luz pasar como un latido que no se agota.",
   },
   {
-    titulo: "ADMV",
     archivo:
       "./src/audiosHome/Maluma - ADMV (Official Video)(MP3_160K).mp3",
     portada: "./src/img/evento-04.jpg",
     descripcion:
       "Cuerdas, charango y viento frío. El sol despierta los cerros mientras el ritmo crece. Camino de tierra, pasos firmes, horizonte claro. Música que abraza y empuja, sencilla, viva, abierta como el cielo.",
-  },
+  }
 ];
 
 const elementoAudio = document.getElementById("elemento-audio");
 const imagenPortada = document.getElementById("imagen-portada");
-const textoTitulo = document.getElementById("texto-titulo");
 const textoDescripcion = document.getElementById("texto-descripcion");
 const botonAnterior = document.getElementById("boton-anterior");
 const botonReproducir = document.getElementById("boton-reproducir");
@@ -77,27 +73,25 @@ function asegurar250Caracteres(texto) {
 }
 
 function actualizarIconoReproducir(paused) {
-  // Cambia entre Play y Pause dibujando el SVG
   if (paused) {
-    iconoPlay.setAttribute("viewBox", "0 0 24 24");
-    iconoPlay.innerHTML = `<path d="M8 5v14l11-7z"/>`;
-    botonReproducir.setAttribute("aria-label", "Reproducir");
-    botonReproducir.title = "Reproducir (K)";
+    iconoPlay.classList.add("bi-play");
+    iconoPlay.classList.remove("bi-pause");
   } else {
-    iconoPlay.setAttribute("viewBox", "0 0 24 24");
-    iconoPlay.innerHTML = `<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>`;
-    botonReproducir.setAttribute("aria-label", "Pausar");
-    botonReproducir.title = "Pausar (K)";
+    iconoPlay.classList.remove("bi-play");
+    iconoPlay.classList.add("bi-pause"); 
   }
 }
 
 function actualizarIconoSilencio(mute, volumen) {
   if (mute || volumen === 0) {
-    iconoVolumen.innerHTML = `<path d="M5 9v6h4l5 5V4L9 9H5zM19 12l3 3-1.5 1.5L17.5 13.5 14 10l1.5-1.5L19 12z"/>`;
-  } else if (volumen < 0.5) {
-    iconoVolumen.innerHTML = `<path d="M5 9v6h4l5 5V4L9 9H5zM16 12c0-1.77-1.02-3.29-2.5-4.03v8.06A4.49 4.49 0 0 0 16 12z"/>`;
+    iconoVolumen.classList.remove('bi-volume-up');
+    iconoVolumen.classList.add('bi-volume-mute');
+  } else if (volumen < 0.9) {
+    iconoVolumen.classList.remove('bi-volume-mute');
+    iconoVolumen.classList.add('bi-volume-down');
   } else {
-    iconoVolumen.innerHTML = `<path d="M5 9v6h4l5 5V4L9 9H5zM18.5 12c0-2.48-1.52-4.6-3.7-5.44v2.23c1.05.66 1.7 1.8 1.7 3.21s-.65 2.55-1.7 3.21v2.23c2.18-.84 3.7-2.96 3.7-5.44z"/>`;
+    iconoVolumen.classList.remove('bi-volume-down');
+    iconoVolumen.classList.add('bi-volume-up');
   }
 }
 
@@ -115,7 +109,6 @@ function cargarPista(indice) {
   imagenPortada.src = pista.portada;
   imagenPortada.alt = `Portada: ${pista.titulo}`;
 
-  textoTitulo.textContent = pista.titulo;
   textoDescripcion.textContent = asegurar250Caracteres(pista.descripcion);
 
   textoTiempoActual.textContent = "0:00";
@@ -123,12 +116,11 @@ function cargarPista(indice) {
   barraProgreso.value = 0;
   aplicarGradienteDosColores(barraProgreso, 0);
 
-  // //Autoplay al cambiar de pista
+  // // Autoplay al cambiar de pista
   // elementoAudio.play().catch(() => {
   //   /* reproducción bloqueada por el navegador */
   // });
   actualizarIconoReproducir(elementoAudio.paused);
-  historialEnTitulo();
 }
 
 function reproducirPausa() {
@@ -224,7 +216,7 @@ document.addEventListener("keydown", (e) => {
   if (tag === "input" || tag === "textarea") return;
 
   switch (e.key.toLowerCase()) {
-    case "k":
+    case "m":
     case " ":
       e.preventDefault();
       reproducirPausa();
