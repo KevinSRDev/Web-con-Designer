@@ -671,9 +671,9 @@ main {
 
 
 
-/* ---------------------------------------
-    AUDIO
------------------------------------------- */
+/* --------------------------------------------------------------------------
+    AUDIOS FORMACIÓN
+-----------------------------------------------------------------------------*/
 .boxGlobaAudio {
     width: 100%;
     height: auto;
@@ -730,7 +730,6 @@ main {
 
 .list-audios li {
     list-style: none;
-    cursor: pointer;
     flex: 0 0 auto;
 }
 
@@ -756,6 +755,23 @@ main {
     height: 100%;
     object-fit: cover;
 }
+.boxIconAudioF{
+    width: 50px;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    bottom: 54px;
+    right: -150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxIconAudioF i{
+    color: #fff;
+    font-size: 20px;
+}
 
 .textAudio {
     width: 100%;
@@ -772,6 +788,99 @@ main {
 .textA:hover {
     text-decoration: underline;
 }
+
+
+
+/* --------------------------------------------------------------------------
+    AUDIOS CAMPESENA
+-----------------------------------------------------------------------------*/
+.boxGlobaAudio {
+    width: 100%;
+    height: auto;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none;
+}
+
+.boxGalleryAudioC {
+    width: 980px;
+    height: auto;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.boxGalleryAudioC::-webkit-scrollbar {
+    height: 15px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 10px;
+}
+
+.boxGalleryAudioC::-webkit-scrollbar-thumb {
+    background-color: rgb(220, 220, 220);
+    border-radius: 10px;
+}
+
+.list-audiosC {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    gap: 60px;
+    padding: 0 20px;
+}
+
+.list-audiosC li {
+    list-style: none;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.list-audiosC li a {
+    text-decoration: none;
+}
+
+.cardAudio {
+    width: 200px;
+    height: auto;
+    border-bottom: 2px solid var(--textColor);
+}
+
+.cardImgAudio {
+    width: 100%;
+    height: 200px;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.6);
+}
+
+
+.cardImgAudio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.boxIconAudioF{
+    width: 50px;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    bottom: 54px;
+    right: -150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxIconAudioC i{
+    color: #fff;
+    font-size: 20px;
+}
+
 
 /* -------------------------------------
     FOOTER

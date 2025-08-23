@@ -14,7 +14,19 @@ const imgSlider = document.querySelectorAll(".img-slider")
 const infoSlider = document.querySelectorAll(".boxSliderInfo")
 const btnNavBar = document.getElementById("open-SideBar-btn");
 
+
 let darkmode = localStorage.getItem("darkmode");
+
+
+//----------------------------------------------------------
+//  AL HACER SCROLL
+// ---------------------------------------------------------
+
+window.addEventListener("scroll", () => {
+  boxLogos.classList.toggle("boxSENAyGovDown", window.scrollY > 0);
+  boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
+  btnNavBar.classList.toggle("btnNavBarDown", window.scrollY > 0);
+});
 
 //---------------------
 // THEME: LIGHT OR DARK
@@ -29,50 +41,27 @@ const disableDarkMode = () => {
   localStorage.setItem("darkmode", null);
 };
 
-if (darkmode === "active") {
+if (darkmode === "active" && window.scrollY > 0) {
   enableDarMode()
   logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
   logoGov.src = "./src/img/SENA_TRABAJO.png";
-};
+} else if(darkmode === "active" && window.scrollY < 0){
+  enableDarMode()
+  logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+  logoGov.src = "./src/img/SENA_TRABAJO.png";
+} else if(darkmode !== "active" && window.scrollY < 0){
+    enableDarMode()
+    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+    logoGov.src = "./src/img/SENA_TRABAJO.png";
+} else if(darkmode !== "active" && window.scrollY > 0){
+  enableDarMode()
+  logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+  logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
+}
 
 themeSwitch.addEventListener("click", () => {
   darkmode = localStorage.getItem("darkmode");
   darkmode !== "active" ? enableDarMode() : disableDarkMode();
-  if (darkmode !== "active") {
-    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-    logoGov.src = "./src/img/SENA_TRABAJO.png";
-  } else {
-    logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-    logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
-  }
-});
-
-
-//----------------------------------------------------------
-//  AL HACER SCROLL
-// ---------------------------------------------------------
-
-window.addEventListener("scroll", () => {
-  boxLogos.classList.toggle("boxSENAyGovDown", window.scrollY > 0);
-  boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
-  btnNavBar.classList.toggle("btnNavBarDown", window.scrollY > 0);
-
-  if(window.scrollY > 0 && darkmode !== "active"){
-    logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-    logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
-  } else if(window.scrollY == 0 && darkmode !== "active"){
-    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-    logoGov.src = "./src/img/SENA_TRABAJO.png";
-  } 
-  if(window.scrollY == 0 && darkmode === "active"){
-    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-    logoGov.src = "./src/img/SENA_TRABAJO.png";
-  } else if(window.scrollY > 0 && darkmode === "active"){
-    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-    logoGov.src = "./src/img/SENA_TRABAJO.png";
-  } 
-  
-  
 });
 
 
@@ -129,6 +118,8 @@ btnsSlider.forEach((btn, i) => {
     sliderNav(i);
   });
 });
+
+
 
 
 
