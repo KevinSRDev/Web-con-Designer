@@ -1,5 +1,7 @@
 const openButton = document.getElementById("open-SideBar-btn");
 const navbar = document.getElementById("navBarM");
+const boxLogos = document.querySelector(".boxSENAyGov");
+const boxNavBar = document.querySelector(".boxNavBar");
 const media = window.matchMedia("(width < 600px)");
 const linkOfertaSena = document.getElementById("oferta-sena");
 const logoSENA = document.getElementById("logoSena");
@@ -10,8 +12,21 @@ const themeSwitch = document.getElementById("theme-switch");
 const btnsSlider = document.querySelectorAll(".btn-nav-slider")
 const imgSlider = document.querySelectorAll(".img-slider")
 const infoSlider = document.querySelectorAll(".boxSliderInfo")
+const btnNavBar = document.getElementById("open-SideBar-btn");
+
 
 let darkmode = localStorage.getItem("darkmode");
+
+
+//----------------------------------------------------------
+//  AL HACER SCROLL
+// ---------------------------------------------------------
+
+window.addEventListener("scroll", () => {
+  boxLogos.classList.toggle("boxSENAyGovDown", window.scrollY > 0);
+  boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
+  btnNavBar.classList.toggle("btnNavBarDown", window.scrollY > 0);
+});
 
 //---------------------
 // THEME: LIGHT OR DARK
@@ -26,67 +41,30 @@ const disableDarkMode = () => {
   localStorage.setItem("darkmode", null);
 };
 
-if (darkmode === "active") enableDarMode();
+if (darkmode === "active" && window.scrollY > 0) {
+  enableDarMode()
+  logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+  logoGov.src = "./src/img/SENA_TRABAJO.png";
+} else if(darkmode === "active" && window.scrollY < 0){
+  enableDarMode()
+  logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+  logoGov.src = "./src/img/SENA_TRABAJO.png";
+} else if(darkmode !== "active" && window.scrollY < 0){
+    enableDarMode()
+    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
+    logoGov.src = "./src/img/SENA_TRABAJO.png";
+} else if(darkmode !== "active" && window.scrollY > 0){
+  enableDarMode()
+  logoSENA.src = "./src/img/SENA_SENA VERDE.png";
+  logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
+}
 
 themeSwitch.addEventListener("click", () => {
   darkmode = localStorage.getItem("darkmode");
   darkmode !== "active" ? enableDarMode() : disableDarkMode();
-  if (darkmode !== "active") {
-    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-    logoGov.src = "./src/img/SENA_TRABAJO.png";
-  } else {
-    logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-    logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
-  }
 });
 
-// --------------
-// BUSCADOR
-// --------------
-function buscar() {
-  const valor = document.getElementById("search").value.toLowerCase().trim();
 
-  // Mapear términos de búsqueda con ids de secciones
-  const secciones = {
-    formación: "formacion",
-    Formación: "formacion",
-    formacion: "formacion",
-    Formacion: "formacion",
-    FORMACIÓN: "formacion",
-    campesena: "campesena",
-    Campesena: "campesena",
-  };
-  const id = secciones[valor];
-
-  if (id) {
-    // Navegar a la sección
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-  } else {
-    alert("Sección no encontrada");
-  }
-}
-
-// if (window.matchMedia < 600) {
-//   boxLogoSena.style.width = `60px`;
-//   boxLogoSena.style.height = `60px`;
-
-//   boxLogoGov.style.width = `100px`;
-//   logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-//   logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
-// } else {
-//   boxLogoSena.style.width = `60px`;
-//   boxLogoSena.style.height = `60px`;
-
-//   boxLogoGov.style.width = `100px`;
-// }
-
-// window.addEventListener("scroll", () => {
-//   var boxLogos = document.querySelector(".boxSENAyGov");
-//   boxLogos.classList.toggle("abajo", window.scrollY > 0);
-
-//   boxNavBar.classList.toggle("navAbajo", window.scrollY > 0);
-//   formBuscar.classList.toggle("formAbajo", window.scrollY > 0);
-// });
 
 media.addEventListener("change", (e) => updateNavbar(e));
 
@@ -114,7 +92,6 @@ function closeSideBar() {
   navbar.setAttribute("inert", "");
 }
 
-
 // ----------------------------------------------
 // FOR SLIDER NAVEGATION
 // ----------------------------------------------
@@ -134,7 +111,6 @@ var sliderNav = function(maual){
 
   btnsSlider[maual].classList.add("btnSliderActive");
   imgSlider[maual].classList.add("imgSliderActive");
-  infoSlider[maual].classList.add("infoSliderActive");
 }
 
 btnsSlider.forEach((btn, i) => {
@@ -142,6 +118,7 @@ btnsSlider.forEach((btn, i) => {
     sliderNav(i);
   });
 });
+
 
 
 
@@ -181,6 +158,7 @@ updateNavbar(media);
 
 // Ejecutar la función al cargar la página
 insertarHTMLSiEsNecesario();
+
 
 // Escuchar cambios en el tamaño de la ventana
 window.addEventListener("resize", insertarHTMLSiEsNecesario);

@@ -1,17 +1,27 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 main {
-    width: 100%;
-    padding: 20px 0;
+    padding-bottom: 50px;
 }
 
 /* ---------------------------------------------
     VISTAS AUDIOS
 ------------------------------------------------ */
+#back-btn {
+    background: none;
+    border: none;
+    color: var(--primerColor);
+    padding: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    transition: all .5s;
+}
+
+#back-btn:hover {
+    font-size: 2.3rem;
+}
+
 .title-f-view {
     width: 980PX;
     position: relative;
@@ -42,68 +52,255 @@ main {
     transform: translate(-50%, 0);
 }
 
-.boxAudio {
+.contenedor-reproductor {
+    background: var(--color-superficie);
+    padding: 18px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    width: 100%;
-    height: auto;
+    grid-template-areas:
+        "portada titulo"
+        "portada controles"
+        "portada progreso";
+    gap: var(--gap);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -0%);
 }
 
-#imagenAudio {
-    width: 400px;
-    height: 300px;
+.portada {
+    grid-area: portada;
+    width: 30%;
+    aspect-ratio: 1/1;
     object-fit: cover;
-    border-radius: 10px;
+    background: #00304d;
 }
 
-.infoAudio {
-    width: 80%;
+.bloque-informacion {
+    grid-area: titulo;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+    min-height: 72px;
+}
+
+.boxTextoActualAudio {
+    width: 60%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
 }
 
-.infoAudio p {
+.texto-titulo {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    width: 100%;
+    height: 50px;
+    letter-spacing: .2px;
+    color: #39a900;
+}
+
+.texto-descripcion {
+    margin: 0;
+    color: var(--textColor);
+    line-height: 1.45;
+    font-size: .95rem;
+    height: 150px;
+}
+
+.fila-controles {
+    grid-area: controles;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.boton-control {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    color: var(--textColor);
+    cursor: pointer;
+    transition: transform .08s ease, background .2s ease, border-color .2s ease, opacity .2s ease;
+    user-select: none;
+}
+
+.boton-control:hover {
+    border: 1px solid var(--color-resto);
+}
+
+.boton-control:active {
+    transform: scale(.96)
+}
+
+.boton-principal {
+    width: 40px;
+    height: 40px;
+    background: var(--color-acento);
+    color: white;
+    font-weight: 700;
+}
+
+.boton-principal:hover {
+    filter: brightness(1.05)
+}
+
+
+.grupo-volumen {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.etiqueta-tiempo {
+    font-variant-numeric: tabular-nums;
+    font-size: .9rem;
     color: var(--textColor);
 }
 
-.imgAudioInfo {
-    width: 100%;
-    height: auto;
+.fila-progreso {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+    gap: 12px;
+    width: 450px;
 }
 
+/* Controles tipo range con dos colores (progreso y resto) */
+.control-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-acento1) 0%, var(--color-acento2) 0%, var(--color-resto) 0%, var(--color-resto) 100%);
+    outline: none;
+    transition: filter .15s ease;
+}
 
-#back-btn {
-    background: none;
-    border: none;
-    color: var(--primerColor);
-    padding: 5px;
-    font-size: 2rem;
-    font-weight: bold;
+.control-range:hover {
+    filter: brightness(1.05)
+}
+
+.control-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--color-acento);
     cursor: pointer;
-    width: 100px;
-    height: 40px;
-    transition: all .5s;
 }
 
-#back-btn:hover {
-    font-size: 2.3rem;
+.control-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #5a5a5a;
+    cursor: pointer;
 }
 
-#audio-title {
+.control-range.volumen {
+    height: 5px;
+    width: 80px;
+    background: linear-gradient(90deg, #5a5a5a 0%, #fff 50%);
+    border-radius: 999px;
+}
+
+.control-range.volumen::-webkit-slider-thumb {
+    border-color: #39a900;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
+}
+
+.control-range.volumen::-moz-range-thumb {
+    border-color: #5a5a5a;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .18);
+}
+
+/* Iconos SVG */
+.icono {
+    width: 22px;
+    height: 22px;
+    fill: currentColor
+}
+
+.icono-grande {
+    width: 24px;
+    height: 24px
+}
+
+/* -----------------------------------------------------
+    PLAYLIST CAMPESENA
+-------------------------------------------------------- */
+.playlistAudios {
+    width: 980px;
+    height: auto;
+    background-color: var(--color-superficie);
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 20px;
+    top: -50px;
+}
+
+.title-playlist {
     color: var(--primerColor);
-    font-size: 2rem;
-    font-weight: bold;
+    padding: 20px 0;
 }
 
+.items-playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 300px;
+    padding: 10px 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.itemsForma {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.itemsForma:hover {
+    background-color: #39a900;
+}
+
+.itemsForma a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+.itemsForma img {
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+}
 
 @media only screen and (max-width: 600px) {
     #theme-switch {
@@ -119,20 +316,10 @@ main {
         width: 100%;
         height: 110px;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         padding: 5px;
         z-index: 2;
-    }
-
-    .boxSENAyGov.abajo {
-        position: fixed;
-        background-color: var(--bg);
-        display: flex;
-        flex-direction: row;
-        top: 40px;
-        height: 100px;
-        z-index: 10;
     }
 
     .senaLogo {
@@ -234,47 +421,6 @@ main {
         font-size: 1.5em;
     }
 
-
-    /* ----------------------------------------------
-        BARRA DE BUSQUEDA
-    ------------------------------------------------- */
-    .formUp {
-        width: 40%;
-        background-color: rgba(0, 0, 0, 0.1);
-        display: flex;
-        overflow: hidden;
-    }
-
-    .inputSearch {
-        width: 100%;
-    }
-
-    .boxMensaje {
-        width: 100%;
-        height: auto;
-        padding-left: 0;
-    }
-
-    .boxMensaje i {
-        font-size: 2rem;
-    }
-
-    .mensaje {
-        width: 50%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-right: 0;
-        padding: 10px;
-    }
-
-    .textMensaje {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--textColorTwo);
-    }
-
     /* ESCUCHAR MAS */
 
     .boxTitleEscuchar {
@@ -355,6 +501,30 @@ main {
         font-size: 2rem;
     }
 
+    .portada {
+        width: 100%;
+    }
+
+    .boxTextoActualAudio {
+        width: 100%;
+        height: auto;
+    }
+
+    .texto-descripcion {
+        height: auto;
+    }
+
+    /* -----------------------------------------------------
+        PLAYLIST FORMACIÓN
+    -------------------------------------------------------- */
+    .playlistAudios {
+        width: 80%;
+        height: auto;
+        background-color: var(--color-superficie);
+    }
+
+
+
     /* FOOTER */
     .box-footer {
         width: 90%;
@@ -396,25 +566,6 @@ main {
 
 @media only screen and (min-width: 601px) and (max-width: 1100px) {
 
-    .boxSENAyGov.abajo {
-        background-color: white;
-        position: fixed;
-        top: 39px;
-        height: 100px;
-    }
-
-    /* ----------------------------------------------
-        BARRA DE BUSQUEDA
-    ------------------------------------------------- */
-    .formUp {
-        width: 40%;
-    }
-
-    .inputSearch {
-        width: 100%;
-    }
-
-
     /* NavBar fijada en la parte inferior de la pagina */
     .boxNavBar {
         width: 100%;
@@ -429,13 +580,6 @@ main {
         justify-content: center;
         align-items: center;
         z-index: 10;
-    }
-
-    .navAbajo {
-        position: fixed;
-        top: 136px;
-        background-color: white;
-        border-top: 1px solid black;
     }
 
     nav ul {
@@ -533,6 +677,14 @@ main {
         padding: 20px;
     }
 
+
+    /* -----------------------------------------------------
+    PLAYLIST FORMACIÓN
+    -------------------------------------------------------- */
+    .playlistAudios {
+        width: 90%;
+        height: auto;
+    }
 
 
     /* FOOTER */
