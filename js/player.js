@@ -9,9 +9,6 @@ const boxLogoSena = document.querySelector(".senaLogo");
 const logoGov = document.getElementById("logoCobierno");
 const boxLogoGov = document.querySelector(".govLogo");
 const themeSwitch = document.getElementById("theme-switch");
-const btnsSlider = document.querySelectorAll(".btn-nav-slider")
-const imgSlider = document.querySelectorAll(".img-slider")
-const infoSlider = document.querySelectorAll(".boxSliderInfo")
 const btnNavBar = document.getElementById("open-SideBar-btn");
 
 
@@ -96,28 +93,49 @@ function closeSideBar() {
 // FOR SLIDER NAVEGATION
 // ----------------------------------------------
 
-var sliderNav = function(maual){
-  btnsSlider.forEach((btn) =>{
-    btn.classList.remove("btnSliderActive");
-  })
+const btnLeft = document.querySelector(".btn-left"),
+    btnRight = document.querySelector(".btn-right"),
+    sliderN = document.querySelector("#sliderN"),
+    sliderSection = document.querySelectorAll(".slider-Section");
 
-  imgSlider.forEach((img) =>{
-    img.classList.remove("imgSliderActive");
-  })
 
-  infoSlider.forEach((info) =>{
-    info.classList.remove("infoSliderActive");
-  })
+btnLeft.addEventListener("click", e => moveToLeft());
+btnRight.addEventListener("click", e => moveToRight());
 
-  btnsSlider[maual].classList.add("btnSliderActive");
-  imgSlider[maual].classList.add("imgSliderActive");
+setInterval(() =>{
+    moveToRight();
+}, 6000);
+
+let operacion = 0;
+    counter = 0;
+    widthImg = 100 / sliderSection.length;
+
+function moveToRight() {
+    if (counter >= sliderSection.length-1){
+        counter = 0;
+        operacion = 0;
+        sliderN.style.transform = `translate(-${operacion}%)`;
+        sliderN.style.transition = "none";
+        return;
+    }
+    counter++;
+
+    operacion = operacion + widthImg;
+    sliderN.style.transform = `translate(-${operacion}%)`;
+    sliderN.style.transition = "all .6s ease-in-out";
 }
-
-btnsSlider.forEach((btn, i) => {
-  btn.addEventListener('click', ()=> {
-    sliderNav(i);
-  });
-});
+function moveToLeft() {
+    counter--;
+    if(counter < 0){
+        counter = sliderSection.length-1;
+        operacion = widthImg * (sliderSection.length-1);
+        sliderN.style.transform = `translate(-${operacion}%)`;
+        return;
+    }
+    operacion = operacion - widthImg;
+    sliderN.style.transform = `translate(-${operacion}%)`;
+    sliderN.style.transition = "all .6s ease-in-out";
+}
 
 
 

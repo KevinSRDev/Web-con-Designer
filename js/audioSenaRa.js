@@ -7,25 +7,7 @@ const iconoPlaySena = document.querySelector("#icono-playSena-RA");
 //  AUDIO SENA-RA
 // -------------------------------------------------
 
-function actualizarIconoReproducirSenaRa(pause) {
-  if (pause) {
-    botonReproducirSena.setAttribute("aria-label", "ReproducirSena-Ra");
-    botonReproducirSena.title = "ReproducirReproducirSena-Ra (K)";
-  } else {
-    botonReproducirSena.setAttribute("aria-label", "PausarSena-Ra");
-    botonReproducirSena.title = "PausarSena-Ra (K)";
-  }
-}
 
-function cargarPistaSenaRa() {
-  elementoAudioSena.src = "https://sonic.paulatina.co/8176/stream";
-
-  actualizarIconoReproducirSenaRa(elementoAudioSena.paused);
-
-  elementoAudioSena.play().catch(() => {
-  //   /* reproducción bloqueada por el navegador */
-  });
-}
 
 
 function reproducirPausaSenaRa() {
@@ -62,13 +44,3 @@ document.addEventListener("keydown", (e) => {
 
 botonReproducirSena.addEventListener("click", reproducirPausaSenaRa);
 
-// ---------------------------
-// Inicialización
-// ---------------------------
-function inicializarReproductorSenaRa() {
-  // Carga de la primera pista
-  cargarPistaSenaRa();
-}
-
-// Arranque
-inicializarReproductor();

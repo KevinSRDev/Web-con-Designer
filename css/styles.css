@@ -274,15 +274,25 @@ main {
 .sliderSenaRa {
     height: 650px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    position: relative;
     top: -160px;
+    position: relative;
 }
 
-.sliderSenaRa::before {
+
+/* -----------------------------------------------------
+    SLIDER
+-------------------------------------------------------- */
+.container-carrusel {
+  overflow: hidden;
+   width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.container-carrusel::before {
     z-index: 1;
     content: '';
     position: absolute;
@@ -293,26 +303,58 @@ main {
     left: 0;
 }
 
-.sliderSenaRa #imgSlider {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+.carruseles {
+  width: 500%; /*cada que se agreguen más img se debe cambiar el valor Example: 4(img) = 400%  2(img) = 200%*/
+  height: 100%;
+  display: flex;
 }
 
-.img-slider {
-    position: absolute;
-    width: 100%;
-    clip-path: circle(0% at 0 50%);
+.slider-Section {
+  /*cada que se agreguen más img se debe cambiar el valor Example: calc( 100% / 4) = 4(img)  calc( 100% / 2) = 2(img)*/
+  width: calc(100% / 5);
+  height: 100%;
 }
 
-.img-slider.imgSliderActive {
-    clip-path: circle(150% at 0 50%);
-    transition: 2s ease-in-out;
-    transition-property: clip-path;
+.slider-Section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-left,
+.btn-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  font-size: 1.6rem;
+  background-color: transparent;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.856);
+  transform: translate(0, -50%);
+  transition: 0.5s ease;
+  user-select: none;
+  z-index: 20;
+}
+
+.btn-left:hover,
+.btn-right:hover {
+  color: white;
+  font-size: 1.8rem;
+  border: 1px solid rgba(222, 222, 222, 0.901);
+}
+
+.btn-right {
+  right: 10px;
+}
+
+.btn-left {
+  left: 10px;
 }
 
 .boxSliderInfo {
@@ -334,10 +376,6 @@ main {
 .logoSenaRa {
     width: 100px;
     height: 100px;
-    position: relative;
-    top: 60%;
-    left: 0%;
-    transform: translate(0, -50%);
 }
 
 .logoSenaRa img {
@@ -353,6 +391,9 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .mensaje {
@@ -414,36 +455,7 @@ main {
 }
 
 
-/* -----------------------------------------------------
-    SLIDER
--------------------------------------------------------- */
-.slider-navegation {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.8);
-}
 
-.slider-navegation .btn-nav-slider {
-    width: 30px;
-    height: 6px;
-    border-radius: 2px;
-    background: #fff;
-    cursor: pointer;
-    margin-right: 12px;
-}
-
-.btn-nav-slider:hover {
-    transform: scale(1.2);
-}
-
-.btn-nav-slider.btnSliderActive {
-    background-color: #39a900;
-}
 
 /* ----------------------------------------
     REPRODUCTRO 
@@ -719,7 +731,7 @@ main {
     transform: translate(-50%, 0);
 }
 
-.list-audios {
+.list-audiosF {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -728,12 +740,12 @@ main {
     padding: 0 20px;
 }
 
-.list-audios li {
+.list-audiosF li {
     list-style: none;
     flex: 0 0 auto;
 }
 
-.list-audios li a {
+.list-audiosF li a {
     text-decoration: none;
 }
 
@@ -755,7 +767,7 @@ main {
     height: 100%;
     object-fit: cover;
 }
-.boxIconAudioF{
+.cardImgAudio button{
     width: 50px;
     aspect-ratio: 1/1;
     background-color: rgba(0, 0, 0, 0.6);
@@ -768,10 +780,14 @@ main {
     justify-content: center;
     align-items: center;
 }
-.boxIconAudioF i{
+.cardImgAudio button i{
     color: #fff;
     font-size: 20px;
 }
+.cardImgAudio button i:hover{
+    transform: scale(1.06);
+}
+
 
 .textAudio {
     width: 100%;
@@ -863,7 +879,7 @@ main {
     height: 100%;
     object-fit: cover;
 }
-.boxIconAudioF{
+.boxIconAudioC{
     width: 50px;
     aspect-ratio: 1/1;
     background-color: rgba(0, 0, 0, 0.6);
@@ -876,6 +892,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+
 .boxIconAudioC i{
     color: #fff;
     font-size: 20px;
