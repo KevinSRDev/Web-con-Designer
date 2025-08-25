@@ -4,20 +4,20 @@
 const listaPistas = [
   {
     archivo: "./src/audiosHome/Para Que La Plata(MP3_320K).mp3",
-    portada: "./src/img/evento-02.jpg",
+    portada: "./src/img/audioD.jpg",
     descripcion:
       "Una guitarra suave acompaña una tarde lluviosa en la ciudad. Melodías cálidas y pausadas invitan a respirar y dejar que el tiempo se estire, como un té humeante cerca de la ventana, lento y reconfortante.",
   },
   {
     archivo: "./src/audiosHome/La Energia Norteña - La Niña De Mis Sueños (Video Oficial)(MP3_320K).mp3",
-    portada: "./src/img/evento-03.jpg",
+    portada: "./src/img/audioD.jpg",
     descripcion:
       "Sintetizadores retro, autopistas mojadas y carteles de neón. Un pulso constante que guía el viaje nocturno, entre nostalgia y futuro. Conduce, piensa, siente cada luz pasar como un latido que no se agota.",
   },
   {
     archivo:
       "./src/audiosHome/Maluma - ADMV (Official Video)(MP3_160K).mp3",
-    portada: "./src/img/evento-04.jpg",
+    portada: "./src/img/audioD.jpg",
     descripcion:
       "Cuerdas, charango y viento frío. El sol despierta los cerros mientras el ritmo crece. Camino de tierra, pasos firmes, horizonte claro. Música que abraza y empuja, sencilla, viva, abierta como el cielo.",
   }
@@ -117,9 +117,9 @@ function cargarPista(indice) {
   aplicarGradienteDosColores(barraProgreso, 0);
 
   // Autoplay al cambiar de pista
-  // elementoAudio.play().catch(() => {
-  //   /* reproducción bloqueada por el navegador */
-  // });
+  elementoAudio.play().catch(() => {
+    /* reproducción bloqueada por el navegador */
+  });
   actualizarIconoReproducir(elementoAudio.paused);
 }
 
@@ -196,8 +196,8 @@ controlVolumen.addEventListener("input", (e) => {
 botonSilencio.addEventListener("click", () => {
   elementoAudio.muted = !elementoAudio.muted;
   if (!elementoAudio.muted && elementoAudio.volume === 0) {
-    elementoAudio.volume = 0.3;
-    controlVolumen.value = 0.3;
+    elementoAudio.volume = 0.9;
+    controlVolumen.value = 0.9;
   }
   aplicarGradienteVolumen(
     controlVolumen,

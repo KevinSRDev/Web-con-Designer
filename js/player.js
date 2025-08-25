@@ -3,11 +3,8 @@ const navbar = document.getElementById("navBarM");
 const boxLogos = document.querySelector(".boxSENAyGov");
 const boxNavBar = document.querySelector(".boxNavBar");
 const media = window.matchMedia("(width < 600px)");
-const linkOfertaSena = document.getElementById("oferta-sena");
-const logoSENA = document.getElementById("logoSena");
-const boxLogoSena = document.querySelector(".senaLogo");
-const logoGov = document.getElementById("logoCobierno");
-const boxLogoGov = document.querySelector(".govLogo");
+const logoSENA = document.querySelector("#logoSena");
+const logoGov = document.querySelector("#logoGobierno");
 const themeSwitch = document.getElementById("theme-switch");
 const btnNavBar = document.getElementById("open-SideBar-btn");
 
@@ -25,6 +22,7 @@ window.addEventListener("scroll", () => {
   btnNavBar.classList.toggle("btnNavBarDown", window.scrollY > 0);
 });
 
+
 //---------------------
 // THEME: LIGHT OR DARK
 // --------------------
@@ -38,22 +36,9 @@ const disableDarkMode = () => {
   localStorage.setItem("darkmode", null);
 };
 
-if (darkmode === "active" && window.scrollY > 0) {
-  enableDarMode()
-  logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-  logoGov.src = "./src/img/SENA_TRABAJO.png";
-} else if(darkmode === "active" && window.scrollY < 0){
-  enableDarMode()
-  logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-  logoGov.src = "./src/img/SENA_TRABAJO.png";
-} else if(darkmode !== "active" && window.scrollY < 0){
-    enableDarMode()
-    logoSENA.src = "./src/img/SENA_SENA BLANCO.png";
-    logoGov.src = "./src/img/SENA_TRABAJO.png";
-} else if(darkmode !== "active" && window.scrollY > 0){
-  enableDarMode()
-  logoSENA.src = "./src/img/SENA_SENA VERDE.png";
-  logoGov.src = "./src/img/SENA_TRABAJO COLOR.png";
+
+if (darkmode === "active") {
+  enableDarMode();
 }
 
 themeSwitch.addEventListener("click", () => {
@@ -94,47 +79,47 @@ function closeSideBar() {
 // ----------------------------------------------
 
 const btnLeft = document.querySelector(".btn-left"),
-    btnRight = document.querySelector(".btn-right"),
-    sliderN = document.querySelector("#sliderN"),
-    sliderSection = document.querySelectorAll(".slider-Section");
+  btnRight = document.querySelector(".btn-right"),
+  sliderN = document.querySelector("#sliderN"),
+  sliderSection = document.querySelectorAll(".slider-Section");
 
 
 btnLeft.addEventListener("click", e => moveToLeft());
 btnRight.addEventListener("click", e => moveToRight());
 
-setInterval(() =>{
-    moveToRight();
+setInterval(() => {
+  moveToRight();
 }, 6000);
 
 let operacion = 0;
-    counter = 0;
-    widthImg = 100 / sliderSection.length;
+counter = 0;
+widthImg = 100 / sliderSection.length;
 
 function moveToRight() {
-    if (counter >= sliderSection.length-1){
-        counter = 0;
-        operacion = 0;
-        sliderN.style.transform = `translate(-${operacion}%)`;
-        sliderN.style.transition = "none";
-        return;
-    }
-    counter++;
-
-    operacion = operacion + widthImg;
+  if (counter >= sliderSection.length - 1) {
+    counter = 0;
+    operacion = 0;
     sliderN.style.transform = `translate(-${operacion}%)`;
-    sliderN.style.transition = "all .6s ease-in-out";
+    sliderN.style.transition = "none";
+    return;
+  }
+  counter++;
+
+  operacion = operacion + widthImg;
+  sliderN.style.transform = `translate(-${operacion}%)`;
+  sliderN.style.transition = "all .6s ease-in-out";
 }
 function moveToLeft() {
-    counter--;
-    if(counter < 0){
-        counter = sliderSection.length-1;
-        operacion = widthImg * (sliderSection.length-1);
-        sliderN.style.transform = `translate(-${operacion}%)`;
-        return;
-    }
-    operacion = operacion - widthImg;
+  counter--;
+  if (counter < 0) {
+    counter = sliderSection.length - 1;
+    operacion = widthImg * (sliderSection.length - 1);
     sliderN.style.transform = `translate(-${operacion}%)`;
-    sliderN.style.transition = "all .6s ease-in-out";
+    return;
+  }
+  operacion = operacion - widthImg;
+  sliderN.style.transform = `translate(-${operacion}%)`;
+  sliderN.style.transition = "all .6s ease-in-out";
 }
 
 
